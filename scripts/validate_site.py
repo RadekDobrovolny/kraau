@@ -11,7 +11,9 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
-BASE = os.environ.get("BASE_PATH", "/").strip("/")
+owner, _, repository = os.environ.get("GITHUB_REPOSITORY", "").partition("/")
+default_base = repository if owner and repository and repository != f"{owner}.github.io" else ""
+BASE = os.environ.get("BASE_PATH", default_base).strip("/")
 
 
 class PageParser(HTMLParser):
@@ -117,7 +119,8 @@ def main():
         print("\n".join(errors[:40]), file=sys.stderr)
         print(f"{len(errors)} validation errors", file=sys.stderr)
         return 1
-    print(f"Validated {len(files)} HTML pages, 61 criteria and internal links (base /{BASE}/).")
+    prefix = f"/{BASE}/" if BASE else "/"
+    print(f"Validated {len(files)} HTML pages, 61 criteria and internal links (base {prefix}).")
     return 0
 
 
