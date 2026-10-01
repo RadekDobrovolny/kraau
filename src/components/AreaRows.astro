@@ -1,0 +1,15 @@
+---
+import type { Area, Competence } from '../lib/framework';
+import { areaUrl } from '../lib/framework';
+
+interface Props { areas: Area[]; competences: Competence[] }
+const { areas, competences } = Astro.props;
+---
+<div class="area-list">
+  {areas.map((area) => <a class="area-item" href={areaUrl(area.id)}>
+    <span class="area-item__number">{area.id.padStart(2, '0')}</span>
+    <span class="area-item__title">{area.title}</span>
+    <span class="area-item__count">{competences.filter((item) => item.areaId === area.id).length} kompetence</span>
+    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+  </a>)}
+</div>

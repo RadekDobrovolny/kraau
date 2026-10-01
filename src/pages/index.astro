@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import FrameworkExplorer from '../components/FrameworkExplorer.astro';
+import { getFramework, withBase } from '../lib/framework';
+const { areas, competences, criteria } = await getFramework();
+---
+<SiteLayout title="Kompetenční rámec pro učitelství SŠ" description="Najděte konkrétní popisy učitelské praxe a promyslete další krok ve výuce.">
+  <section class="home-hero" aria-labelledby="home-title">
+    <img class="home-hero__image" src={withBase('hero-ucitelstvi.jpg')} alt="" fetchpriority="high" />
+    <div class="shell home-hero__content">
+      <p class="home-hero__kicker">KRAAU <span aria-hidden="true">/</span> Učitelství SŠ</p>
+      <h1 id="home-title">Kompetenční rámec studentů a studentek učitelství pro střední školy</h1>
+      <p>Společný jazyk pro přemýšlení o výuce, pedagogických rozhodnutích a dalším profesním rozvoji.</p>
+      <a class="home-hero__link" href="#ramec">Procházet rámec <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+    </div>
+  </section>
+  <section class="shell home-framework" id="ramec" aria-labelledby="framework-heading">
+    <header class="home-framework__heading"><div><p class="eyebrow">Obsah rámce</p><h2 id="framework-heading">Šest oblastí učitelské praxe</h2></div><p>19 kompetencí · 61 kritérií</p></header>
+    <FrameworkExplorer areas={areas} competences={competences} criteria={criteria} />
+  </section>
+</SiteLayout>

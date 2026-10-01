@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import source from '../../data/framework.json';
+import { criterionUrl, withBase } from '../../lib/framework';
+---
+<SiteLayout title="Jak s rámcem pracovat" current="jak">
+  <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Jak s rámcem pracovat' }]} />
+    <header class="page-heading"><p class="eyebrow">Metodika</p><h1>Jak s rámcem pracovat</h1><p class="lede">Začněte konkrétní situací z výuky. Rámec vám pomůže pojmenovat jednání a domluvit jeden další krok.</p></header>
+    <div class="prose methodology-page">
+      <h2 id="postup">Tři kroky pro reflexi</h2>
+      <ol class="steps">
+        <li><div><h3>Začněte pozorováním</h3><p>Popište, co se při výuce skutečně stalo. Vyberte téma nebo oblast, které se situace týká.</p></div></li>
+        <li><div><h3>Porovnejte popisy jednání</h3><p>Otevřete příslušné kritérium a čtěte všechny čtyři úrovně. Hledejte nejbližší popis, nikoli známku. Všimněte si také profesního přesvědčení v oddílu mindset.</p></div></li>
+        <li><div><h3>Domluvte další krok</h3><p>Pojmenujte jeden konkrétní postup, který lze při příští výuce zkusit a znovu reflektovat.</p></div></li>
+      </ol>
+      <p><a class="text-link" href={criterionUrl('1.1.1')}>Podívat se na kritérium 1.1.1 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
+      <h2 id="podle-role">Práce podle role</h2>
+      <div class="role-grid">
+        <section><h3>Studující</h3><p>Vyberte situaci z vlastní výuky, popište své jednání a porovnejte je s nejbližšími deskriptory. Zvolte jeden další krok, který můžete zkusit při příští hodině.</p></section>
+        <section><h3>Provázející učitelé</h3><p>Při zpětné vazbě začněte pozorovanými situacemi. Čtěte kritérium společně se studujícím a ptejte se, co daný postup podpořilo nebo brzdilo.</p></section>
+        <section><h3>Vysokoškolští vzdělavatelé</h3><p>Propojujte kritéria s cíli kurzu a praxe. Používejte společné popisy jednání při plánování, pozorování i reflexi, aby navazující zkušenosti dávaly smysl.</p></section>
+      </div>
+      <details class="methodology-details" id="vychodiska"><summary>Východiska z původního dokumentu <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><div>{source.methodology.map((paragraph) => <p>{paragraph}</p>)}</div></details>
+    </div>
+  </div>
+</SiteLayout>

@@ -1,0 +1,78 @@
+---
+import '../styles/fonts.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '../styles/global.css';
+import sansLatin from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
+import sansLatinExt from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-ext-wght-normal.woff2?url';
+import serifLatin from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
+import serifLatinExt from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-ext-wght-normal.woff2?url';
+import { withBase } from '../lib/framework';
+
+interface Props {
+  title: string;
+  description?: string;
+  current?: 'ramec' | 'urovne' | 'ukazky' | 'jak' | 'o-projektu';
+}
+
+const { title, description = 'Kompetenční rámec studentů a studentek učitelství pro střední školy.', current } = Astro.props;
+const nav = [
+  { id: 'ramec', label: 'Procházet rámec', path: '#ramec' },
+  { id: 'jak', label: 'Jak rámec použít', path: 'jak-pracovat/' },
+] as const;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="cs" data-base={import.meta.env.BASE_URL}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#155B4D" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="preload" href={sansLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={sansLatinExt} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serifLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serifLatinExt} as="font" type="font/woff2" crossorigin />
+    <title>{title} | KRAAU</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Přejít na obsah</a>
+    <div class="draft-strip">
+      <div class="shell draft-strip__inner"><span>Pracovní verze rámce pro střední školy</span></div>
+    </div>
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href={withBase('')} aria-label="KRAAU, úvodní stránka">
+          <span class="brand__mark" aria-hidden="true">K.</span>
+          <span class="brand__text"><strong>KRAAU</strong><small>Kompetenční rámec SŠ</small></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Hlavní navigace">
+          {nav.map((item) => <a class:list={{ active: current === item.id }} href={withBase(item.path)} aria-current={current === item.id ? 'page' : undefined}>{item.label}</a>)}
+        </nav>
+        <a class="header-search" href={withBase('hledat/')} aria-label="Hledat v rámci" title="Hledat v rámci">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span class="sr-only">Hledat v rámci</span>
+        </a>
+        <details class="mobile-nav">
+          <summary aria-label="Otevřít nabídku" title="Nabídka"><i class="fa-solid fa-bars" aria-hidden="true"></i></summary>
+          <nav aria-label="Mobilní navigace">
+            {nav.map((item) => <a href={withBase(item.path)} aria-current={current === item.id ? 'page' : undefined}>{item.label}</a>)}
+            <a href={withBase('hledat/')}>Hledat</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+    <main id="obsah"><slot /></main>
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div><strong>KRAAU</strong><p>Kompetenční rámec studentů a studentek učitelství pro střední školy.</p></div>
+        <div class="site-footer__links">
+          <a href={withBase('urovne/')}>Co znamenají úrovně</a>
+          <a href={withBase('ukazky/')}>Ukázky z praxe</a>
+          <a href={withBase('o-projektu/')}>O projektu</a>
+        </div>
+        <p class="site-footer__note">Pracovní verze určená k odbornému připomínkování.</p>
+      </div>
+    </footer>
+  </body>
+</html>

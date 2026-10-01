@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import source from '../../data/framework.json';
+import { pdfUrl, withBase } from '../../lib/framework';
+const subjectFrames = [
+  ['Cizí jazyky', 'https://msmt.gov.cz/uploads/OSKR/OSKR_Cizi_jazyky.pdf'],
+  ['Dějepis', 'https://msmt.gov.cz/uploads/OSKR/OSK_Dejepis_new2.pdf'],
+  ['Filozofie', 'https://msmt.gov.cz/uploads/OSKR/OSKR_Filozofie_new.pdf'],
+  ['Latinský jazyk a literatura', 'https://msmt.gov.cz/uploads/OSKR/OSKR_Latinsky_jazyk_a_literatura.pdf'],
+];
+---
+<SiteLayout title="O projektu" current="o-projektu">
+  <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'O projektu' }]} />
+    <header class="page-heading"><p class="eyebrow">Původ a stav</p><h1>O kompetenčním rámci</h1><p class="lede">Fakultní adaptace rámce pro studující učitelských programů se zaměřením na střední školy.</p></header>
+    <div class="content-layout"><div class="prose">
+      <div class="source-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div><strong>Pracovní verze.</strong> Dodaný dokument je určen k odbornému připomínkování. Dosud neprošel jazykovou korekturou ani finální sazbou.</div></div>
+      <h2>Východiska rámce</h2>
+      {source.background.map((paragraph) => <p>{paragraph}</p>)}
+      <h2>Zdrojové dokumenty</h2>
+      <div class="resource-list"><a href={pdfUrl()} target="_blank" rel="noopener noreferrer"><span>Kompetenční rámec studentů a studentek učitelství pro střední školy (PDF)</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a href={pdfUrl(31)} target="_blank" rel="noopener noreferrer"><span>Použitá literatura v původním dokumentu, strana 31</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+      <h2>Oborově specifické rámce</h2><p>Zdrojový dokument odkazuje také na rámce pro jednotlivé vyučované obory.</p>
+      <div class="resource-list">{subjectFrames.map(([name, url]) => <a href={url} target="_blank" rel="noopener noreferrer"><span>{name}</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>)}</div>
+      <h2>Redakční poznámka</h2><p>{source.editorialCorrections[0]}</p><p>Obsah webu vznikl převodem pracovního PDF. Definitivní znění a další obsahové úpravy vyžadují schválení garanta rámce.</p>
+    </div><aside class="content-layout__aside"><h2>Stručně</h2><ul><li><span class="meta">Rozsah: 6 oblastí, 19 kompetencí, 61 kritérií</span></li><li><span class="meta">Verze: {source.version}</span></li></ul><p class="meta">Ukázky z praxe se doplní po odborném a publikačním schválení.</p><figure class="source-cover"><a href={pdfUrl()} target="_blank" rel="noopener noreferrer"><img src={withBase('ramec-titulni-strana.png')} alt="Titulní strana pracovního Kompetenčního rámce pro střední školy" width="720" height="405" loading="lazy" /></a><figcaption>Pracovní dokument, titulní strana</figcaption></figure></aside></div>
+  </div>
+</SiteLayout>

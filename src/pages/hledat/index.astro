@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SearchApp from '../../components/SearchApp.astro';
+import { getFramework, withBase } from '../../lib/framework';
+const { areas } = await getFramework();
+---
+<SiteLayout title="Hledat v rámci" current="ramec">
+  <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Hledat' }]} />
+    <div class="search-page"><header><p class="eyebrow">Vyhledávání</p><h1>Najít kritérium</h1><p class="lede">Začněte tématem z výuky nebo číslem kritéria.</p></header><SearchApp areas={areas} /></div>
+  </div>
+</SiteLayout>

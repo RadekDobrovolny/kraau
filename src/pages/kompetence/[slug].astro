@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CriterionRows from '../../components/CriterionRows.astro';
+import type { Area, Competence, Criterion } from '../../lib/framework';
+import { areaUrl, displayTitle, getFramework, slug, withBase } from '../../lib/framework';
+
+interface Props { area: Area; competence: Competence; criteria: Criterion[] }
+export async function getStaticPaths() {
+  const { areas, competences, criteria } = await getFramework();
+  return competences.map((competence) => ({ params: { slug: slug(competence.id) }, props: {
+    area: areas.find((item) => item.id === competence.areaId)!,
+    competence,
+    criteria: criteria.filter((item) => item.competenceId === competence.id),
+  } }));
+}
+const { area, competence, criteria } = Astro.props;
+---
+<SiteLayout title={`${competence.id} ${displayTitle(competence.title)}`} current="ramec">
+  <div class="shell">
+    <Breadcrumbs items={[{ label: 'Rámec', href: withBase('ramec/') }, { label: `Oblast ${area.id}`, href: areaUrl(area.id) }, { label: `Kompetence ${competence.id}` }]} />
+    <header class="page-heading"><p class="eyebrow">Kompetence {competence.id}</p><h1>{displayTitle(competence.title)}</h1><p class="lede">{area.title}</p></header>
+    <section class="page-section" aria-labelledby="criteria-heading"><div class="section-heading"><div><h2 id="criteria-heading">Kritéria kompetence</h2><p>Každé kritérium má čtyři úrovně profesního rozvoje a mindset.</p></div><span class="meta">{criteria.length} kritérií</span></div><CriterionRows criteria={criteria} /></section>
+  </div>
+</SiteLayout>

@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FrameworkExplorer from '../../components/FrameworkExplorer.astro';
+import { getFramework, withBase } from '../../lib/framework';
+const { areas, competences, criteria } = await getFramework();
+---
+<SiteLayout title="Rámec" current="ramec">
+  <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Rámec' }]} />
+    <header class="page-heading"><p class="eyebrow">Procházet rámec</p><h1>Vyberte oblast své praxe</h1><p class="lede">V každé oblasti najdete konkrétní kritéria. Otevřete to, které souvisí s vaší situací ve výuce.</p></header>
+    <FrameworkExplorer areas={areas} competences={competences} criteria={criteria} />
+  </div>
+</SiteLayout>

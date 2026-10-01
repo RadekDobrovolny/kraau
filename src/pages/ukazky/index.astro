@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { withBase } from '../../lib/framework';
+---
+<SiteLayout title="Ukázky z praxe" current="ukazky">
+  <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Ukázky z praxe' }]} />
+    <header class="page-heading"><p class="eyebrow">Ilustrátory</p><h1>Ukázky z praxe</h1><p class="lede">Konkrétní situace, dokumenty a reflexe budou postupně propojovat deskriptory s děním ve třídě.</p></header>
+    <section class="page-section"><div class="empty-state"><i class="fa-regular fa-file-lines" aria-hidden="true"></i><h2>Ukázky zatím nejsou zveřejněné</h2><p>Na této stránce se objeví po odborném schválení a ověření souhlasů. Jednotlivá kritéria a jejich úrovně jsou již dostupné v rámci.</p><a class="button" href={withBase('ramec/')}>Procházet rámec <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></section>
+  </div>
+</SiteLayout>

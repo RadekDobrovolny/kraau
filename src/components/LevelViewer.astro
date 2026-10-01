@@ -1,0 +1,15 @@
+---
+import type { Criterion } from '../lib/framework';
+interface Props { criterion: Criterion }
+const { criterion } = Astro.props;
+---
+<section class="level-viewer" aria-labelledby="levels-heading">
+  <h2 id="levels-heading" class="sr-only">Úrovně profesního rozvoje</h2>
+  <div class="level-grid">
+    <div class="level-grid__head"><span>Úroveň</span><span>Popis profesního jednání</span></div>
+    {criterion.levels.map((text, level) => <section class="level-panel" id={`uroven-${level}`} data-level-panel={level} aria-labelledby={`level-heading-${level}`}>
+      <h3 id={`level-heading-${level}`}><span class="sr-only">Úroveň </span><span class="level-panel__number">{level}</span></h3>
+      <p>{text}</p>
+    </section>)}
+  </div>
+</section>

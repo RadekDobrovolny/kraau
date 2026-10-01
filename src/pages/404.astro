@@ -1,0 +1,5 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { withBase } from '../lib/framework';
+---
+<SiteLayout title="Stránka nenalezena"><div class="shell page-section narrow"><p class="eyebrow">404</p><h1>Stránka nebyla nalezena</h1><p class="lede">Odkaz může být neúplný nebo už neplatí. Pokračujte do přehledu rámce.</p><div class="page-heading__actions"><a class="button" href={withBase('ramec/')}>Procházet rámec <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="button button--light" href={withBase('hledat/')}>Hledat</a></div></div></SiteLayout>

@@ -1,0 +1,987 @@
+{
+  "version": "Pracovní verze, 1. 10. 2026",
+  "areas": [
+    {
+      "id": "1",
+      "title": "Obsah vyučovaného oboru a jeho didaktické zprostředkování",
+      "intro": [
+        "Oblast 1 se zaměřuje na vyučované obory a jejich zprostředkovávání žákům a žákyním. Vychází z předpokladu, že kvalitní výuka není založena pouze na obecných pedagogických dovednostech, ale také na hlubokém porozumění vyučovanému oboru, jeho způsobům poznávání a možnostem jeho didaktického zprostředkování různým žákům a žákyním. Současné výzkumy přitom ukazují, že právě propojení oborových znalostí, oborově-didaktického uvažování a schopnosti pracovat s tím, jak žáci a žákyně oborovému obsahu rozumějí, představuje jednu z klíčových složek kvalitní výuky (Shulman, 1986; Janík et al., 2013). Kompetence v této oblasti proto zahrnují nejen práci s obsahem vyučovaných oborů, ale také porozumění tomu, jak v oborech vzniká poznání, jaké způsoby myšlení jsou pro jednotlivé disciplíny typické a jak lze tyto způsoby poznávání zprostředkovávat žákům a žákyním. Součástí je také dovednost reflektovat proměny oboru, pracovat s odbornými zdroji a využívat oborově specifické nástroje a technologie.",
+        "Tato oblast je v předkládaném rámci formulována záměrně obecně tak, aby vytvářela společný základ pro všechny studující učitelství se zaměřením na střední školy. Současně však vycházíme z toho, že jednotlivé vyučované obory mají svá specifika, která nelze plně zachytit pouze na obecné úrovni. Předložený rámec proto chápeme jako zastřešující východisko, které je postupně doplňováno a konkretizováno prostřednictvím oborově specifických kompetenčních rámců vznikajících v návaznosti na národní Kompetenční rámec absolventa a absolventky učitelství (2023). Tyto rámce rozpracovávají specifické aspekty jednotlivých oborů, jejich epistemologii, charakteristické způsoby práce i specifické požadavky na oborově-didaktické kompetence vyučujících."
+      ],
+      "sourcePage": 5
+    },
+    {
+      "id": "2",
+      "title": "Plánování výuky",
+      "intro": [
+        "Plánování výuky představuje klíčovou profesní činnost, jejímž prostřednictvím vyučující promýšlí a strukturuje výuku tak, aby směřovala k naplnění stanovených cílů a podporovala učení žáků a žákyň. Nejde přitom pouze o organizační přípravu jednotlivých hodin, ale o komplexní rozhodování o cílech, obsahu, metodách, čase i způsobech práce s různorodostí žáků a žákyň. Výzkumy dlouhodobě ukazují, že kvalita plánování se promítá do efektivity výuky i výsledků učení (Hattie, 2009). Současné přístupy ke kurikulu zároveň zdůrazňují, že učení není nahodilý proces, ale opírá se o systematicky strukturované poznání, které je třeba ve výuce cíleně budovat a postupně rozvíjet (Surma et al., 2025).",
+        "V rámci plánování výuky vyučující nastavuje cíle tak, aby byly srozumitelné, dosažitelné a zároveň představovaly přiměřenou výzvu pro různé žáky a žákyně. Jasně formulované cíle pomáhají zaměřit pozornost na podstatné aspekty učiva a umožňují sledovat pokrok v učení (Hattie, 2009; Sadler, 1989). Současně jsou cíle ukotveny v promyšleném výběru obsahu, protože rozvoj komplexních dovedností je vždy spojen s konkrétními znalostmi a jejich strukturou (Surma et al., 2025). Nastavování cílů tak zahrnuje nejen jejich formulaci, ale i jejich zasazení do širšího kontextu učiva a jejich přizpůsobení aktuální úrovni žáků a žákyň.",
+        "Na formulaci cílů navazuje volba metod a forem výuky, které umožňují žákům a žákyním těchto cílů dosahovat. Efektivita výukových metod nespočívá v jejich formální „aktivitě“, ale v míře, v jaké podporují kognitivní zapojení a práci s obsahem (Hattie, 2009; Kirschner, Sweller & Clark, 2006). Vyučující proto plánuje metody v návaznosti na charakter učiva i potřeby konkrétní třídy a zohledňuje přitom také principy kognitivní zátěže (Sweller et al., 2019). Plánování metod zahrnuje jejich strukturování, návaznost i vytváření prostoru pro aktivní zpracování učiva.",
+        "Součástí plánování je také promyšlený výběr a úprava výukových materiálů, které významně ovlivňují, jakým způsobem žáci a žákyně učivu rozumějí a jak s ním pracují. Vyučující vybírá materiály tak, aby podporovaly porozumění, umožňovaly aktivní zapojení a navazovaly na předchozí zkušenosti žáků a žákyň (Hattie, 2009). Současně je upravuje s ohledem na různorodost třídy a vytváří tak různé cesty k porozumění učivu. Diferenciace přitom neznamená zjednodušování obsahu, ale jeho didaktické zpřístupňování různým žákům a žákyním (Navrátilová, 2025; Tomlinson, 2014).",
+        "Plánování výuky zahrnuje také práci s časem, která vytváří rámec pro efektivní průběh učení. Vyučující promýšlí strukturu výuky tak, aby jednotlivé činnosti na sebe navazovaly a podporovaly porozumění, procvičování i upevňování učiva. Efektivní využití času nespočívá pouze v dodržení předem stanoveného plánu, ale především v jeho flexibilním přizpůsobování průběhu výuky a potřebám žáků a žákyň (Hattie, 2009). Současně vyučující zohledňuje i širší časové souvislosti výuky a vytváří prostor pro návrat k obtížným tématům či prohlubování porozumění.",
+        "Nedílnou součástí plánování je také zohlednění různorodosti žáků a žákyň. Vyučující přizpůsobuje výuku jejich předchozím znalostem, zkušenostem i tempu učení a vytváří příležitosti pro zapojení všech. Diferenciace přitom není chápána jako dodatečná úprava výuky, ale jako její integrální součást, která se promítá do cílů, metod i organizace výuky (Tomlinson, 2014). Výzkumy z českého prostředí ukazují, že efektivní diferenciace spočívá především v promyšleném přizpůsobení výukových postupů v rámci společné výuky, nikoli pouze v organizačních opatřeních (Navrátilová, 2025; Obrovská et al., 2025).",
+        "Plánování výuky tak propojuje jednotlivé složky pedagogického rozhodování do funkčního celku. Umožňuje vyučujícím vytvářet smysluplné výukové situace, které reflektují strukturu učiva i potřeby žáků a žákyň, a představuje tak základ pro kvalitní a promyšlenou výuku."
+      ],
+      "sourcePage": 9
+    },
+    {
+      "id": "3",
+      "title": "Podmínky pro učení",
+      "intro": [
+        "Oblast 3 se zaměřuje na to, jak studující dokáže utvářet podmínky pro učení tak, aby podporovaly zapojení všech žáků a žákyň, jejich pocit bezpečí a kvalitu vztahů ve třídě. Vychází z předpokladu, že prostředí, ve kterém se učení odehrává, zásadním způsobem ovlivňuje, zda a jak se žáci a žákyně mohou učit. Atmosféra ve třídě, kvalita vztahů, pocit důvěry a bezpečí i předvídatelnost pravidel vytvářejí rámec, ve kterém se může smysluplné učení rozvíjet. Bez tohoto rámce zůstávají i dobře připravené výukové aktivity jen obtížně využitelné. Vhodně utvářené podmínky pro učení přitom nepodporují pouze zvládání učiva, ale přispívají i k rozvoji dovedností důležitých pro fungování žáků a žákyň ve skupině, jako je spolupráce, komunikace či regulace emocí. Skládá se ze dvou vzájemně souvisejících kompetencí: kompetence k budování prostředí důvěry (3.1) a k vytváření a udržování bezpečného prostředí (3.2).",
+        "Kompetence budování prostředí důvěry (3.1) vychází z výzkumných zjištění, která ukazují, že prostředí založené na důvěře podporuje zapojení žáků a žákyň do učení, jejich ochotu riskovat chybu i celkovou studijní motivaci (Bryk & Schneider, 2002; Wentzel, 2012). Důvěra se přitom nevytváří jednorázově, ale postupně – v každodenních interakcích mezi vyučujícím a žáky a žákyněmi i mezi nimi navzájem. Výzkumy zároveň ukazují, že pokud žáci a žákyně vnímají, že jsou ve třídě přijímáni a respektováni, vytváří to podmínky pro jejich aktivní zapojení do učení (Wentzel, 2012). Studující s rozvinutou kompetencí proto přistupuje ke všem žákům a žákyním s respektem, jedná předvídatelně a spravedlivě a svým jednáním vytváří stabilní a srozumitelné prostředí. Důvěru posiluje také tím, že dodržuje dohodnutá pravidla, reaguje konzistentně a dokáže regulovat vlastní emoce i v náročných situacích. Současně vědomě pracuje s komunikačními normami ve třídě, podporuje interakce mezi žáky a žákyněmi a oceňuje projevy prosociálního chování, které přispívají k rozvoji pozitivních vztahů a pocitu sounáležitosti. Budování důvěry tak představuje dlouhodobý proces, který tvoří jeden ze základních předpokladů efektivního učení.",
+        "Kompetence vytváření a udržování bezpečného prostředí (3.2) vychází z předpokladu, že bezpečné prostředí – zahrnující fyzickou i psychologickou rovinu – umožňuje žákům a žákyním vyjadřovat své myšlenky a emoce, dělat chyby a aktivně se zapojovat do učení bez obav z ponížení či odmítnutí. Výzkumy ukazují, že vnímané bezpečí ve třídě úzce souvisí se zapojením žáků a žákyň, jejich školní spokojeností i socioemočním rozvojem (Thapa et al., 2013; Wang & Degol, 2016). Bezpečné prostředí zároveň podporuje rozvoj sociálních a emočních dovedností, které jsou důležité nejen pro učení, ale i pro fungování žáků a žákyň mimo školu (Thapa et al., 2013). Studující s rozvinutou kompetencí proto systematicky pracuje s pravidly, která jsou pro žáky a žákyně srozumitelná a předvídatelná, a citlivě reaguje na situace, které by mohly bezpečí ve třídě narušovat. Součástí je také podpora socioemočního rozvoje žáků a žákyň a vedení k uvědomování dopadů jejich chování na ostatní. Studující si všímá projevů, které mohou signalizovat ohrožení bezpečí nebo zdravého vývoje žáků a žákyň, a adekvátně na ně reaguje. Pozornost věnuje rovněž materiálnímu a organizačnímu uspořádání prostředí, včetně podmínek bezpečí ve virtuálním prostoru. Vytváření bezpečného prostředí tak představuje kontinuální proces, který propojuje práci s pravidly, vztahy i konkrétními situacemi ve třídě."
+      ],
+      "sourcePage": 14
+    },
+    {
+      "id": "4",
+      "title": "Podpora učení",
+      "intro": [
+        "Oblast 4 se zaměřuje na to, jak vyučující vede výuku tak, aby podporovala učení všech žáků a žákyň, průběžně reagovala na jejich potřeby a současně rozvíjela jejich schopnost přebírat odpovědnost za vlastní učení. Navazuje na plánování výuky a soustředí se na její realizaci v konkrétní třídní situaci. Výzkumy ukazují, že kvalita výuky úzce souvisí s tím, jakým způsobem vyučující podporuje proces učení a jak dokáže vytvářet příležitosti pro aktivní zapojení žáků a žákyň (Hattie, 2009). Současně poznatky kognitivní psychologie zdůrazňují, že učení není pasivním přijímáním informací, ale procesem aktivního zpracování, při kterém žáci a žákyně propojují nové poznatky s již existujícími znalostmi a postupně budují strukturované porozumění (Surma et al., 2025).",
+        "V průběhu výuky vyučující zprostředkovává cíle učení a ověřuje, jak jim žáci a žákyně rozumějí. Jasně formulované cíle a kritéria úspěchu patří mezi faktory s významným dopadem na učení, protože umožňují žákům a žákyním orientovat se v tom, čeho mají dosáhnout, sledovat vlastní pokrok a regulovat své úsilí (Hattie, 2009; Black & Wiliam, 2009). Vyučující proto s cíli nepracuje pouze na začátku hodiny, ale průběžně je zpřítomňuje, vrací se k nim a zapojuje žáky a žákyně do jejich porozumění, například prostřednictvím společného formulování kritérií nebo diskuse o tom, jak poznají, že cíle dosáhli (Andrade & Brookhart, 2020).",
+        "Současně vyučující využívá výukové strategie, které podporují učení žáků a žákyň. Výzkumy ukazují, že efektivní výuka je založena na promyšlené kombinaci postupů vedoucích k aktivnímu zpracování učiva, jeho strukturování a propojování s předchozími znalostmi (Hattie, 2009; Surma et al., 2025). Srozumitelná zadání snižují vnější kognitivní zátěž a umožňují soustředit pozornost na podstatné aspekty učiva (Sweller et al., 2019). Významnou roli hraje také výuková komunikace, která slouží jako nástroj rozvoje myšlení — žáci a žákyně se prostřednictvím svého zapojení do výukové komunikace učí formulovat své myšlenky, argumentovat i reflektovat vlastní porozumění. Kvalita výukové komunikace ve třídě přitom souvisí s výsledky učení (Šeďová et al., 2019). Vyučující současně vytváří příležitosti pro spolupráci, v nichž žáci a žákyně rozvíjejí nejen porozumění učivu, ale i komunikační a sociální dovednosti (Kasíková, 2010; Slavin, 2014).",
+        "Důležitou součástí podpory učení je také schopnost vyučujícího průběžně vyhodnocovat, jak se žákům a žákyním daří pracovat s učivem, a na základě těchto zjištění reagovat. Vyučující sleduje, jak žáci a žákyně učivu rozumějí, identifikuje obtíže či miskoncepce a podle toho upravuje průběh výuky (Heritage, 2010; Schön, 1983). Schopnost flexibilně reagovat přispívá nejen k lepším výsledkům učení, ale také k vyšší motivaci žáků a žákyň a jejich pocitu podpory ze strany vyučujícího (Pianta et al., 2012; Bardach et al., 2020).",
+        "V průběhu výuky vyučující zároveň podporuje autoregulaci učení žáků a žákyň. Jedním z cílů vzdělávání je vést žáky a žákyně k tomu, aby dokázali plánovat, sledovat a vyhodnocovat vlastní učení (MŠMT, 2020). Schopnost autoregulace představuje významný předpoklad dlouhodobého vzdělávacího úspěchu (Zimmerman, 2002). Žáci a žákyně se těmto dovednostem učí postupně prostřednictvím cílené podpory vyučujícího, který modeluje postupy, poskytuje vedení a postupně předává odpovědnost za učení samotným žákům a žákyním (Fisher & Frey, 2014). Součástí tohoto procesu je také rozvoj metakognice, tedy schopnosti přemýšlet o vlastním učení, volit strategie a vyhodnocovat jejich účinnost (Efklides, 2011). Žáci a žákyně, kteří vnímají, že mohou své učení ovlivňovat, vykazují vyšší vytrvalost i odolnost při překonávání obtíží (Zimmerman & Schunk, 2011).",
+        "Oblast podpory učení tak propojuje práci s cíli, výukovými strategiemi, průběžným vyhodnocováním učení i rozvojem autoregulace do jednoho celku. Umožňuje vyučujícím vytvářet výuku, která není pouze předáváním informací, ale procesem, v němž se žáci a žákyně aktivně zapojují, rozvíjejí své porozumění a postupně přebírají odpovědnost za vlastní učení."
+      ],
+      "sourcePage": 18
+    },
+    {
+      "id": "5",
+      "title": "Zpětná vazba a hodnocení",
+      "intro": [
+        "Oblast 5 se zaměřuje na to, jak studující využívá hodnocení jako součást výuky tak, aby podporovalo učení žáků a žákyň a poskytovalo jim orientaci v jejich pokroku. Hodnocení zde není chápáno pouze jako závěrečné posouzení výsledků, ale jako průběžná práce s informacemi o učení, které umožňují vyučujícímu i žákům a žákyním rozhodovat o dalším postupu. Tento přístup odpovídá současnému pojetí hodnocení jako nástroje regulace učení, který je úzce propojen s cíli výuky, výukovými činnostmi i zpětnou vazbou (Black & Wiliam, 1998; Wiliam & Leahy, 2016; Slavík, 1999). V návaznosti na pojetí zdůrazňované v národním kompetenčním rámci je hodnocení chápáno jako proces, který vytváří podmínky pro aktivní zapojení žáků a žákyň do učení, podporuje jejich porozumění smyslu učení a umožňuje jim postupně přebírat odpovědnost za vlastní učení. Formativní hodnocení v tomto smyslu představuje průběžné hodnocení, které žákům a žákyním poskytuje informace o tom, co již zvládají, čemu rozumějí a jak mohou své učení dále rozvíjet, umožňuje jim sledovat vlastní pokrok a směřuje jejich učení k naplnění stanovených cílů (MŠMT, 2020; Starý, Laufková et al., 2016). Hodnocení se tak stává integrální součástí výukové interakce a opírá se o systematickou práci s důkazy o učení, které se ve výuce objevují v různých podobách (Hattie & Yates, 2014). V tomto pojetí zároveň dochází k propojení formativních a sumativních prvků hodnocení, kdy i souhrnné posouzení může sloužit jako zdroj informací pro další učení, pokud je interpretováno ve vztahu k cílům a kritériím a poskytuje žákům a žákyním vodítka pro další postup.",
+        "Kompetence poskytování průběžné zpětné vazby vychází z předpokladu, že zpětná vazba pomáhá žákům a žákyním porozumět jejich aktuálnímu výkonu i dalším krokům v učení. Studující ji opírá o předem sdílená kritéria a vztahuje ji k cílům výuky, čímž podporuje orientaci žáků a žákyň v tom, co se učí a proč. Zpětná vazba je konkrétní, popisná a zaměřená na proces učení, nikoli na hodnocení osoby žáka či žákyně (Slavík, 1999). Současně studující vede žáky a žákyně k tomu, aby zpětné vazbě rozuměli, dokázali ji interpretovat a využívali ji při plánování dalšího postupu v učení. Zpětná vazba se tak nestává pouze informací o výsledku, ale prostředkem aktivně podporujícím další rozvoj učení (Black & Wiliam, 1998; Wiliam & Leahy, 2016). Důležitou roli přitom hraje také načasování zpětné vazby, její provázanost s konkrétními učebními situacemi a návaznost na další výukové kroky, aby byla pro žáky a žákyně skutečně využitelná a vedla k reálné změně jejich učení.",
+        "Kompetence využívání různorodých metod a forem hodnocení vychází z předpokladu, že různé způsoby hodnocení umožňují zachytit různé podoby učení žáků a žákyň. Studující proto volí způsoby hodnocení v návaznosti na cíle učení a povahu učiva tak, aby poskytovaly co nejúplnější obraz o učení žáků a žákyň. Kombinuje různé přístupy a vytváří příležitosti k tomu, aby žáci a žákyně mohli své porozumění prokazovat různými způsoby (Wiliam & Leahy, 2016). V souladu s formativním pojetím hodnocení zapojuje žáky a žákyně do hodnoticího procesu prostřednictvím sebehodnocení a vzájemného hodnocení, které rozvíjí jejich schopnost posuzovat kvalitu vlastní práce, formulovat kritéria kvality a přebírat odpovědnost za vlastní učení (Starý, Laufková et al., 2016; Košťálová et al., 2008). Studující přitom využívá nástroje založené na kritériích, které umožňují sledovat pokrok a podporují porozumění tomu, co znamená kvalitní výkon. Důležitou roli hraje také transparentnost hodnocení, která posiluje důvěru žáků a žákyň v jeho spravedlnost a srozumitelnost, a tím přispívá k jejich větší ochotě aktivně se do hodnocení zapojovat.",
+        "Kompetence využívání okamžité zpětné vazby v průběhu výuky vychází z předpokladu, že podoba zpětné vazby ve výukové komunikaci významně ovlivňuje příležitosti žáků a žákyň k učení. Studující proto pracuje se zpětnou vazbou přímo v průběhu výukové komunikace a reaguje na odpovědi žáků a žákyň způsobem, který podporuje jejich porozumění, rozvíjí jejich myšlení a vede je k dalšímu uvažování. Výzkumy výukové komunikace ukazují, že pokud zpětná vazba přesahuje pouhé hodnocení správnosti a směřuje k rozvíjení odpovědí, kladení navazujících otázek a vytváření prostoru pro společné uvažování, podporuje hlubší zapojení žáků a žákyň do učení i rozvoj jejich porozumění (Šeďová, Švaříček, & Šalamounová, 2012). Nedílnou součástí tohoto přístupu je také práce s chybou jako přirozenou součástí učení — studující vytváří prostředí, ve kterém jsou chyby využívány jako zdroj informací o porozumění a příležitost k dalšímu učení, a vede žáky a žákyně k jejich aktivnímu zpracování. Tento způsob práce současně podporuje rozvoj metakognitivních dovedností, protože žáci a žákyně se učí reflektovat vlastní myšlení, strategie i postupy při řešení úloh a využívat tyto zkušenosti při dalším učení."
+      ],
+      "sourcePage": 23
+    },
+    {
+      "id": "6",
+      "title": "Profesní spolupráce, profesní sebepojetí, profesní rozvoj a péče o sebe",
+      "intro": [
+        "Oblast 6 se zaměřuje na profesní fungování studujícího jako člena školního společenství a jeho schopnost dlouhodobě rozvíjet vlastní profesní kompetence při současném zachování osobní pohody a psychického zdraví. V návaznosti na pojetí národního kompetenčního rámce je profesní rozvoj chápán jako kontinuální proces utváření profesní identity, který probíhá v interakci s profesní zkušeností, reflexí a spoluprací s ostatními. Nejde tedy pouze o osvojování dílčích dovedností, ale o postupné porozumění vlastní roli vyučujícího a hledání způsobů, jak tuto roli naplňovat v různých pedagogických situacích.",
+        "Kompetence profesní spolupráce vychází z předpokladu, že spolupráce s ostatními představuje jeden z klíčových zdrojů profesního učení. Výzkumy ukazují, že míra a kvalita spolupráce mezi vyučujícími souvisí s kvalitou výuky, výsledky žáků a žákyň i pracovní spokojeností vyučujících (OECD, 2020; Vangrieken et al., 2015). Spolupráce přitom nezahrnuje pouze sdílení materiálů, ale také společné promýšlení výuky, reflexi pedagogických situací a koordinaci postupů ve vztahu k žákům a žákyním. Důležitou podmínkou její funkčnosti je otevřenost sdílení a ochota učit se od druhých (García-Martínez et al., 2021; Brücknerová & Novotný, 2017). Studující proto aktivně vstupuje do profesních vztahů, rozvíjí spolupráci s provázejícím vyučujícím, asistenty pedagoga i dalšími aktéry školního prostředí a učí se využívat spolupráci jako zdroj vlastního profesního růstu. V tomto kontextu představuje tandemová výuka specifickou příležitost, protože umožňuje sdílet odpovědnost za výuku a současně reflektovat různé přístupy k řešení pedagogických situací (Baeten & Simons, 2014).",
+        "Kompetence plánování a realizace profesního rozvoje vychází z předpokladu, že profesní učení je dlouhodobý, systematický a reflektivní proces. Profesní rozvoj není jednorázovou aktivitou, ale průběžným propojováním zkušenosti, reflexe a teoretického porozumění (Day, 1999; Kelchtermans, 2009). Formování profesního sebepojetí umožňuje vyučujícím interpretovat pedagogické situace, čelit profesním výzvám a hledat adekvátní způsoby jednání (Wong & Liu, 2024). Výzkumy zároveň ukazují, že nejúčinnější profesní rozvoj je úzce propojen s vlastní výukovou praxí, zahrnuje systematickou reflexi a zpětnou vazbu a má dlouhodobý charakter (Timperley et al., 2007). Studující proto plánuje svůj profesní rozvoj v návaznosti na vlastní zkušenosti z výuky, identifikuje oblasti pro zlepšení a využívá různé zdroje učení, včetně reflexe vlastní praxe i sdílení s ostatními. Součástí tohoto procesu je také schopnost průběžné reflexe přímo během výuky, tedy schopnost situace interpretovat a adekvátně na ně reagovat (Schön, 1983).",
+        "Kompetence péče o sebe vychází z předpokladu, že péče o vlastní psychickou pohodu představuje nezbytnou podmínku dlouhodobě udržitelného profesního fungování. Učitelská profese patří mezi povolání s vyšší mírou psychické náročnosti a rizikem stresu a vyhoření, přičemž dlouhodobý stres negativně ovlivňuje nejen zdraví vyučujících, ale také kvalitu jejich interakcí se žáky a žákyněmi, motivaci žáků a žákyň i jejich vzdělávací výsledky (Madigan & Kim, 2021; Wartenberg et al., 2023). Péče o sebe proto není chápána jako individuální doplněk profesní role, ale jako její integrální součást. Zahrnuje schopnost sledovat vlastní psychickou pohodu, nastavovat hranice mezi pracovním a osobním životem a využívat strategie zvládání zátěže. Výzkumy zároveň ukazují, že vyšší míra wellbeingu vyučujícího souvisí s kvalitnějším třídním klimatem a efektivnější výukou (Hascher & Waber, 2021). Studující se proto učí vnímat péči o sebe jako předpoklad dlouhodobé profesní udržitelnosti i jako faktor, který přímo ovlivňuje kvalitu vzdělávacího procesu."
+      ],
+      "sourcePage": 27
+    }
+  ],
+  "competences": [
+    {
+      "id": "1.1",
+      "areaId": "1",
+      "title": "Rozumím vyučovaným oborům a dále se v nich rozvíjím"
+    },
+    {
+      "id": "1.2",
+      "areaId": "1",
+      "title": "Zprostředkovávám obsah vyučovaného oboru"
+    },
+    {
+      "id": "2.1",
+      "areaId": "2",
+      "title": "Nastavuji cíle výuky"
+    },
+    {
+      "id": "2.2",
+      "areaId": "2",
+      "title": "Plánuji metody výuky"
+    },
+    {
+      "id": "2.3",
+      "areaId": "2",
+      "title": "Připravuji výukové materiály"
+    },
+    {
+      "id": "2.4",
+      "areaId": "2",
+      "title": "Plánuji rozvržení času"
+    },
+    {
+      "id": "2.5",
+      "areaId": "2",
+      "title": "Individualizuji plán výuky"
+    },
+    {
+      "id": "3.1",
+      "areaId": "3",
+      "title": "Buduji prostředí důvěry"
+    },
+    {
+      "id": "3.2",
+      "areaId": "3",
+      "title": "Udržuji bezpečné prostředí"
+    },
+    {
+      "id": "4.1",
+      "areaId": "4",
+      "title": "Zprostředkovávám výukové cíle a ověřuji, jak jim žáci a žákyně rozumí"
+    },
+    {
+      "id": "4.2",
+      "areaId": "4",
+      "title": "Využívám výukové strategie podporující učení žáků a žákyň"
+    },
+    {
+      "id": "4.3",
+      "areaId": "4",
+      "title": "Vedu výuku s ohledem na aktuální situaci ve třídě"
+    },
+    {
+      "id": "4.4",
+      "areaId": "4",
+      "title": "Podporuji autoregulaci učení žáků a žákyň"
+    },
+    {
+      "id": "5.1",
+      "areaId": "5",
+      "title": "Poskytuji průběžnou zpětnou vazbu"
+    },
+    {
+      "id": "5.2",
+      "areaId": "5",
+      "title": "Využívám různorodé metody a formy hodnocení"
+    },
+    {
+      "id": "5.3",
+      "areaId": "5",
+      "title": "Svou okamžitou zpětnou vazbou podporuji učení žáků a žákyň"
+    },
+    {
+      "id": "6.1",
+      "areaId": "6",
+      "title": "Spolupracuji s ostatními"
+    },
+    {
+      "id": "6.2",
+      "areaId": "6",
+      "title": "Plánuji a realizuji svůj profesní rozvoj"
+    },
+    {
+      "id": "6.3",
+      "areaId": "6",
+      "title": "Pečuji o sebe"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "1.1.1",
+      "competenceId": "1.1",
+      "title": "PŘI PLÁNOVÁNÍ A REALIZACI VÝUKY ÚČELNĚ VYUŽÍVÁM ZNALOSTI A DOVEDNOSTI VYUČOVANÉHO OBORU.",
+      "levels": [
+        "Obsah vyučovaného oboru prozatím zprostředkovávám s jistou mírou nejistoty, s občasnými chybami či s nedostatečným porozuměním.",
+        "Obsah vyučovaného oboru zprostředkovávám věcně správně, s oporou o informace z VŠ studia a z učebních materiálů, které využívá škola, na níž vykonávám praxi (učebnice, pracovní sešity apod.).",
+        "Obsah vyučovaného oboru zprostředkovávám věcně správně, informace z VŠ studia a z učebních materiálů školy, na níž vykonávám praxi, místy rozšiřuji o další důvěryhodné zdroje či aktuální vědecká fakta.",
+        "Obsah vyučovaného oboru zprostředkovávám věcně správně, s oporou o pestré a důvěryhodné oborové zdroje i aktuální vědecká fakta. Svou výukou žákům a žákyním zprostředkovávám současně také způsob myšlení v daném oboru, jeho metody, případně etické otázky."
+      ],
+      "mindset": "Jsem přesvědčen/a, že kvalitní výuka oboru se opírá o věcně správné a ověřené informace, zprostředkovává žákům a žákyním způsob myšlení typický pro daný obor a vychází z dlouhodobého zájmu vyučujícího o vývoj a proměny oboru.",
+      "sourcePage": 6
+    },
+    {
+      "id": "1.1.2",
+      "competenceId": "1.1",
+      "title": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM S OPOROU O DŮVĚRYHODNÉ ZDROJE A KRITICKY PRACUJI S INFORMACEMI A JEJICH ZDROJI.",
+      "levels": [
+        "Při zprostředkovávání obsahu vyučovaného oboru zatím pracuji se zdroji informací jen omezeně nebo bez ověřování jejich spolehlivosti.",
+        "Při zprostředkovávání obsahu vyučovaného oboru využívám důvěryhodné zdroje informací.",
+        "Při zprostředkovávání obsahu vyučovaného oboru využívám důvěryhodné zdroje a upozorňuji žáky a žákyně na rozdílnou kvalitu informací a jejich zdrojů.",
+        "Při zprostředkovávání obsahu vyučovaného oboru systematicky pracuji s důvěryhodností zdrojů a vedu žáky a žákyně ke kritickému posuzování informací a způsobů, jak v oboru vzniká poznání."
+      ],
+      "mindset": "Jsem přesvědčen/a, že součástí kvalitní výuky je práce s důvěryhodnými zdroji a rozvoj schopnosti žáků a žákyň kriticky posuzovat informace.",
+      "sourcePage": 6
+    },
+    {
+      "id": "1.1.3",
+      "competenceId": "1.1",
+      "title": "PŘI PLÁNOVÁNÍ A REALIZACI VÝUKY ÚČELNĚ VYUŽÍVÁM MODERNÍ TECHNOLOGIE A DALŠÍ NÁSTROJE VYUŽÍVANÉ VE VYUČOVANÉM OBORU.",
+      "levels": [
+        "Při plánování a realizaci výuky zatím využívám digitální technologie a oborové nástroje jen omezeně nebo bez zjevné návaznosti na obsah a cíle výuky.",
+        "Při plánování a realizaci výuky využívám základní digitální technologie a oborové nástroje typické pro vyučovaný obor.",
+        "Při plánování a realizaci výuky využívám digitální technologie a oborové nástroje účelně vzhledem k obsahu a cílům výuky.",
+        "Při plánování a realizaci výuky promyšleně vybírám a využívám digitální technologie a oborové nástroje tak, aby podporovaly práci žáků a žákyň s obsahem vyučovaného oboru."
+      ],
+      "mindset": "Jsem přesvědčen/a, že digitální technologie a oborové nástroje mají ve výuce smysl tehdy, pokud podporují porozumění obsahu vyučovaného oboru a aktivní práci žáků a žákyň s ním.",
+      "sourcePage": 6
+    },
+    {
+      "id": "1.1.4",
+      "competenceId": "1.1",
+      "title": "PŘI PLÁNOVÁNÍ A REALIZACI VÝUKY ZOHLEDŇUJI NÁVAZNOST VYUČOVANÉHO OBORU A KURIKULA NAPŘÍČ STUPNI VZDĚLÁVÁNÍ.",
+      "levels": [
+        "Při plánování a realizaci výuky zatím zohledňuji návaznost vyučovaného oboru a kurikula napříč stupni vzdělávání jen omezeně.",
+        "Při plánování a realizaci výuky zohledňuji základní návaznosti vyučovaného oboru a kurikula na předchozí stupně vzdělávání.",
+        "Při plánování a realizaci výuky zohledňuji návaznosti vyučovaného oboru a kurikula vzhledem k předchozím i navazujícím stupňům vzdělávání.",
+        "Při plánování a realizaci výuky promyšleně pracuji s návazností vyučovaného oboru a kurikula napříč stupni vzdělávání."
+      ],
+      "mindset": "Jsem přesvědčen/a, že kvalitní výuka vychází z porozumění tomu, jak se poznání a dovednosti ve vyučovaném oboru postupně rozvíjejí napříč stupni vzdělávání.",
+      "sourcePage": 6
+    },
+    {
+      "id": "1.2.1",
+      "competenceId": "1.2",
+      "title": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM S OHLEDEM NA ŽÁKY A ŽÁKYNĚ SROZUMITELNĚ (VČ. ZOHLEDNĚNÍ STUPNĚ A TYPU VZDĚLÁVÁNÍ).",
+      "levels": [
+        "Obsah vyučovaného oboru prozatím nezprostředkovávám srozumitelně.",
+        "Obsah vyučovaného oboru, který mám dopředu připravený, zprostředkovávám spíše srozumitelně.",
+        "Obsah vyučovaného oboru, který mám dopředu připravený, zprostředkovávám srozumitelně.",
+        "Obsah vyučovaného oboru zprostředkovávám srozumitelně, a to i při spontánních reakcích na podněty žáků a žákyň."
+      ],
+      "mindset": "Jsem přesvědčen/a, že k výuce mi nestačí vyučovanému obsahu rozumět, ale musím jej dokázat žákům a žákyním srozumitelně zprostředkovat.",
+      "sourcePage": 7
+    },
+    {
+      "id": "1.2.2",
+      "competenceId": "1.2",
+      "title": "VEDU ŽÁKY A ŽÁKYNĚ K TOMU, ABY CHÁPALI, PROČ SE DANÉMU VYUČOVACÍMU OBSAHU VĚNUJÍ.",
+      "levels": [
+        "Z mé hodiny prozatím není patrné, proč se s žáky a žákyněmi danému vyučovacímu obsahu věnujeme.",
+        "V některé části hodiny zmíním, proč se s žáky a žákyněmi danému vyučovacímu obsahu věnujeme.",
+        "Vysvětluji žákům a žákyním, proč se danému vyučovacímu obsahu věnujeme.",
+        "Vedu žáky a žákyně k tomu, aby dokázali sami vysvětlit, proč se danému vyučovacímu obsahu věnujeme."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně se učí lépe, pokud rozumějí tomu, proč se danému vyučovacímu obsahu věnují.",
+      "sourcePage": 7
+    },
+    {
+      "id": "1.2.3",
+      "competenceId": "1.2",
+      "title": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM S OHLEDEM NA TO, CO JIŽ ŽÁCI A ŽÁKYNĚ O DANÉM UČIVU VĚDÍ A S JAKOU ZKUŠENOSTÍ PŘICHÁZEJÍ.",
+      "levels": [
+        "Při uvedení tématu nezjišťuji, co žáci a žákyně o učivu vědí a s jakou zkušeností přicházejí.",
+        "Při uvedení tématu zjišťuji, co žáci a žákyně o učivu vědí a s jakou zkušeností přicházejí, ale ve výuce s tím dále nepracuji.",
+        "Při uvedení tématu zjišťuji, co žáci a žákyně o učivu vědí a s jakou zkušeností přicházejí, a na některé podněty poté odkazuji.",
+        "Při uvedení tématu zjišťuji, co žáci a žákyně o učivu vědí a s jakou zkušeností přicházejí, a ve výuce s těmito podněty průběžně pracuji."
+      ],
+      "mindset": "Jsem přesvědčen/a, že to, s čím žáci a žákyně o učivu do výuky přicházejí – jak o něm přemýšlejí a jak mu rozumějí – ovlivňuje jejich další učení, a proto s tím ve výuce pracuji.",
+      "sourcePage": 8
+    },
+    {
+      "id": "1.2.4",
+      "competenceId": "1.2",
+      "title": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDOVÁVÁM V SOUVISLOSTECH S DALŠÍMI PŘEDMĚTY, JE-LI TO S OHLEDEM NA VYUČOVANÝ OBSAH ŽÁDOUCÍ.",
+      "levels": [
+        "Obsah vyučovaného oboru zprostředkovávám bez návaznosti na jiné předměty.",
+        "Při zprostředkovávání vyučovaného obsahu odkazuji na jiný předmět.",
+        "Při zprostředkování obsahu vyučovaného oboru odkazuji na konkrétní učivo jiného předmětu.",
+        "Obsah vyučovaného oboru relevantně zprostředkovávám v souvislosti s učivem jiného předmětu, integruji učivo."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně potřebují vidět učivo v souvislostech, nikoli jako izolované informace.",
+      "sourcePage": 8
+    },
+    {
+      "id": "1.2.5",
+      "competenceId": "1.2",
+      "title": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM SPOLEČNĚ S VÝSTUPY PRŮŘEZOVÝCH TÉMAT, KLÍČOVÝCH KOMPETENCÍ ČI GRAMOTNOSTÍ, JE-LI TO V SOULADU S VYUČOVANÝM OBSAHEM.",
+      "levels": [
+        "Obsah vyučovaného oboru zprostředkovávám, aniž bych vedl/a žáky a žákyně k rozvoji klíčových kompetencí či gramotností, případně bez směřování k výstupům klíčových kompetencí.",
+        "Prostřednictvím obsahu vyučovaného oboru vedu žáky a žákyně také k rozvoji gramotností, klíčových kompetencí či k naplnění výstupů průřezových témat, ale žáci si těchto cílů nejsou vědomi.",
+        "Prostřednictvím obsahu vyučovaného oboru vedu žáky a žákyně vědomě také k rozvoji gramotností, klíčových kompetencí či naplnění výstupů průřezových témat, a to vždy jednorázově.",
+        "Prostřednictvím obsahu vyučovaného oboru vedu žáky a žákyně také k rozvoji gramotností, klíčových kompetencí či k naplnění výstupů průřezových témat, a to systematicky a explicitně."
+      ],
+      "mindset": "Jsem přesvědčen/a, že mým úkolem je (v souladu s aktuálním pojetím vzdělávání) rozvíjet u žáků a žákyň krom znalostí také dovednosti a postoje.",
+      "sourcePage": 8
+    },
+    {
+      "id": "2.1.1",
+      "competenceId": "2.1",
+      "title": "Cíle výuky nastavuji tak, aby se vztahovaly ke klíčovým znalostem a dovednostem a vedly k naplnění očekávaných výstupů učení.",
+      "levels": [
+        "Cíle výuky zaměňuji za téma či obsah výuky.",
+        "Nastavuji cíle výuky, ale nepostihuji jimi klíčové znalosti a dovednosti, kterých mají žáci a žákyně dosáhnout.",
+        "Nastavuji cíle, ale postihuji jimi jen některé klíčové znalosti a dovednosti, kterých mají žáci a žákyně dosáhnout.",
+        "Nastavuji cíle výuky tak, aby postihovaly všechny klíčové znalosti a dovednosti a vedly k naplnění očekávaných výstupů učení."
+      ],
+      "mindset": "Jsem přesvědčen/a, že cíle výuky mají vycházet z pečlivě vybraných vzdělávacích obsahů a že je důležité upřednostňovat hloubku porozumění a aplikaci před povrchním osvojováním informací.",
+      "sourcePage": 10
+    },
+    {
+      "id": "2.1.2",
+      "competenceId": "2.1",
+      "title": "Cíle výuky nastavuji tak, aby byly ověřitelné, a současně plánuji způsob jejich ověření.",
+      "levels": [
+        "Prozatím nastavuji cíle výuky, u kterých není možné ověřit, zda jich žáci a žákyně dosahují.",
+        "Nastavuji cíle výuky tak, že u některých lze ověřit, zda jich žáci a žákyně dosahují.",
+        "Nastavuji ověřitelné cíle výuky. U některých plánuji odpovídající způsob ověření.",
+        "Nastavuji ověřitelné cíle výuky a odpovídající způsob ověření."
+      ],
+      "mindset": "Jsem přesvědčen/a, že součástí výuky je průběžně zjišťovat, jak se žákům a žákyním daří dosahovat stanovených cílů, a mít k tomu jasné důkazy.",
+      "sourcePage": 10
+    },
+    {
+      "id": "2.1.3",
+      "competenceId": "2.1",
+      "title": "Cíle výuky nastavuji tak, aby byly pro žáky a žákyně přiměřenou výzvou.",
+      "levels": [
+        "Cíle výuky prozatím nastavuji podle tematického plánu. Nepřizpůsobuji je aktuální úrovni výkonu žáků a žákyň.",
+        "Cíle vycházející z tematického plánu upravuji tak, aby byly pro žáky a žákyně výzvou, ale mnohdy jsou příliš obtížné, nebo naopak příliš snadné.",
+        "Cíle vycházející z tematického plánu upravuji tak, aby pro žáky a žákyně byly přiměřenou výzvou.",
+        "Cíle vycházející z tematického plánu upravuji tak, aby pro žáky a žákyně byly přiměřenou výzvou. Tam, kde je to vhodné, obsahuje můj plán i gradaci cílů."
+      ],
+      "mindset": "Jsem přesvědčen/a, že cíle výuky mají pro žáky a žákyně představovat přiměřenou výzvu, která podporuje jejich učení.",
+      "sourcePage": 10
+    },
+    {
+      "id": "2.1.4",
+      "competenceId": "2.1",
+      "title": "Cíle výuky nastavuji tak, aby vedly k celkovému rozvoji žáků a žákyň.",
+      "levels": [
+        "Nastavuji cíle výuky, které se vztahují pouze k jedné oblasti rozvoje žáků a žákyň (např. pouze kognitivní cíle, afektivní, nebo psychomotorické cíle).",
+        "Příležitostně nastavuji cíle výuky, které se vztahují k více oblastem rozvoje žáků a žákyň.",
+        "Pravidelně nastavuji cíle výuky, které se vztahují k více oblastem rozvoje žáků a žákyň.",
+        "V mém dlouhodobém plánu systematicky nastavuji cíle pro různé oblasti rozvoje žáků a žákyň."
+      ],
+      "mindset": "Jsem přesvědčen/a, že cíle vzdělávání mají přesahovat kognitivní rozvoj.",
+      "sourcePage": 10
+    },
+    {
+      "id": "2.2.1",
+      "competenceId": "2.2",
+      "title": "Metody výuky plánuji tak, aby odpovídaly cílům výuky.",
+      "levels": [
+        "Prozatím plánuji metody výuky, které neodpovídají jejím cílům.",
+        "Většina metod výuky zatím neodpovídá jejím cílům.",
+        "Většina metod výuky odpovídá jejím cílům.",
+        "Plánované metody výuky odpovídají jejím cílům a jejich časové rozvržení odpovídá významu cíle."
+      ],
+      "mindset": "Jsem přesvědčen/a, že metody výuky volím s ohledem na cíle, kterých mají žáci a žákyně dosáhnout.",
+      "sourcePage": 11
+    },
+    {
+      "id": "2.2.2",
+      "competenceId": "2.2",
+      "title": "Metody výuky plánuji tak, aby byly přiměřené a účelně různorodé.",
+      "levels": [
+        "Při plánování výuky napříč vyučovacími hodinami používám pouze omezený repertoár vyučovacích metod.",
+        "Při plánování výuky napříč vyučovacími hodinami používám širší repertoár metod, ale jejich využití v plánu často není účelné.",
+        "Při plánování výuky napříč vyučovacími hodinami používám širší repertoár metod. Jejich využití je většinou účelné.",
+        "Při plánování výuky napříč vyučovacími hodinami používám účelně široký repertoár metod."
+      ],
+      "mindset": "Jsem přesvědčen/a o tom, že kvalita výuky je dána přiměřeností metod k cílům spíše než samotnou pestrostí užitých metod.",
+      "sourcePage": 11
+    },
+    {
+      "id": "2.2.3",
+      "competenceId": "2.2",
+      "title": "Metody výuky plánuji tak, aby žáci a žákyně při výuce sami bádali, experimentovali, nacházeli souvislosti.",
+      "levels": [
+        "Do plánu výuky prozatím nezahrnuji aktivity, v jejichž rámci žáci a žákyně při výuce sami bádají, experimentují, nacházejí souvislosti.",
+        "Plán výuky doplňuji jednoduchými aktivitami, v jejichž rámci žáci a žákyně mohou využít příležitost samostatně bádat, experimentovat a nacházet souvislosti.",
+        "Do plánu výuky zahrnuji aktivity vedoucí žáky a žákyně k tomu, aby bádali, experimentovali a nacházeli souvislosti.",
+        "Do plánu výuky zahrnuji funkčně navržené aktivity vedoucí žáky a žákyně k tomu, aby prostřednictvím bádání, experimentování a hledání souvislostí řešili smysluplné otázky nebo problémy a učili se z nich vyvozovat závěry."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně mohou k porozumění mnoha poznatkům dospět vlastní aktivní prací a že tyto procesy jsou významnou součástí učení.",
+      "sourcePage": 11
+    },
+    {
+      "id": "2.2.4",
+      "competenceId": "2.2",
+      "title": "Metody výuky plánuji tak, abych vedl/a žáky a žákyně ke kritickému myšlení, respektu k vědeckým faktům, odpovědné práci s informacemi a jejich zdroji, včetně umělé inteligence.",
+      "levels": [
+        "Do plánu výuky prozatím nezahrnuji aktivity, jimiž žáky a žákyně vedu ke kritickému myšlení, respektu k vědeckým faktům, odpovědné práci s informacemi a jejich zdroji, včetně umělé inteligence.",
+        "Plán výuky doplňuji jednoduchými aktivitami, v jejichž rámci žáci a žákyně mohou využít příležitost ke kritickému myšlení, respektu k vědeckým faktům, odpovědné práci s informacemi a jejich zdroji, včetně umělé inteligence.",
+        "Do plánu výuky zahrnuji aktivity vedoucí žáky a žákyně ke kritickému myšlení, respektu k vědeckým faktům, odpovědné práci s informacemi a jejich zdroji, včetně umělé inteligence.",
+        "Do plánu výuky zahrnuji funkčně navržené aktivity, v nichž žáci a žákyně kriticky pracují s informacemi a jejich zdroji, posuzují jejich věrohodnost, respektují vědecká fakta a odpovědně využívají i nástroje umělé inteligence."
+      ],
+      "mindset": "Jsem přesvědčen/a, že je mou odpovědností ve výuce cíleně rozvíjet kritické myšlení žáků a žákyň a jejich odpovědnou práci s informacemi a jejich zdroji, včetně umělé inteligence.",
+      "sourcePage": 11
+    },
+    {
+      "id": "2.2.5",
+      "competenceId": "2.2",
+      "title": "Metody výuky plánuji tak, abych vedl/a žáky a žákyně k tvůrčí činnosti.",
+      "levels": [
+        "Do plánu výuky prozatím nezahrnuji aktivity, jimiž bych žáky a žákyně vedl/a k tvůrčí činnosti.",
+        "Plán výuky doplňuji jednoduchými aktivitami, v jejichž rámci žáci a žákyně mohou využít příležitost k tvůrčí činnosti.",
+        "Do plánu výuky zahrnuji aktivity vedoucí žáky a žákyně k tvůrčí činnosti.",
+        "Do centra plánu výuky systematicky zahrnuji funkčně navržené aktivity, v nichž žáci a žákyně uplatňují tvůrčí činnost."
+      ],
+      "mindset": "Jsem přesvědčen/a, že mým úkolem je ve výuce vytvářet podmínky pro rozvoj tvořivosti žáků a žákyň.",
+      "sourcePage": 12
+    },
+    {
+      "id": "2.2.6",
+      "competenceId": "2.2",
+      "title": "Metody výuky plánuji s ohledem na různé možnosti využití prostorového uspořádání třídy, vybavení a pomůcek.",
+      "levels": [
+        "Nevyužívám možnosti prostorového uspořádání třídy, vybavení a pomůcek.",
+        "Občas a spíše nahodile využívám některé možnosti prostorového uspořádání třídy, vybavení a pomůcek.",
+        "Účelně využívám některé z možností prostorového uspořádání třídy, vybavení a pomůcek.",
+        "Účelně využívám dostupné možnosti prostorového uspořádání třídy, vybavení a pomůcek s ohledem na cíle výuky a potřeby žáků a žákyň."
+      ],
+      "mindset": "Jsem přesvědčen/a, že uspořádání prostoru a volba pomůcek významně ovlivňují, jak se žáci a žákyně učí a jak se ve výuce cítí.",
+      "sourcePage": 12
+    },
+    {
+      "id": "2.3.1",
+      "competenceId": "2.3",
+      "title": "Vybírám či připravuji výukové materiály tak, aby byly účelně různorodé a sloužily naplnění zvolených cílů.",
+      "levels": [
+        "Moje výukové materiály ne vždy odpovídají výukovým cílům, nebo jsou z jiného důvodu nevhodně zvolené.",
+        "Moje výukové materiály odpovídají cílům výuky, ale mohou působit jednotvárně.",
+        "Moje výukové materiály odpovídají cílům výuky a jsou různorodé.",
+        "Moje výukové materiály odpovídají cílům výuky a jsou účelně různorodé."
+      ],
+      "mindset": "Jsem přesvědčen/a, že klíčovým smyslem výukových materiálů je podporovat naplnění cílů výuky.",
+      "sourcePage": 12
+    },
+    {
+      "id": "2.3.2",
+      "competenceId": "2.3",
+      "title": "Výukové materiály vybírám a upravuji tak, aby vhodně reagovaly na potřeby žáků a žákyň.",
+      "levels": [
+        "Výukové materiály připravuji vždy stejné pro celou třídu, bez ohledu na SVP žáků a žákyň ve třídě.",
+        "Výukové materiály upravuji s ohledem na SVP žáků a žákyň, ale má řešení nejsou zcela funkční.",
+        "Výukové materiály vhodně upravuji s ohledem na SVP žáků a žákyň.",
+        "Výukové materiály účelně upravuji podle potřeb žáků a žákyň ve třídě (zohledňuji nejen SVP, ale i další potřeby, zájmy a preference)."
+      ],
+      "mindset": "Jsem přesvědčen/a, že výukové materiály mají být nástrojem podpory učení, a proto je třeba přizpůsobovat je rozmanitým potřebám žáků a žákyň.",
+      "sourcePage": 12
+    },
+    {
+      "id": "2.4.1",
+      "competenceId": "2.4",
+      "title": "Plánuji rozvržení času tak, aby výuka byla pro mě i pro žáky a žákyně časově účelná a efektivní.",
+      "levels": [
+        "Časový plán výuky není realizovatelný, plánované aktivity nelze ve vyučovací hodině stihnout, případně jimi nelze naplnit celou hodinu. Nepočítám s možným odchýlením od časového plánu.",
+        "Časový plán jako celek odpovídá délce vyučovací hodiny, ale časové rozložení jednotlivých aktivit neodráží jejich význam ve vztahu k učení žáků a žákyň. Nepočítám s možným odchýlením od časového plánu.",
+        "Časový plán jako celek odpovídá délce vyučovací hodiny, časové rozložení většiny aktivit odráží jejich význam ve vztahu k učení žáků a žákyň. Plán nabízí prostor pro flexibilitu.",
+        "Časový plán jako celek odpovídá délce vyučovací hodiny a časové rozložení jednotlivých aktivit odráží jejich význam ve vztahu k učení žáků a žákyň. Plán nabízí prostor pro flexibilitu."
+      ],
+      "mindset": "Jsem přesvědčen/a, že efektivní výuka vyžaduje vědomou práci s časem tak, aby odpovídal významu jednotlivých aktivit pro učení žáků a žákyň.",
+      "sourcePage": 13
+    },
+    {
+      "id": "2.5.1",
+      "competenceId": "2.5",
+      "title": "Individualizuji plán výuky tak, aby můj plán zohledňoval různorodé individuální potřeby žáků a žákyň.",
+      "levels": [
+        "Plánování výuky končím přípravou jednotného plánu pro celou třídu.",
+        "Po naplánování vyučovací hodiny plán upravuji pro žáky a žákyně se SVP podle doporučení, ale ne vždy funkčně.",
+        "Po naplánování vyučovací hodiny plán funkčně upravuji pro žáky a žákyně se SVP podle doporučení.",
+        "Po naplánování vyučovací hodiny plán funkčně upravuji nejen dle potřeb žáků a žákyň se SVP, ale i podle potřeb a zájmů dalších žáků ve třídě."
+      ],
+      "mindset": "Jsem přesvědčen/a, že promyšlená individualizace výuky může přispět ke snižování vzdělávacích nerovností a k vytváření rovných příležitostí pro učení všech žáků a žákyň.",
+      "sourcePage": 13
+    },
+    {
+      "id": "3.1.1",
+      "competenceId": "3.1",
+      "title": "Se všemi žáky a žákyněmi jednám s respektem, bez ohledu na jejich pohlaví či gender, barvu pleti, národnost či etnickou příslušnost, náboženství, sexuální orientaci, rodinné zázemí či původ, studijní předpoklady či aktuální studijní výsledky.",
+      "levels": [
+        "V mé komunikaci a jednání není patrný respekt k žákům a žákyním.",
+        "Má komunikace a mé jednání jsou v zásadě respektující, s patrnými rozdíly v mém jednání vůči jednotlivým žákům a žákyním.",
+        "Má komunikace a mé jednání jsou v zásadě respektující, a to ve vztahu ke všem žákům a žákyním.",
+        "Má komunikace a mé jednání jsou vždy respektující ve vztahu ke všem žákům a žákyním, a to i tehdy, když o žácích a žákyních hovořím v jejich nepřítomnosti."
+      ],
+      "mindset": "Jsem přesvědčen/a, že každý žák a každá žákyně si zaslouží respekt.",
+      "sourcePage": 15
+    },
+    {
+      "id": "3.1.2",
+      "competenceId": "3.1",
+      "title": "Buduji s žáky a žákyněmi vztah založený na vzájemné důvěře: jednám spravedlivě, plním sliby, chodím včas, reaguji na situace porušování pravidel, jsem konzistentní v chování k žákům a žákyním a jsem transparentní ve svých očekáváních.",
+      "levels": [
+        "Zatím se mi nedaří vhodně uplatňovat postupy k budování vzájemné důvěry mezi mnou a žáky a žákyněmi.",
+        "Zatím vhodně uplatňuji pouze některé z postupů budování vzájemné důvěry.",
+        "Vhodně uplatňuji širší repertoár postupů k budování vzájemné důvěry.",
+        "Systematicky a promyšleně uplatňuji postupy, díky nimž mezi mnou a žáky a žákyněmi vznikají vztahy založené na vzájemné důvěře."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně se nejlépe učí v prostředí, v němž cítí důvěru.",
+      "sourcePage": 15
+    },
+    {
+      "id": "3.1.3",
+      "competenceId": "3.1",
+      "title": "Vedu žáky a žákyně k budování pozitivních vrstevnických vztahů: reflektuji s žáky a žákyněmi komunikační normy, podporuji interakci napříč třídou, oceňuji prosociální chování; s prvky konkurence a soutěživosti při výuce nakládám tak, aby nebyla narušena spolupráce a vzájemná podpora ve třídě.",
+      "levels": [
+        "Zatím se mi nedaří vhodně uplatňovat postupy k budování pozitivních vztahů mezi žáky a žákyněmi.",
+        "Zatím vhodně uplatňuji pouze některé z postupů k budování pozitivních vztahů mezi žáky a žákyněmi.",
+        "Vhodně uplatňuji širší repertoár postupů, jimiž podporuji pozitivní vrstevnické vztahy mezi žáky a žákyněmi.",
+        "Systematicky a promyšleně uplatňuji postupy, díky nimž mezi žáky a žákyněmi vznikají a udržují se pozitivní vrstevnické vztahy."
+      ],
+      "mindset": "Jsem přesvědčen/a, že pozitivní vztahy mezi žáky a žákyněmi podporují jejich učení, a proto je při výuce cíleně podporuji.",
+      "sourcePage": 15
+    },
+    {
+      "id": "3.1.4",
+      "competenceId": "3.1",
+      "title": "Ve výuce vhodně reguluji své emoce tak, aby mé chování zůstalo vyrovnané.",
+      "levels": [
+        "Ve výuce zatím nedokážu dostatečně regulovat své emoce.",
+        "V některých výukových situacích se mi nedaří své emoce regulovat tak, aby mé chování zůstalo vyrovnané.",
+        "Ve výjimečných situacích se mi nedaří své emoce regulovat tak, aby mé chování zůstalo vyrovnané.",
+        "Své emoce ve výuce cíleně a účinně reguluji."
+      ],
+      "mindset": "Jsem si vědom/a, že moje práce s vlastními emocemi ovlivňuje klima ve třídě.",
+      "sourcePage": 15
+    },
+    {
+      "id": "3.2.1",
+      "competenceId": "3.2",
+      "title": "Podporuji socioemoční rozvoj žáků a žákyň (sebeuvědomění, seberegulaci, sociální uvědomění, tvorbu vztahů a odpovědné rozhodování) a vedu je k uvědomění si dopadu vlastního chování na sebe i ostatní.",
+      "levels": [
+        "Nevytvářím příležitosti, v nichž by si žáci a žákyně uvědomovali emoce a potřeby sebe a druhých ani dopady vlastního chování na sebe a ostatní.",
+        "Ojediněle vytvářím příležitosti pro rozvoj některých socioemočních dovedností žáků a žákyň a vedu je k uvědomění si dopadu vlastního chování na sebe i ostatní.",
+        "Pravidelně vytvářím příležitosti, v nichž si žáci a žákyně uvědomují emoce a potřeby své i druhých, a vedu je k uvědomění si dopadů vlastního chování na sebe i ostatní.",
+        "Systematicky vytvářím příležitosti pro rozvoj socioemočních dovedností. Vedu žáky a žákyně k tomu, aby si uvědomovali (i tím, že to sám/sama modeluji) dopady svého chování na sebe i ostatní a zohledňovali to ve svém dalším jednání."
+      ],
+      "mindset": "Jsem přesvědčen/a, že socioemoční rozvoj žáků a žákyň je nedílnou součást jejich učení a vzdělávání.",
+      "sourcePage": 16
+    },
+    {
+      "id": "3.2.2",
+      "competenceId": "3.2",
+      "title": "Reaguji na chování žáků a žákyň, které by mohlo vést k narušení bezpečného prostředí ve třídě (např. nerespektující chování, výsměch, verbální či fyzická agrese, včetně digitálního prostředí). Transparentně a v souladu s pravidly školy pracuji s důsledky nedodržení stanovených pravidel.",
+      "levels": [
+        "Projevy ohrožující důvěru ve třídě často přecházím. Při nedodržování stanovených pravidel nereaguji konzistentně, mé jednání není ukotveno ve společně nastavených pravidlech.",
+        "Projevy ohrožující důvěru ve třídě občas přecházím. Při nedodržování stanovených pravidel reaguji nekonzistentně, mé jednání není vždy ukotveno ve stanovených pravidlech.",
+        "Cíleně reaguji na projevy ohrožující důvěru ve třídě. Transparentně a konzistentně pracuji s důsledky nedodržení stanovených pravidel, a to v souladu s pravidly školy.",
+        "Při výskytu projevů ohrožujících důvěru ve třídě účelně zapojuji žáky a žákynědo řešení situace. Transparentně a konzistentně pracuji s důsledky nedodržení stanovených pravidel, a to v souladu s pravidly školy."
+      ],
+      "mindset": "Jsem přesvědčen/a, že bezpečné prostředí je nezbytnou podmínkou pro učení a je mou odpovědností ho zajišťovat.",
+      "sourcePage": 16
+    },
+    {
+      "id": "3.2.3",
+      "competenceId": "3.2",
+      "title": "Reaguji na fyzické či psychické znaky či projevy u žáků a žákyň, které mohou naznačovat, že u nich dochází k ohrožení jejich zdravého vývoje.",
+      "levels": [
+        "Nevšímám si znaků či projevů, které mohou naznačovat ohrožení zdravého vývoje žáků a žákyň.",
+        "Registruji znaky či projevy možného ohrožení zdravého vývoje žáků a žákyň, ale na situaci nereaguji nebo ji řeším pouze minimálně. Podporu ze strany kolegů či školního poradenského pracoviště ve většině případů nevyhledávám.",
+        "Registruji znaky či projevy možného ohrožení zdravého vývoje žáků a žákyň a snažím se na ně reagovat. Moje reakce je spíše intuitivní a ne vždy plně odpovídá mým profesním kompetencím. Ve většině případů již vyhledávám podporu ze strany kolegů či školního poradenského pracoviště.",
+        "Registruji znaky či projevy možného ohrožení zdravého vývoje žáků a žákyň, situaci vyhodnocuji v kontextu své role a reaguji na ni přiměřeně svým profesním kompetencím. Aktivně a včas zapojuji relevantní podporu (provázející učitel, třídní učitel, školní poradenské pracoviště) a jednám s ohledem na bezpečí a nejlepší zájem žáka či žákyně."
+      ],
+      "mindset": "Jsem si vědom/a, že součástí mé role je všímat si psychického i fyzického stavu žáků a žákyň a v případě potřeby vyhledat odbornou podporu.",
+      "sourcePage": 16
+    },
+    {
+      "id": "3.2.4",
+      "competenceId": "3.2",
+      "title": "Přizpůsobuji fyzické prostředí třídy tak, abych zajistil/a bezpečí žáků a žákyň.",
+      "levels": [
+        "Fyzické prostředí třídy zatím cíleně nepromýšlím ani nepřizpůsobuji s ohledem na bezpečí žáků a žákyň.",
+        "Bezpečnost fyzického prostředí řeším až v situacích, kdy dojde k ohrožení.",
+        "Průběžně upravuji fyzické prostředí třídy s ohledem na bezpečnost žáků a žákyň.",
+        "Systematicky promýšlím a předem zajišťuji bezpečné fyzické prostředí třídy. Se žáky a žákyněmi pravidelně diskutuji možná rizika, preventivní opatření i postupy v případě ohrožení."
+      ],
+      "mindset": "Jsem přesvědčen/a, že bezpečné prostředí je nezbytným základem učení a je mou odpovědností ho chránit.",
+      "sourcePage": 17
+    },
+    {
+      "id": "3.2.5",
+      "competenceId": "3.2",
+      "title": "Využívám virtuální prostředí třídy tak, abych zajistil/a bezpečí žáků a žákyň.",
+      "levels": [
+        "Virtuální prostředí třídy zatím nevyužívám.",
+        "Virtuální prostředí využívám nahodile, bez jasně stanovených pravidel bezpečnosti. Občas zjišťuji, co se v prostoru děje, přehled o dění v něm mám tedy jen omezeně.",
+        "Virtuální prostředí využívám s tím, že jsou dopředu stanovena základní pravidla bezpečnosti. Jjejichž dodržování však sleduji nepravidelně.",
+        "Virtuální prostředí využívám systematicky a promyšleně. Předem stanovím jasná pravidla bezpečnosti a důsledně dbám na jejich dodržování."
+      ],
+      "mindset": "Jsem přesvědčen/a, že bezpečné prostředí je nezbytným základem učení a je mou odpovědností ho chránit.",
+      "sourcePage": 17
+    },
+    {
+      "id": "3.2.6",
+      "competenceId": "3.2",
+      "title": "Reaguji na nenadálé situace ve výuce.",
+      "levels": [
+        "Na nenadálé situace nereaguji. Pokračuji ve výuce podle původního plánu, i když je narušena atmosféra nebo pozornost žáků a žákyň.",
+        "Reaguji na některé nenadálé situace, ale spíše s cílem co nejrychleji se vrátit k původnímu plánu výuky. Moje reakce situaci neřeší, spíše ji odsouvá stranou.",
+        "Na nenadálé situace během výuky reaguji a nepřehlížím je. Ne vždy se mi daří zareagovat korektně či účinně, ale hledám způsoby, jak situaci zvládnout.",
+        "Během výuky pružně a korektně reaguji na nenadálé situace. Průběh výuky upravuji tak, aby byla zachována pozornost i atmosféra podporující učení."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně se učí lépe, když výuka citlivě reaguje na nenadálé situace, místo aby je přehlížel/a.",
+      "sourcePage": 17
+    },
+    {
+      "id": "4.1.1",
+      "competenceId": "4.1",
+      "title": "Vedu žáky a žákyně k porozumění cílům výuky.",
+      "levels": [
+        "Cíle výuky žákům a žákyním nijak nesděluji.",
+        "Cíle výuky žákům a žákyním příležitostně uvádím, ale spíše formálně. O tom, jak jim žáci a žákyně rozumí, se nepřesvědčuji.",
+        "Vysvětluji žákům a žákyním, jaké jsou cíle výuky. O tom, jak cílům rozumí, se ojediněle přesvědčuji.",
+        "Vysvětluji žákům a žákyním, jaké jsou cíle výuky, a přesvědčuji se, jak jim rozumí."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně se učí účinněji, když rozumí cílům výuky a současně tak mohou převzít odpovědnost za vlastní učení.",
+      "sourcePage": 19
+    },
+    {
+      "id": "4.2.1",
+      "competenceId": "4.2",
+      "title": "Formuluji srozumitelná zadání úkolů či výukových situací.",
+      "levels": [
+        "Formuluji složitá či nejasná zadání úkolů či výukových situací. Některé informace chybí či jsou nevhodně řazeny, jsou nejednoznačné, nadbytečné či nevhodně načasované.",
+        "Formuluji zadání, která jsou složitá nebo nejednoznačná, ale obsahují potřebné informace. Žáci a žákyně jsou schopni s dodatečným vysvětlením pracovat.",
+        "Formuluji zadání, která obsahují všechny důležité informace a jsou pro většinu žáků a žákyň srozumitelná.",
+        "Formuluji zadání, která jsou srozumitelná. Využívám jazyk a způsob zadání, které žákům a žákyním umožňují pracovat bez nutnosti dovysvětlování."
+      ],
+      "mindset": "Jsem přesvědčen/a, že jasné instrukce jsou předpokladem pro to, aby se mohl každý žák a každá žákyně úspěšně učit.",
+      "sourcePage": 19
+    },
+    {
+      "id": "4.2.2",
+      "competenceId": "4.2",
+      "title": "Vytvářím příležitosti pro to, aby se žáci a žákyně zapojovali do výukové komunikace.",
+      "levels": [
+        "Během výuky komunikuji dominantně já, žáci a žákyně mají jen ojediněle příležitost participovat, jinak spíše naslouchají.",
+        "Do výukové komunikace zapojuji jen některé z žáků a žákyň, typicky ty, kterým se v předmětu daří, nebo ty, kteří nedávají pozor.",
+        "Do výukové komunikace zapojuji značnou část žáků a žákyň.",
+        "Do výukové komunikace zapojuji zančnou část žáků a žákyň. Všímám si tzv. tichých žáků a žákyň a snažím se najít způsob, jak je zapojit."
+      ],
+      "mindset": "Jsem přesvědčen/a, že každý žák a každá žákyně se mohou učit účinněji, pokud mají příležitost aktivně se zapojit do výukové komunikace.",
+      "sourcePage": 19
+    },
+    {
+      "id": "4.2.3",
+      "competenceId": "4.2",
+      "title": "Vytvářím příležitosti pro produktivní zapojení žáků a žákyň.",
+      "levels": [
+        "Během výukové komunikace zapojuji žáky a žákyně zejména krátkými odpověďmi, jimiž ověřuji, zda si pamatují požadované učivo.",
+        "Během výukové komunikace zapojuji žáky a žákyně zejména odpověďmi, jimiž ověřuji, zda si pamatují požadované učivo. Zařazuji však i otázky, které vedou k delším odpovědím.",
+        "Do výukové komunikace zapojuji žáky a žákyně zejména (mnohdy delšími) odpověďmi vyšší myšlenkové náročnosti.",
+        "Do výukové komunikace zapojuji žáky a žákyně delšími odpověďmi vyšší myšlenkové náročnosti. Vytvářím příležitosti pro to, aby na sebe žáci a žákyně reagovali navzájem."
+      ],
+      "mindset": "Jsem přesvědčen/a, že aktivní zapojení všech žáků a žákyň do výuky podporuje jejich učení",
+      "sourcePage": 20
+    },
+    {
+      "id": "4.2.4",
+      "competenceId": "4.2",
+      "title": "Postupnými kroky předem strukturuji výuku tak, aby všichni žáci a žákyně mohli dosáhnout nastavených cílů.",
+      "levels": [
+        "Výuku strukturuji do jednotlivých kroků podle učiva, potřeby žáků a žákyň nezohledňuji.",
+        "Výuku strukturuji do jednotlivých kroků s ohledem na žáky a žákyně, přičemž všichni pracují stejným způsobem a stejným tempem.",
+        "Výuku strukturuji do přiměřených jednotlivých kroků a v jejím průběhu reaguji na žáky a žákyně, kteří potřebují doplňující vysvětlení, úpravy tempa nebo další podpůrné kroky, aby mohli dosáhnout stanovených cílů.",
+        "Výuku systematicky strukturuji do jednotlivých kroků tak, aby její součástí byla podpora dostupná všem žákům a žákyním, kteří ji potřebují. Průběžně sleduji jejich učení a cíleně přizpůsobuji míru a podobu podpory tak, aby žáci a žákyně mohli dosáhnout stanovených cílů."
+      ],
+      "mindset": "Jsem přesvědčen/a o potenciálu každého žáka a každé žákyně postupně dosáhnout stanovených cílů.",
+      "sourcePage": 20
+    },
+    {
+      "id": "4.2.5",
+      "competenceId": "4.2",
+      "title": "Vedu žáky a žákyně k vzájemné podpoře při učení včetně rozvoje dovedností a postojů potřebných ke spolupráci.",
+      "levels": [
+        "V mé výuce zatím není příležitost pro spolupráci. Pokud uplatňuji aktivity s potenciálem spolupráce, nemají z hlediska rozvoje spolupráce funkční zadání, případně slouží jako součást/zdroj soutěže.",
+        "Vytvářím příležitosti pro spolupráci, přičemž aktivity slouží jako změna formy výuky s možnou vzájemnou podporou při učení. Postoje a dovednosti spojené se spoluprací cíleně nerozvíjím.",
+        "Vytvářím příležitosti pro spolupráci s cílem vzájemné podpory při učení, využívám prvky kooperativních aktivit (například rozdělení rolí ve skupině či individuální odpovědnost). Příležitostně vedu žáky a žákyně k rozvoji dovedností a postojů spojených se spoluprací.",
+        "Podporuji spolupráci skrze kooperativní aktivity (rozdělení rolí, pozitivní vzájemná závislost, individuální odpovědnost, reflexe skupinových procesů). Systematicky vedu žáky a žákyně k rozvoji dovedností a postojů spojených se spoluprací. Používám vědomé strategie pro rozdělení žáků a žákyň do skupin."
+      ],
+      "mindset": "Jsem přesvědčen/a, že vzájemná podpora a spolupráce žáků a žákyň jsou důležitou součástí procesu učení.",
+      "sourcePage": 20
+    },
+    {
+      "id": "4.3.1",
+      "competenceId": "4.3",
+      "title": "V průběhu výuky uplatňuji postupy, díky nimž jsme já i žáci a žákyně schopni vyhodnocovat, jak se jim aktuálně daří v procesu učení.",
+      "levels": [
+        "Během výuky nezjišťuji, jak se žákům a žákyním průběžně daří v procesu učení.",
+        "Během výuky příležitostně a jen u některých žáků a žákyň zjišťuji, jak se jim průběžně daří v procesu učení.",
+        "Během výuky systematicky uplatňuji postupy, díky nimž mohu vyhodnocovat, jak se žákům a žákyním aktuálně daří v procesu učení.",
+        "Během výuky systematicky uplatňuji postupy, díky nimž jsme já i žáci a žákyně schopni vyhodnocovat, jak se jim aktuálně daří v procesu učení, průběžně pracujeme s tzv. důkazy o učení."
+      ],
+      "mindset": "Jsem přesvědčen/a, že pravidelné sledování a vyhodnocování učení během výuky pomáhá mně i žákům a žákyním lépe porozumět procesu učení.",
+      "sourcePage": 21
+    },
+    {
+      "id": "4.3.2",
+      "competenceId": "4.3",
+      "title": "Ve výuce průběžně reaguji na to, jak se žákům a žákyním daří v procesu učení.",
+      "levels": [
+        "Výuka probíhá dle předem stanoveného plánu bez ohledu na to, jak se žákům a žákyním aktuálně daří v procesu učení.",
+        "Ve výuce sleduji, jak se žákům a žákyním daří, a své postřehy pojmenovávám nebo sdílím, ale průběh výuky na jejich základě neupravuji.",
+        "Ve výuce reaguji na to, jak se žákům a žákyním daří v procesu učení, ale má reakce jen částečně pomáhá žákům a žákyním v učení (vysvětlím znovu stejně, mírně úpravím aktivitu).",
+        "Výuku flexibilně přizpůsobuji tomu, jak se žákům a žákyním aktuálně daří v procesu učení, a volím různé způsoby reakce tak, aby zřetelně podporovaly jejich učení (např. upravím zadání, změním tempo, nabídnu alternativní postup)."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně se učí účinněji, pokud výuka reaguje na jejich aktuální porozumění.",
+      "sourcePage": 21
+    },
+    {
+      "id": "4.4.1",
+      "competenceId": "4.4",
+      "title": "Podporuji žáky a žákyně v uvědomování si a řízení vlastního učení.",
+      "levels": [
+        "V mojí výuce není prostor pro to, aby žáci a žákyně přemýšleli nad tím, jak se učí (nad svým procesem učení).",
+        "Ve výuce příležitostně vedu žáky a žákyně k tomu, aby si uvědomovali, jakým způsobem se učí.",
+        "Vedu žáky a žákyně k tomu, aby zkoušeli strategie, které je možné používat v procesu učení.",
+        "Vedu žáky a žákyně k tomu, aby vědomě volili vhodné strategie učení a zlepšovali je."
+      ],
+      "mindset": "Jsem přesvědčen/a, že součástí učení je i schopnost přemýšlet o vlastním procesu učení.",
+      "sourcePage": 22
+    },
+    {
+      "id": "4.4.2",
+      "competenceId": "4.4",
+      "title": "Vedu výuku tak, aby žáci a žákyně postupnými kroky přebírali odpovědnost za své učení.",
+      "levels": [
+        "Ve výuce řídím veškeré dění. Žáci a žákyně mají jen minimální příležitost rozhodovat o svém učení.",
+        "Žákům a žákyním ojediněle nabízím omezené možnosti volby (např. vybrat si úlohu), ale nadále zastávám určující roli v procesu učení já.",
+        "Žákům a žákyním umožňuji rozhodovat o způsobu, postupu či formě práce (např. zda budou pracovat samostatně nebo ve skupině, jakým způsobem zpracují úkol).",
+        "Výuku systematicky vedu tak, aby žáci a žákyně přebírali odpovědnost za svůj proces učení – plánovali jej, volili vhodné strategie a podle potřeby tyto strategie upravovali. Jejich autonomie se stává součástí běžné výuky."
+      ],
+      "mindset": "Jsem přesvědčen/a, že žáci a žákyně se učí i tím, že postupně přebírají odpovědnost za vlastní učení.",
+      "sourcePage": 22
+    },
+    {
+      "id": "5.1.1",
+      "competenceId": "5.1",
+      "title": "Poskytuji popisnou zpětnou vazbu.",
+      "levels": [
+        "Neposkytuji popisnou zpětnou vazbu. Používám pouze obecné hodnocení výkonu (výborně) nebo osoby (jsi pečlivý).",
+        "Popisnou zpětnou vazbu poskytuji jen příležitostně a spíše v obecné rovině. Jen ojediněle ji vztahuji ke konkrétním aspektům práce žáků a žákyň.",
+        "Popisnou zpětnou vazbu poskytuji pravidelně, zaměřuji se na konkrétní části výkonu a sděluji, co se žákům a žákyním ne/daří.",
+        "Poskytuji žákům a žákyním popisnou zpětnou vazbu, v níž se zaměřuji se na konkrétní části výkonu a sděluji, co se žákům a žákyním ne/daří, v čem dělají pokrok a jak mohou svůj výkon dále posunout."
+      ],
+      "mindset": "Jsem přesvědčen/a, že popisná zpětná vazba zaměřená na konkrétní aspekty práce žáků a žákyň pomáhá porozumění jejich učení a podporuje jejich další pokrok.",
+      "sourcePage": 24
+    },
+    {
+      "id": "5.1.2",
+      "competenceId": "5.1",
+      "title": "Poskytuji průběžnou zpětnou vazbu na základě stanovených kritérií.",
+      "levels": [
+        "Při poskytování zpětné vazby nepoužívám kritéria hodnocení. Žáci a žákyně nevědí, podle čeho jsou hodnoceni.",
+        "Při poskytování zpětné vazby používám kritéria (vlastní nebo převzatá), ale jejich použití není konzistentní a žáci a žákyně často nerozumí, podle čeho jsou hodnoceni, případně jim kritéria nesděluji.",
+        "Při poskytování zpětné vazby používám jasně nastavená kritéria a žáci a žákyně rozumí tomu, jak jsou hodnoceni.",
+        "Pro systematicky zvolené produkty či výstupy používám vhodně nastavená kritéria, s nimiž žáky a žákyně seznamuji a do jejichž tvorby je příležitostně zapojuji. Žáci a žákyně rozumí tomu, podle čeho jsou hodnoceni."
+      ],
+      "mindset": "Jsem přesvědčen/a, že jasně stanovená kritéria jsou základem popisné zpětné vazby a vedou žáky a žákyně k porozumění tomu, jak je hodnoceno jejich učení.",
+      "sourcePage": 24
+    },
+    {
+      "id": "5.1.3",
+      "competenceId": "5.1",
+      "title": "Poskytuji průběžnou zpětnou vazbu tak, aby byla využitelná pro další učení žáků a žákyň, byla respektující, konkrétní, včasná, konstruktivní a aby zohledňovala individuální potřeby žáků a žákyň.",
+      "levels": [
+        "Žáci a žákyně z mého hodnocení nezískávají žádnou informaci, která by jim napomáhala v dalším učení.",
+        "Žáci z mého hodnocení získávají konkrétní informace, které jim napomáhají v dalším učení, ale pouze na úrovni celé třídy.",
+        "Žáci a žákyně z mého hodnocení pravidelně získávají konkrétní informace, které jim napomáhají v dalším učení, a to zejména na úrovni celé třídy, ojediněle individualizovaně.",
+        "Žáci a žákyně z mého hodnocení pravidelně získávají konkrétní a individualizované informace, které jim napomáhají v dalším učení."
+      ],
+      "mindset": "Jsem přesvědčen/a, že zpětná vazba má žákům a žákyním poskytovat informace využitelné pro jejich další učení.",
+      "sourcePage": 24
+    },
+    {
+      "id": "5.2.1",
+      "competenceId": "5.2",
+      "title": "Využívám různorodé metody a formy hodnocení výsledků učení i pokroku žáků a žákyň.",
+      "levels": [
+        "Využívám jeden ustálený postup, kterým hodnotím výsledky učení žáků a žákyň (zpravidla známkování).",
+        "Využívám několik málo ustálených postupů, kterými hodnotím výsledky učení žáků a žákyň.",
+        "Využívám široký repertoár postupů, kterými hodnotím výsledky učení žáků a žákyň. Občas hodnotím také pokrok žáků a žákyň.",
+        "Využívám široký repertoár postupů, kterými hodnotím výsledky učení žáků a žákyň. Pravidelně hodnotím také jejich pokrok."
+      ],
+      "mindset": "Jsem přesvědčen/a, že různé, cíleně volené metody a formy hodnocení umožňují lépe zachytit jak výsledky, tak pokrok v učení žáků a žákyň.",
+      "sourcePage": 25
+    },
+    {
+      "id": "5.2.2",
+      "competenceId": "5.2",
+      "title": "Využívám různorodé metody a formy hodnocení včetně těch, jimiž vytvářím příležitosti a oporu pro vzájemné hodnocení.",
+      "levels": [
+        "Vzájemné hodnocení žáků do výuky nezařazuji, případně nevím, jak ho zařadit.",
+        "Vzájemné hodnocení žáků a žákyň do výuky zařazuji občas, spíše nahodile a zejména u některých činností (referát, skupinová práce apod.), ale bez stanovených kritérií.",
+        "Vzájemné hodnocení žáků a žákyň do výuky zařazuji plánovaně a pravidelně, žáci a žákyně postupují podle jednoduchých kritérií.",
+        "Vzájemné hodnocení žáků a žákyň ve výuce realizuji promyšleně a podle stanovených kritérií. Žáci a žákyně si poskytují popisnou zpětnou vazbu na základě kritérií a využívají popisný jazyk."
+      ],
+      "mindset": "Jsem přesvědčen/a, že mou zodpovědností je rozvíjet u žáků dovednost konstruktivně hodnotit a přijímat zpětnou vazbu.",
+      "sourcePage": 25
+    },
+    {
+      "id": "5.2.3",
+      "competenceId": "5.2",
+      "title": "Vedu žáky a žákyně k sebehodnocení.",
+      "levels": [
+        "Sebehodnocení žáků do výuky nezařazuji. Zpravidla na ně nemám čas či nevím jak.",
+        "Sebehodnocení žáků a žákyň zařazuji nahodile, spíše v emoční rovině (líbí, nelíbí apod.).",
+        "Pravidelně do výuky zařazuji sebehodnocení. Vedu žáky a žákyně k jednoduchému hodnocení jejich výsledků a občas také procesu učení.",
+        "Sebehodnocení zařazuji pravidelně a cíleně tak, aby žáci a žákyně dokázali samostatně hodnotit proces svého učení i jeho výsledky."
+      ],
+      "mindset": "Jsem přesvědčen/a, že sebehodnocení pomáhá žákům a žákyním porozumět vlastnímu učení a převzít za něj odpovědnost.",
+      "sourcePage": 25
+    },
+    {
+      "id": "5.3.1",
+      "competenceId": "5.3",
+      "title": "Během výuky pracuji s odpověďmi žáků a žákyň tak, že na ně navazuji elaborovanou zpětnou vazbou či rozvíjející otázkou.",
+      "levels": [
+        "Na žákovské odpovědi často nereaguji, dál s nimi nepracuji.",
+        "Na žákovské odpovědi reaguji zejména zpětnou vazbou, v níž hodnotím ne/správnost odpovědi.",
+        "Na žákovské odpovědi se snažím reagovat elaborovanou zpětnou vazbou či rozvíjející otázkou, ale ne vždy se mi to daří.",
+        "Elaborovanou zpětnou vazbu a navazující otázky používám jako běžný nástroj, kterým podporuji proces učení žáků a žákyň."
+      ],
+      "mindset": "Jsem přesvědčen/a, že kolegiální spolupráce napomáhá mému dalšímu profesnímu rozvoji, a to i v případě, kdy máme s provázejícím učitelem / provázející učitelkou odlišná pojetí výuky.",
+      "sourcePage": 26
+    },
+    {
+      "id": "5.3.2",
+      "competenceId": "5.3",
+      "title": "Formativně pracuji s chybou a vedu k tomu také žáky a žákyně.",
+      "levels": [
+        "Chybné odpovědi často přecházím.",
+        "Chyby sám/sama opravuji, žáky a žákyně do práce s chybou nezapojuji.",
+        "Na chyby upozorňuji a poskytuji žákům a žákyním příležitost, aby je sami opravili. S chybou pracuji jako s užitečnou součástí procesu učení.",
+        "V případě chyby vedu žáky a žákyně k tomu, aby je sami identifikovali, opravili a využili jako příležitost k učení."
+      ],
+      "mindset": "Jsem přesvědčen/a, že chyba je přirozenou a užitečnou součástí procesu učení.",
+      "sourcePage": 26
+    },
+    {
+      "id": "6.1.1",
+      "competenceId": "6.1",
+      "title": "Spolupracuji s provázejícím učitelem / provázející učitelkou.",
+      "levels": [
+        "S provázejícím učitelem / provázející učitelkou nespolupracuji.",
+        "S provázejícím učitelem / provázející učitelkou spolupracuji především na úrovni organizačních otázek, moji výuku řešíme zejména prostřednictvím rychlé zpětné vazby.",
+        "S provázejícím učitelem / provázející učitelkou pravidelně konzultuji svoji přípravu i průběh mé výuky. Společně řešíme vybrané části plánů, moji výuku reflektujeme.",
+        "S provázejícím učitelem / provázející učitelkou pravidelně konzultuji svoji přípravu i průběh mé výuky. Společně řešíme vybrané části plánů, moji výuku reflektujeme. Hledám další příležitosti pro vzájemně obohacující spolupráci."
+      ],
+      "mindset": "Jsem přesvědčen/a, že kolegiální spolupráce napomáhá mému dalšímu profesnímu rozvoji, a to i v případě, kdy máme s provázejícím učitelem / provázející učitelkou odlišná pojetí výuky.",
+      "sourcePage": 28
+    },
+    {
+      "id": "6.1.2",
+      "competenceId": "6.1",
+      "title": "Vedu tandemovou výuku společně se spolužáky a spolužačkami či provázejícími učiteli a učitelkami, je-li to možné.",
+      "levels": [
+        "Tandemovou výuku nerealizuji.",
+        "Realizuji tandemovou výuku, kterou plánujeme a reflektujeme jen částečně. Výuka má převážně podobu dvou samostatných částí, v nichž se střídáme.",
+        "Realizuji tandemovou výuku, kterou společně plánujeme a reflektujeme. V průběhu výuky vědomě využíváme přítomnosti druhého a uplatňujeme různé formy tandemové výuky.",
+        "Realizuji tandemovou výuku, kterou společně plánujeme a reflektujeme, a cíleně volíme takovou formu tandemové výuky, která nejlépe odpovídá potřebám žáků a žákyň ve třídě."
+      ],
+      "mindset": "Jsem přesvědčen/a, že tandemová výuka a sdílená reflexe podporují můj profesní rozvoj i kvalitu učení žáků a žákyň.",
+      "sourcePage": 28
+    },
+    {
+      "id": "6.1.3",
+      "competenceId": "6.1",
+      "title": "Spolupracuji s asistentem či asistentkou pedagoga, je-li ve třídě, s členy ŠPP a dalšími kolegy a kolegyněmi ve prospěch žáků a žákyň ve třídě.",
+      "levels": [
+        "S asistentem či asistentkou pedagoga, členy ŠPP a dalšími kolegy a kolegyněmi ve škole nespolupracuji.",
+        "Identifikuji typické situace, kdy je vhodné využít spolupráce s asistentem či asistentkou pedagoga, s členy ŠPP apod., a svoje poznatky sdílím s provázejícím učitelem / provázející učitelkou.",
+        "Zkouším využívat doporučení třídního učitele / třídní učitelky či členů ŠPP (včetně doporučení zprostředkovaných provázejícím učitelem / provázející učitelkou), zatím však spíše dílčím způsobem.",
+        "Spolupracuji s asistentem či asistentkou pedagoga, s třídním učitelem / třídní učitelkou či s členy ŠPP apod., je-li to v rámci praxe možné, a využívám jejich doporučení při své výuce. ."
+      ],
+      "mindset": "Jsem přesvědčen/a, že pro rozvoj žáků a žákyň je žádoucí využívat expertízy různých pedagogických pracovníků a pracovnic ve škole.",
+      "sourcePage": 28
+    },
+    {
+      "id": "6.1.4",
+      "competenceId": "6.1",
+      "title": "Vyhodnocuji, kdy, jak a s jakým cílem komunikovat s rodiči žáků a žákyň.",
+      "levels": [
+        "O komunikaci s rodiči žáků a žákyň prozatím nepřemýšlím.",
+        "Identifikuji typické situace, kdy je komunikace s rodiči důležitá (např. podpora žáka a žákyně, řešení problému, sdílení úspěchu), ale prozatím neformuluji, jak a kdy komunikaci vést.",
+        "Identifikuji typické situace, kdy je komunikace s rodiči důležitá (např. podpora žáka a žákyně, řešení problému, sdílení úspěchu). Formuluji cíl komunikace s rodiči, navrhuji provázejícímu učiteli / provázející učitelce možný způsob komunikace.",
+        "Průběžně vyhodnocuji různé situace z hlediska potřeby komunikace s rodiči. Promýšlím vhodný cíl, formu i načasování komunikace a s provázejícím učitelem / provázející učitelkou konzultuji, jak by zvolený postup mohl být účinný pro podporu žáka a žákyně. Diskutuji, jak nastavit podporu u žáků a žákyň, jejichž rodiče se školou nekomunikují, tak, aby tím žáci a žákyně nebyli znevýhodněni."
+      ],
+      "mindset": "Vnímám rodiče žáků a žákyň jako partnery v efektivní podpoře žáků a žákyň.",
+      "sourcePage": 28
+    },
+    {
+      "id": "6.2.1",
+      "competenceId": "6.2",
+      "title": "Formuluji své profesní sebepojetí.",
+      "levels": [
+        "Nezabývám se otázkou, jaký chci být učitel / jaká chci být učitelka.",
+        "Kladu si otázku, jaký chci být učitel / jaká chci být učitelka, ale své profesní sebepojetí prozatím neověřuji v praxi.",
+        "Formuluji své profesní sebepojetí a vztahuji je k vlastním zkušenostem z praxe.",
+        "Formuluji své profesní sebepojetí, ověřuji je v praxi a na základě reflexe je dále zpřesňuji či rozvíjím."
+      ],
+      "mindset": "Jsem přesvědčená, že reflexe profesního sebepojetí mi pomáhá porozumět sobě jako učiteli/učitelce a nastavovat si směr dalšího rozvoje.",
+      "sourcePage": 29
+    },
+    {
+      "id": "6.2.2",
+      "competenceId": "6.2",
+      "title": "Stanovuji si přiměřené (adekvátní) cíle svého profesního rozvoje, plánuji kroky pro jejich naplnění a vyhodnocuji, zda se nastaveným rozvojovým cílům přibližuji.",
+      "levels": [
+        "Nestanovuji si cíle svého profesního rozvoje, nechci, nebo je nedokážu formulovat.",
+        "Nastavuji si cíle profesního rozvoje, ale mnohdy nejsou dostatečně konkrétní nebo dosažitelné.",
+        "Nastavuji si adekvátní cíle svého profesního rozvoje, snažím se navrhnout kroky k jejich naplnění a tyto kroky realizovat.",
+        "Nastavuji si adekvátní cíle svého profesního rozvoje, navrhuji kroky k jejich naplnění a tyto kroky skutečně realizuji."
+      ],
+      "mindset": "Jsem přesvědčen/a, že můj profesní rozvoj je celoživotní proces, za který nesu odpovědnost.",
+      "sourcePage": 29
+    },
+    {
+      "id": "6.2.3",
+      "competenceId": "6.2",
+      "title": "Reflektuji svoji výuku.",
+      "levels": [
+        "Svoji výuku nereflektuji.",
+        "Pokouším se reflektovat svoji výuku, ale prozatím se mi nedaří identifikovat to podstatné.",
+        "Reflektuji svoji výuku, zpravidla identifikuji to podstatné a zkouším formulovat návrhy, co bych mohl/a udělat příště lépe.",
+        "Běžně reflektuji svoji výuku, identifikuji klíčové aspekty a formuluji konkrétní návrhy, s nimiž poté dále pracuji."
+      ],
+      "mindset": "Jsem přesvědčen/a, že reflexe by měla být každodenní součástí práce učitele/učitelky.",
+      "sourcePage": 29
+    },
+    {
+      "id": "6.2.4",
+      "competenceId": "6.2",
+      "title": "Získávám zpětnou vazbu od kolegů a kolegyň (spolužáků a spolužaček, provázejících učitelů a učitelek, didaktiků a didaktiček) i z dalších zdrojů a využívám ji pro svůj další profesní rozvoj.",
+      "levels": [
+        "Zpětnou vazbu od kolegů a kolegyň nevyhledávám ani jí nevyužívám.",
+        "Zpětnou vazbu přijímám, pokud mi ji někdo poskytne, ale sám/sama ji nevyhledávám. Nevracím se k ní při plánování své další výuky.",
+        "Zpětnou vazbu od kolegů a kolegyň občas aktivně vyhledávám a snažím se jí využít pro plánování své další výuky.",
+        "Zpětnou vazbu od kolegů a kolegyň i dalších zdrojů aktivně vyhledávám a promyšleně jí využívám při plánování a reflexi své výuky."
+      ],
+      "mindset": "Zpětnou vazbu vnímám jako užitečný zdroj informací, nikoli jako něco ohrožujícího.",
+      "sourcePage": 29
+    },
+    {
+      "id": "6.3.1",
+      "competenceId": "6.3",
+      "title": "Vyhodnocuji rovnováhu mezi svým pracovním a osobním životem, sleduji stav svého psychického zdraví a reaguji na něj.",
+      "levels": [
+        "Nevěnuji pozornost rovnováze mezi pracovním a osobním životem, stav svého psychického zdraví nesleduji.",
+        "Občas si uvědomím dopady pracovního zatížení na svůj osobní život nebo psychické zdraví, ale jen zřídka na to navazuji konkrétními kroky.",
+        "Sleduji, jak se mi daří udržovat rovnováhu mezi pracovním a osobním životem a jaký je stav mého psychického zdraví, ale konkrétními kroky navazuji, až když pociťuji výraznější zátěž.",
+        "Vyhodnocuji rovnováhu mezi pracovním a osobním životem, sleduji stav svého psychického zdraví a průběžně pracuji na jeho ochraně a podpoře."
+      ],
+      "mindset": "Jsem přesvědčen/a, že péče o vlastní psychické a fyzické zdraví je nezbytným předpokladem pro to, abych mohl/a dlouhodobě a kvalitně působit v učitelské profesi.",
+      "sourcePage": 30
+    },
+    {
+      "id": "6.3.2",
+      "competenceId": "6.3",
+      "title": "Znám a vědomě používám strategie, které mi pomáhají vyrovnat se se stresem.",
+      "levels": [
+        "Se stresem nijak nepracuji.",
+        "Na stres reaguji spíše nahodile. Využívám některé strategie zvádání stresu, aniž bych si je plně uvědomoval/a.",
+        "Vědomě zkouším využívat některé ze strategií zvládání stresu, ale nevyužívám je vždy včas či důsledně.",
+        "Na zátěž reaguji včas. Vědomě využívám strategie zvládání stresu, které jsou pro mě účinné."
+      ],
+      "mindset": "Jsem přesvědčen/a, že zvládání vlastního stresu je nezbytným předpokladem pro zajištění psychického a fyzického bezpečí ve třídě.",
+      "sourcePage": 30
+    }
+  ],
+  "examples": [],
+  "editorialCorrections": [
+    "2.1.3, úroveň 3: V PDF je na konci buňky oříznutý začátek slova „cílů“; na webu je doplněno „c“ a koncová tečka."
+  ],
+  "background": [
+    "Kompetenční rámec studentů a studentek učitelství pro střední školy vznikal od září 2024 do ledna 2026, a to na základě dvou dokumentů. Prvním byl národní Kompetenční rámec absolventa a absolventky učitelství , který v říjnu 2023 představilo MŠMT jakožto určitou shodu na tom, jakými kompetencemi by měl být vybaveni každý absolvent a každá absolventka učitelství bez ohledu na to, na které fakultě v České republice se na svoji pedagogickou dráhu připravují. Výčet kompetencí, jimiž by učitelé a učitelky mohli disponovat, by hypoteticky mohl být velmi dlouhý (což se ukáže v zásadě vždy, když se studujícími hledáme odpověď na otázku, co by měl umět ideální učitel). Kompetenční rámec absolventky a absolventek učitelství pro nás proto byl klíčový v tom, že z kompetencí, jimiž by měli disponovat budoucí učitelé, vytvořil jasně ohraničenou množinu. Díky tomu jsme se opakovaně mohli vracet k otázce, zda v plánovaném kurikulu našich studijních programů něco nechybí, ale také zda potřebujeme to, co v kurikulu našich studijních programů přebývá. Kompetenční rámec absolventa a absolventky učitelství (2023) pro nás byl nápomocný díky tomu, že otevřeně zachytil to, že absolvent učitelství ještě není hotový učitel, ale učitel “”na cestě”, který se má kam se rozvíjet dál.",
+    "Předkládaný Kompetenční rámec studentů a studentek učitelství pro střední školy vychází z národního Kompetenčního rámce absolventa a absolventky učitelství (2023) a zachovává jeho základní strukturu členění do oblastí i důraz na postupný rozvoj profesních kompetencí. Při pozorném porovnání dokumentů však lze najít dvě odlišnosti. U oblasti 2 jsme se z didaktických důvodů vydali cestou podrobnějšího rozdělení procesů plánování, vedení a reflexe výuky do více navazujících oblastí. Toto členění vychází z logiky samotné pedagogické činnosti v čase – od přípravy výuky, přes její realizaci až po její vyhodnocování – a umožňuje tak jednotlivé fáze lépe zpřehlednit a cíleněji podporovat rozvoj studujících. Zároveň reflektuje organizaci pregraduální přípravy, v níž se na rozvoji těchto oblastí podílejí různou mírou různí aktéři (např. didaktik, provázející učitel či facilitátor reflexe). Oblast profesní spolupráce pak v tomto nástroji netvoří samostatnou oblast, ale je úzce propojena s profesním sebepojetím a profesním rozvojem. Toto propojení vychází z poznatků, že profesní sebepojetí učitele se utváří především prostřednictvím reflektované zkušenosti z praxe a jejího sdílení. Právě spolupráce s kolegy, společná reflexe výuky a práce s profesními cíli představují významné mechanismy, které vedou k postupnému zpřesňování a proměně představ studujících o jejich roli učitele a podporují jejich další profesní učení (srov. Pravdová, 2022). Tyto úpravy pro nás nepředstavují odklon od národního rámce, ale jeho metodické rozpracování pro potřeby přípravy budoucích učitelů, které je navíc v souladu s nástrojem, s nímž vyučující i studující v rámci učitelských programů na Masarykově univerzitě dlouhodobě pracují (viz dále).",
+    "Druhým dokumentem, který představoval pro naši práci zásadní východisko, byl Standard kvality profesních kompetencí studenta učitelství , který byl vydán v roce 2020 díky práci týmu kolem doc. Jany Kratochvílové z Pedagogické fakulty Masarykovy univerzity. Právě Standard kvality profesních kompetencí studenta učitelství se stal jedním z klíčových inspiračních zdrojů také pro národní Kompetenční rámec absolventů a absolventek učitelství, v důsledku čehož lze mezi oběma dokumenty najít mnoho průniků. Standard kvality profesních kompetencí studenta učitelství zodpovídá dvě stěžejní otázky: pro rozvoj kterých kompetencí by mělo studium učitelství vytvářet podmínky a podporu (stejně jako Kompetenční rámec absolventa a absolventky učitelství) a jak sledovat, že k rozvoji kompetencí skutečně dochází (což umožňuje stanovení úrovní rozvoje pro každou kompetenci).",
+    "S tandard kvality profesních kompetencí studenta učitelství byl na Masarykově univerzitě používán již před schválením národního Kompetenčního rámce absolventa a absolventky učitelství, přičemž vyučující podílející se na přípravě budoucích učitelů a učitelek byli zvyklí s architekturou tohoto nástroje pracovat. Předloženým Kompetenčním rámcem pro studující učitelských programů pro střední školy proto navazujeme na dobrou praxi zavedenou Standardem kvality profesních kompetencí studenta učitelství.",
+    "Současně jsme při tvorbě nástroje usilovali o maximální kompatibilitu s oběma uvedenými dokumenty, a to jak na úrovni oblastí, tak i v analogickém vymezení kompetencí. Nástroje jsou si proto cíleně velmi podobné a případnými odlišnostmi postihují ta specifika přípravy, která jsou daná stupněm vzdělávání, na němž studující v budoucnu plánují vyučovat. Toto sladění má umožnit kontinuitu v práci s kompetenčními modely napříč přípravou učitelů i jejich profesní dráhou a usnadnit orientaci vyučujících i studujících v jednotlivých nástrojích. Vedle toho nástroj přebírá princip sledování rozvoje kompetencí prostřednictvím úrovní kvality, přičemž navazuje na model kontinuálního rozvoje vyjádřený čtyřmi úrovněmi. Toto pojetí reflektuje skutečnost, že národní Kompetenční rámec popisuje očekávanou úroveň absolventa, zatímco předkládaný nástroj sleduje proces postupného přibližování se k této úrovni v průběhu studia. Úrovně proto slouží k zachycení profesního růstu studujících, podporují formativní práci s kompetencemi a poskytují oporu pro reflexi i zpětnou vazbu."
+  ],
+  "methodology": [
+    "Předkládaný nástroj vznikl jako podpora profesního učení studujících učitelství. Jeho cílem není pouze popsat, jaké kompetence by měl mít absolvent učitelství, ale především zachytit cestu, kterou studující během svého profesního rozvoje prochází. Kompetenční rámec je proto členěn do oblastí, které představují širší okruhy profesního fungování vyučujícího. Jednotlivé oblasti jsou dále rozpracovány do kompetencí a konkrétních kritérií profesního jednání. Kritéria jsou popsána prostřednictvím čtyř úrovní kvality, které umožňují sledovat postupný profesní růst, a doplněna mindsetem zachycujícím profesní přesvědčení vztahující se k dané oblasti pedagogické práce.",
+    "Úrovně nejsou chápány jako „nálepky“ či konečné hodnocení studujících, ale jako opora pro formativní práci, profesní růst a reflexi — mají pomoci odpovědět na otázky: Kde se právě nacházím? Co už zvládám? A kam se mohu posouvat dál?",
+    "Důležitým principem při tvorbě nástroje bylo, aby jednotlivé úrovně vycházely z toho, co lze skutečně pozorovat v profesním jednání studujících. Kritéria proto nejsou formulována primárně prostřednictvím produktů práce, například plánů výuky, ani prostřednictvím obtížně zachytitelných charakteristik. Zaměřují se na konkrétní projevy pedagogického jednání, které lze během výuky sledovat, dokumentovat a následně reflektovat. Díky tomu nástroj neosciluje mezi tím, co je a není možné v pedagogické situaci zachytit, ale vytváří společný základ pro pozorování výuky, poskytování zpětné vazby i vedení profesní reflexe opřené o důkazy z praxe. Právě tuto oporu v pozorovatelném jednání považujeme za zásadní.",
+    "Nástroj je současně záměrně vystavěn jako popisný. Neslouží tedy pouze k tomu, aby bylo možné studující „zařadit“ na určitou úroveň, ale především k tomu, aby se studující, univerzitní vyučující i provázející učitelé učili společně a profesně hovořit o výuce. Popisná formulace kritérií umožňuje vést rozhovor nad konkrétními situacemi a zkušenostmi z praxe místo obecných hodnotících soudů. Podporuje tak rozvoj profesního jazyka, který je důležitý nejen pro reflexi vlastní výuky, ale i pro spolupráci mezi všemi, kdo se podílejí na přípravě budoucích učitelů a učitelek.",
+    "Specifickou součástí nástroje je tzv. mindset, který doprovází každé kritérium. Mindset vyjadřuje profesní přesvědčení vztahující se k dané oblasti pedagogické práce — tedy to, jak vyučující o dané činnosti přemýšlí a jaký jí přikládá význam pro učení žáků a žákyň. Nesoustředí se proto pouze na to, co studující dělá, ale také proč to dělá a zda danému postupu skutečně věří.",
+    "Zařazení mindsetu vychází z předpokladu, že studující vstupují do učitelské přípravy již s určitými představami o tom, co znamená „dobře učit“. Tyto představy vznikají dlouhodobě na základě vlastních zkušeností v roli žáků a žákyň a často ovlivňují pedagogické jednání ještě dříve, než studující získají vlastní zkušenost s výukou. Právě proto považujeme za důležité, aby studující nepromýšleli pouze to, jak určitou profesní činnost provádět, ale také jak o ní přemýšlejí a zda je v souladu s jejich pojetím kvalitní výuky.",
+    "Mindset současně může pomoci porozumět situacím, kdy se studující v některé oblasti dlouhodobě neposouvá. Někdy totiž není problém v nedostatku znalostí nebo dovedností, ale v tom, že studující není vnitřně přesvědčen o významu dané kompetence pro učení žáků a žákyň. Pokud například nevěří, že formativní hodnocení podporuje učení, bude jej jen obtížně začleňovat do vlastní výuky, i když zná konkrétní postupy. V takové situaci může být užitečné vrátit se právě k mindsetu — tedy k otázce, jaké pojetí výuky a učení studující zastává a z jakých předpokladů jeho pedagogické jednání vychází. V tomto smyslu nástroj navazuje na pojetí reflexe typu double-loop learning (Argyris & Schön, 1974), které nesměřuje pouze k úpravě jednotlivých postupů, ale také k promýšlení hlubších předpokladů pedagogického jednání.",
+    "Mindset proto nechápeme jako doplněk k profesním dovednostem, ale jako jejich důležitou součást. Umožňuje propojit profesní jednání s hlubší reflexí vlastních přesvědčení a podporuje tak rozvoj, který nespočívá pouze ve změně jednotlivých postupů, ale i v proměně způsobu uvažování o výuce. V tomto smyslu nástroj navazuje na pojetí reflexe typu double-loop learning, které nesměřuje pouze k úpravě jednotlivých postupů, ale také k promýšlení hlubších předpokladů pedagogického jednání.",
+    "Nástroj tak propojuje sledování profesních dovedností, reflexi zkušenosti i práci s profesním přesvědčením do jednoho celku. Jeho cílem není pouze popsat kompetence budoucích učitelů a učitelek, ale vytvářet podmínky pro jejich dlouhodobý, reflektovaný a smysluplný profesní rozvoj."
+  ]
+}

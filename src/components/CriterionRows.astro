@@ -1,0 +1,14 @@
+---
+import type { Criterion } from '../lib/framework';
+import { criterionUrl, displayTitle } from '../lib/framework';
+
+interface Props { criteria: Criterion[] }
+const { criteria } = Astro.props;
+---
+<div class="criteria-list">
+  {criteria.map((criterion) => <a class="criterion-item" href={criterionUrl(criterion.id)}>
+    <span class="criterion-item__id">{criterion.id}</span>
+    <span class="criterion-item__title">{displayTitle(criterion.title)}</span>
+    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+  </a>)}
+</div>

@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CompetenceRows from '../../components/CompetenceRows.astro';
+import type { Area, Competence, Criterion } from '../../lib/framework';
+import { getFramework, pdfUrl, withBase } from '../../lib/framework';
+
+interface Props { area: Area; competences: Competence[]; criteria: Criterion[] }
+export async function getStaticPaths() {
+  const { areas, competences, criteria } = await getFramework();
+  return areas.map((area) => ({ params: { id: area.id }, props: {
+    area,
+    competences: competences.filter((item) => item.areaId === area.id),
+    criteria,
+  } }));
+}
+const { area, competences, criteria } = Astro.props;
+---
+<SiteLayout title={`Oblast ${area.id}: ${area.title}`} current="ramec">
+  <div class="shell">
+    <Breadcrumbs items={[{ label: 'Rámec', href: withBase('ramec/') }, { label: `Oblast ${area.id}` }]} />
+    <header class="page-heading"><p class="eyebrow">Oblast {area.id} ze 6</p><h1>{area.title}</h1><p class="lede">{area.intro[0]?.split('. ').slice(0, 2).join('. ')}.</p></header>
+    <div class="content-layout">
+      <div>
+        <section class="area-intro" aria-labelledby="about-area"><h2 id="about-area">O oblasti</h2><p>{area.intro[0]}</p>
+          {area.intro.length > 1 && <details><summary>Celý úvod k oblasti</summary><div class="prose">{area.intro.slice(1).map((paragraph) => <p>{paragraph}</p>)}</div></details>}
+        </section>
+        <section aria-labelledby="competences-heading"><div class="section-heading"><div><h2 id="competences-heading">Kompetence v oblasti</h2><p>Vyberte kompetenci a pokračujte ke konkrétním kritériím.</p></div><span class="meta">{competences.length} kompetencí</span></div><CompetenceRows competences={competences} criteria={criteria} /></section>
+      </div>
+      <aside class="content-layout__aside"><h2>Zdroj</h2><p class="meta">Úvod k oblasti na straně {area.sourcePage} pracovního dokumentu.</p><a href={pdfUrl(area.sourcePage)} target="_blank" rel="noopener noreferrer">Otevřít původní PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></aside>
+    </div>
+  </div>
+</SiteLayout>

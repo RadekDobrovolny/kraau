@@ -1,0 +1,14 @@
+---
+import type { Competence, Criterion } from '../lib/framework';
+import { competenceUrl, displayTitle } from '../lib/framework';
+
+interface Props { competences: Competence[]; criteria: Criterion[] }
+const { competences, criteria } = Astro.props;
+---
+<div class="competence-list">
+  {competences.map((competence) => <a class="competence-item" href={competenceUrl(competence.id)}>
+    <span class="competence-item__id">{competence.id}</span>
+    <span class="competence-item__title">{displayTitle(competence.title)}</span>
+    <span class="competence-item__count">{criteria.filter((item) => item.competenceId === competence.id).length} kritérií</span>
+  </a>)}
+</div>

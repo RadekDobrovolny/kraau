@@ -1,0 +1,22 @@
+---
+import type { Area, Competence, Criterion } from '../lib/framework';
+import { criterionUrl, displayTitle } from '../lib/framework';
+
+interface Props { areas: Area[]; competences: Competence[]; criteria: Criterion[] }
+const { areas, competences, criteria } = Astro.props;
+---
+<div class="framework-explorer" aria-label="Oblasti kompetenčního rámce">
+  {areas.map((area) => {
+    const areaCompetences = competences.filter((item) => item.areaId === area.id);
+    const areaCriteriaCount = criteria.filter((item) => item.competenceId.startsWith(`${area.id}.`)).length;
+    return <details class="framework-area" name="framework-area">
+      <summary><span class="framework-area__number">{area.id.padStart(2, '0')}</span><span class="framework-area__title">{area.title}</span><span class="framework-area__count">{areaCriteriaCount} kritérií</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+      <div class="framework-area__content">
+        {areaCompetences.map((competence) => <section class="framework-competence" aria-labelledby={`competence-${competence.id}`}>
+          <h2 id={`competence-${competence.id}`}><span>{competence.id}</span> {displayTitle(competence.title)}</h2>
+          <ul>{criteria.filter((criterion) => criterion.competenceId === competence.id).map((criterion) => <li><a href={criterionUrl(criterion.id)}><span>{criterion.id}</span>{displayTitle(criterion.title)}<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>)}</ul>
+        </section>)}
+      </div>
+    </details>;
+  })}
+</div>

@@ -1,0 +1,15 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import LevelViewer from '../../components/LevelViewer.astro';
+import { criterionUrl, getFramework, withBase } from '../../lib/framework';
+const { criteria } = await getFramework();
+const example = criteria.find((item) => item.id === '1.1.1')!;
+---
+<SiteLayout title="Úrovně profesního rozvoje" current="urovne">
+  <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Úrovně' }]} />
+    <header class="page-heading"><p class="eyebrow">Čtení rámce</p><h1>Čtyři úrovně profesního rozvoje</h1><p class="lede">Úrovně 0–3 popisují postupný rozvoj konkrétního profesního jednání. Jsou oporou pro reflexi a zpětnou vazbu, ne nálepkou pro člověka.</p></header>
+    <div class="content-layout"><div class="prose"><h2>Co úrovně zachycují</h2><p>Rámec sleduje, co lze během výuky pozorovat, dokumentovat a společně reflektovat. Úrovně pomáhají pojmenovat, co už se daří a kam může další profesní učení směřovat.</p><p>Každé kritérium má vlastní čtyři deskriptory. Úroveň proto čtěte vždy v souvislosti s konkrétním kritériem a situací z praxe; samotné číslo nevypovídá o kvalitě učitele jako osoby.</p><h2>Mindset patří ke kritériu</h2><p>Vedle jednání rámec zachycuje také profesní přesvědčení: proč vyučující určitému postupu přikládá význam a jak uvažuje o učení žáků a žákyň. Mindset není další stupeň na škále.</p></div><aside class="content-layout__aside"><h2>Rychlý přechod</h2><ul><li><a href={withBase('ramec/')}>Procházet oblasti</a></li><li><a href={withBase('jak-pracovat/')}>Jak s rámcem pracovat</a></li></ul></aside></div>
+    <section class="page-section" aria-labelledby="example-heading"><div class="section-heading"><div><p class="eyebrow">Příklad</p><h2 id="example-heading">Kritérium {example.id}</h2><p>{example.title}</p></div><a class="text-link" href={criterionUrl(example.id)}>Otevřít detail <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div><LevelViewer criterion={example} /><section class="mindset" aria-labelledby="example-mindset"><div class="mindset__heading"><span class="mindset__icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></span><div><p class="eyebrow">Profesní přesvědčení</p><h2 id="example-mindset">Mindset</h2></div></div><div class="mindset__body"><p>{example.mindset}</p></div></section></section>
+  </div>
+</SiteLayout>

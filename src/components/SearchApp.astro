@@ -1,0 +1,115 @@
+---
+import type { Area } from '../lib/framework';
+import { withBase } from '../lib/framework';
+interface Props { areas: Area[] }
+const { areas } = Astro.props;
+---
+<div class="search-app" data-search-app data-index-url={withBase('search-index.json')}>
+  <div class="field"><label for="search-query">Téma nebo číslo kritéria</label><div class="search-input-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="search-query" type="search" placeholder="Např. zpětná vazba nebo 2.1.1" autocomplete="off" /></div></div>
+  <details class="search-options"><summary>Upřesnit podle oblasti <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><div class="field"><label for="filter-area">Oblast</label><select id="filter-area"><option value="">Všechny oblasti</option>{areas.map((item) => <option value={item.id}>{item.id}. {item.title}</option>)}</select></div></details>
+  <section class="search-results" aria-labelledby="results-heading"><h2 id="results-heading" class="sr-only">Výsledky hledání</h2><p class="search-results__meta search-status" data-search-status role="status">Načítání rámce…</p><div data-search-results></div></section>
+  <noscript><div class="source-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div>Hledání vyžaduje JavaScript. Celý rámec lze procházet podle <a href={withBase('ramec/')}>oblastí a kompetencí</a>.</div></div></noscript>
+</div>
+
+<script>
+  import MiniSearch from 'minisearch';
+  import type { SearchDocument } from '../lib/search';
+
+  const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('cs-CZ');
+  document.querySelectorAll<HTMLElement>('[data-search-app]').forEach(async (app) => {
+    const query = app.querySelector<HTMLInputElement>('#search-query')!;
+    const area = app.querySelector<HTMLSelectElement>('#filter-area')!;
+    const options = app.querySelector<HTMLDetailsElement>('.search-options')!;
+    const results = app.querySelector<HTMLElement>('[data-search-results]')!;
+    const status = app.querySelector<HTMLElement>('[data-search-status]')!;
+    const params = new URLSearchParams(location.search);
+    query.value = params.get('q') ?? '';
+    area.value = params.get('oblast') ?? '';
+    options.open = Boolean(area.value);
+
+    let documents: SearchDocument[] = [];
+    let search: MiniSearch<SearchDocument>;
+    try {
+      const response = await fetch(app.dataset.indexUrl!);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      documents = await response.json();
+      search = new MiniSearch<SearchDocument>({
+        fields: ['indexTitle', 'body', 'indexCode', 'indexContext'],
+        storeFields: ['kind', 'criterionId', 'areaId', 'competenceId', 'level', 'title', 'code', 'context', 'body', 'url'],
+        processTerm: normalize,
+      });
+      search.addAll(documents);
+    } catch {
+      status.textContent = 'Hledání se nepodařilo načíst. Rámec můžete procházet podle oblastí.';
+      return;
+    }
+
+    function saveState() {
+      const next = new URLSearchParams();
+      if (query.value.trim()) next.set('q', query.value.trim());
+      if (area.value) next.set('oblast', area.value);
+      history.replaceState(null, '', `${location.pathname}${next.size ? `?${next}` : ''}`);
+    }
+
+    function appendResult(doc: SearchDocument) {
+      const item = document.createElement('article');
+      item.className = 'search-result';
+      const eyebrow = document.createElement('div');
+      eyebrow.className = 'search-result__eyebrow';
+      eyebrow.textContent = doc.level === null ? `Kritérium ${doc.code}` : `Kritérium ${doc.code} · úroveň ${doc.level}`;
+      const heading = document.createElement('h2');
+      const link = document.createElement('a');
+      link.href = doc.url;
+      link.textContent = doc.title;
+      heading.append(link);
+      const preview = document.createElement('p');
+      preview.textContent = doc.kind === 'level' ? doc.body : doc.context;
+      item.append(eyebrow, heading, preview);
+      results.append(item);
+    }
+
+    function render() {
+      saveState();
+      const term = query.value.trim();
+      results.replaceChildren();
+      if (!term) {
+        status.textContent = 'Zadejte téma nebo číslo kritéria.';
+        return;
+      }
+      let matches: SearchDocument[];
+      const code = term.match(/^([1-6])(?:\.([1-5]))?(?:\.([1-9]))?$/);
+      if (code) {
+        matches = documents.filter((doc) => doc.kind === 'criterion' && (doc.code === term || doc.code.startsWith(`${term}.`)));
+      } else {
+        const found = search.search(term, { prefix: true, fuzzy: term.length >= 5 ? 0.18 : false, boost: { indexCode: 8, indexTitle: 4, indexContext: 1, body: 1 } });
+        matches = found.map((item) => item as unknown as SearchDocument);
+      }
+      const seen = new Set<string>();
+      matches = matches.filter((doc) => {
+        if (area.value && doc.areaId !== area.value) return false;
+        if (seen.has(doc.criterionId)) return false;
+        seen.add(doc.criterionId);
+        return true;
+      });
+      status.textContent = `${matches.length} ${matches.length === 1 ? 'kritérium' : matches.length >= 2 && matches.length <= 4 ? 'kritéria' : 'kritérií'}`;
+      if (!matches.length) {
+        const empty = document.createElement('div');
+        empty.className = 'search-empty';
+        const title = document.createElement('h2');
+        title.textContent = 'Nic jsme nenašli';
+        const hint = document.createElement('p');
+        hint.textContent = 'Zkuste kratší výraz, jiné číslo kritéria nebo změňte oblast.';
+        empty.append(title, hint);
+        results.append(empty);
+      } else {
+        matches.forEach(appendResult);
+      }
+    }
+
+    let timer: number;
+    query.addEventListener('input', () => { window.clearTimeout(timer); timer = window.setTimeout(render, 170); });
+    area.addEventListener('change', render);
+    window.addEventListener('popstate', () => { location.reload(); });
+    render();
+  });
+</script>
