@@ -1,10 +1,10 @@
 [
   {
     "id": "vzor-koncept",
-    "status": "draft",
-    "title": "Vzorová ukázka (koncept, jen pro náhled)",
+    "status": "published",
+    "title": "Vzorová ukázka (dočasně, jen pro náhled)",
     "type": "transkript",
-    "context": "Tato položka je jen technický vzor, jak bude ukázka vypadat. Má stav „draft“, proto se zobrazuje pouze při lokálním vývoji (npm run dev) a na veřejný web se nedostane.",
+    "context": "Tato položka je jen technický vzor, jak bude ukázka z praxe vypadat. Na webu je zveřejněná dočasně pro náhled a nahradí ji skutečné ukázky.",
     "body": [
       "Sem patří samotný obsah ukázky: přepis části hodiny, popis přípravy, reflexe studujícího nebo popis artefaktu.",
       "Každý odstavec je samostatná položka v poli „body“."
