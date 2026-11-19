@@ -2,10 +2,8 @@
 import '../styles/fonts.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../styles/global.css';
-import sansLatin from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
-import sansLatinExt from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-ext-wght-normal.woff2?url';
-import serifLatin from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
-import serifLatinExt from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-ext-wght-normal.woff2?url';
+import muniRegular from '../fonts/muni-regular.ttf?url';
+import muniBold from '../fonts/muni-bold.ttf?url';
 import { withBase } from '../lib/framework';
 
 interface Props {
@@ -27,13 +25,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#155B4D" />
+    <meta name="theme-color" content="#0000DC" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="preload" href={sansLatin} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={sansLatinExt} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={serifLatin} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={serifLatinExt} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={muniRegular} as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href={muniBold} as="font" type="font/ttf" crossorigin />
     <title>{title} | KRAAU</title>
   </head>
   <body>
@@ -44,7 +40,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <header class="site-header">
       <div class="shell site-header__inner">
         <a class="brand" href={withBase('')} aria-label="KRAAU, úvodní stránka">
-          <span class="brand__mark" aria-hidden="true">K.</span>
+          <span class="brand__mark" aria-hidden="true">K</span>
           <span class="brand__text"><strong>KRAAU</strong><small>Kompetenční rámec SŠ</small></span>
         </a>
         <nav class="desktop-nav" aria-label="Hlavní navigace">
