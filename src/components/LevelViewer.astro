@@ -1,15 +1,31 @@
 ---
-import type { Criterion } from '../lib/framework';
-interface Props { criterion: Criterion }
-const { criterion } = Astro.props;
+import type { Criterion, Example } from '../lib/framework';
+import { exampleTypeIcon, exampleUrl } from '../lib/framework';
+interface Props { criterion: Criterion; examples?: Example[] }
+const { criterion, examples = [] } = Astro.props;
+const examplesFor = (level: number) =>
+  examples.filter((example) => example.links.some((link) => link.criterionId === criterion.id && link.level === level));
 ---
 <section class="level-viewer" aria-labelledby="levels-heading">
   <h2 id="levels-heading" class="sr-only">Úrovně profesního rozvoje</h2>
   <div class="level-grid">
-    <div class="level-grid__head"><span>Úroveň</span><span>Popis profesního jednání</span></div>
-    {criterion.levels.map((text, level) => <section class="level-panel" id={`uroven-${level}`} data-level-panel={level} aria-labelledby={`level-heading-${level}`}>
-      <h3 id={`level-heading-${level}`}><span class="sr-only">Úroveň </span><span class="level-panel__number">{level}</span></h3>
-      <p>{text}</p>
-    </section>)}
+    <div class="level-grid__head"><span>Úroveň</span><span>Popis profesního jednání</span><span class="level-grid__head-examples">Ukázka z praxe</span></div>
+    {criterion.levels.map((text, level) => {
+      const levelExamples = examplesFor(level);
+      return <section class="level-panel" id={`uroven-${level}`} data-level-panel={level} aria-labelledby={`level-heading-${level}`}>
+        <h3 id={`level-heading-${level}`}><span class="sr-only">Úroveň </span><span class="level-panel__number">{level}</span></h3>
+        <p>{text}</p>
+        <div class="level-panel__examples">
+          {levelExamples.length > 0 && <ul aria-label={`Ukázky z praxe k úrovni ${level}`}>
+            {levelExamples.map((example) => <li>
+              <a class="level-marker" href={exampleUrl(example.id)} title={example.title} aria-label={`Ukázka z praxe (${example.type}): ${example.title}`}>
+                <span class="level-marker__circle" aria-hidden="true"><i class={`fa-solid ${exampleTypeIcon[example.type]}`}></i></span>
+                <span class="level-marker__label" aria-hidden="true">Ukázka<span class="level-marker__suffix"> z praxe</span></span>
+              </a>
+            </li>)}
+          </ul>}
+        </div>
+      </section>;
+    })}
   </div>
 </section>

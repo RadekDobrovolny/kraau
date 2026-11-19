@@ -2,12 +2,16 @@
 interface Crumb { label: string; href?: string }
 interface Props { items: Crumb[] }
 const { items } = Astro.props;
+/* Poslední odkaz před aktuální stránkou = „o úroveň výš“; na mobilu se zobrazí jen ten. */
+const parentIndex = items.findLastIndex((item, index) => item.href && index < items.length - 1);
 ---
 <nav class="breadcrumbs" aria-label="Drobečková navigace">
   <ol>
-    {items.map((item, index) => <li>
-      {item.href ? <a href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
-      {index < items.length - 1 && <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>}
+    {items.map((item, index) => <li class:list={{ 'breadcrumbs__parent': index === parentIndex, 'breadcrumbs__current': !item.href }}>
+      {item.href
+        ? <a href={item.href}><i class="fa-solid fa-arrow-left breadcrumbs__back" aria-hidden="true"></i><span>{item.label}</span></a>
+        : <span aria-current="page">{item.label}</span>}
+      {index < items.length - 1 && <i class="fa-solid fa-chevron-right breadcrumbs__sep" aria-hidden="true"></i>}
     </li>)}
   </ol>
 </nav>

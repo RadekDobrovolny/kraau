@@ -37,6 +37,30 @@ export async function getFramework() {
   return { areas, competences, criteria };
 }
 
+export type Example = CollectionEntry<'examples'>['data'];
+
+/** Ukázky viditelné v aktuálním sestavení: publikované, při lokálním vývoji i koncepty. */
+export async function getExamples() {
+  const entries = await getCollection('examples');
+  const criterionIds = new Set((await getCollection('criteria')).map((entry) => entry.data.id));
+  const examples = entries.map((entry) => entry.data);
+  for (const example of examples) {
+    const unknown = example.links.find((link) => !criterionIds.has(link.criterionId));
+    if (unknown) throw new Error(`Example ${example.id} links to unknown criterion ${unknown.criterionId}`);
+  }
+  return examples.filter((example) => example.status === 'published' || import.meta.env.DEV);
+}
+
+export const exampleTypeIcon: Record<Example['type'], string> = {
+  transkript: 'fa-comments',
+  příprava: 'fa-clipboard-list',
+  reflexe: 'fa-pen-nib',
+  fotografie: 'fa-image',
+  artefakt: 'fa-shapes',
+  dokument: 'fa-file-lines',
+  video: 'fa-circle-play',
+};
+
 export const slug = (id: string) => id.replaceAll('.', '-');
 
 export function withBase(path: string) {
@@ -48,7 +72,8 @@ export const areaUrl = (id: string) => withBase(`oblasti/${id}/`);
 export const competenceUrl = (id: string) => withBase(`kompetence/${slug(id)}/`);
 export const criterionUrl = (id: string, level?: number) =>
   withBase(`kriteria/${slug(id)}/`) + (level === undefined ? '' : `#uroven-${level}`);
-export const pdfUrl = (page?: number) =>
+export const exampleUrl = (id: string) => withBase(`ukazky/${id}/`);
+export const pdfUrl =(page?: number) =>
   withBase('kompetencni-ramec-ss.pdf') + (page ? `#page=${page}` : '');
 
 export function displayTitle(title: string) {

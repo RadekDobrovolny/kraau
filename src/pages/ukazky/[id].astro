@@ -1,0 +1,38 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import type { Criterion, Example } from '../../lib/framework';
+import { criterionUrl, displayTitle, exampleTypeIcon, getExamples, getFramework, withBase } from '../../lib/framework';
+
+interface Props { example: Example; criteria: Criterion[] }
+export async function getStaticPaths() {
+  const [examples, { criteria }] = await Promise.all([getExamples(), getFramework()]);
+  return examples.map((example) => ({ params: { id: example.id }, props: { example, criteria } }));
+}
+const { example, criteria } = Astro.props;
+const links = example.links.map((link) => ({ ...link, criterion: criteria.find((item) => item.id === link.criterionId)! }));
+---
+<SiteLayout title={example.title} description={example.context} current="ukazky">
+  <div class="shell">
+    <Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Ukázky z praxe', href: withBase('ukazky/') }, { label: example.title }]} />
+    <header class="page-heading">
+      <p class="eyebrow"><i class={`fa-solid ${exampleTypeIcon[example.type]}`} aria-hidden="true"></i> Ukázka z praxe · {example.type}{example.status === 'draft' && ' · koncept'}</p>
+      <h1>{example.title}</h1>
+      <p class="lede">{example.context}</p>
+    </header>
+    <div class="content-layout">
+      <div class="prose">
+        {example.body.map((paragraph) => <p>{paragraph}</p>)}
+        {example.url && <p><a class="button" href={example.url} target="_blank" rel="noopener noreferrer">Otevřít ukázku <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></p>}
+        {example.commentary && <section class="source-note"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i><div><strong>Komentář</strong><p>{example.commentary}</p></div></section>}
+        {example.source && <p class="meta">Zdroj: {example.source}</p>}
+      </div>
+      <aside class="content-layout__aside" aria-labelledby="example-links-heading">
+        <h2 id="example-links-heading">Ilustruje</h2>
+        <ul>
+          {links.map((link) => <li><a href={criterionUrl(link.criterionId, link.level)}><strong>{link.criterionId} · úroveň {link.level}</strong><br />{displayTitle(link.criterion.title)}</a></li>)}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</SiteLayout>

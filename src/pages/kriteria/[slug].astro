@@ -2,8 +2,8 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import LevelViewer from '../../components/LevelViewer.astro';
-import type { Area, Competence, Criterion } from '../../lib/framework';
-import { areaUrl, competenceUrl, criterionUrl, displayTitle, getFramework, pdfUrl, slug, withBase } from '../../lib/framework';
+import OwlIcon from '../../components/OwlIcon.astro';import type { Area, Competence, Criterion } from '../../lib/framework';
+import { areaUrl, competenceUrl, criterionUrl, displayTitle, getExamples, getFramework, pdfUrl, slug, withBase } from '../../lib/framework';
 
 interface Props { area: Area; competence: Competence; criterion: Criterion; previous?: Criterion; next?: Criterion }
 export async function getStaticPaths() {
@@ -20,34 +20,35 @@ export async function getStaticPaths() {
   });
 }
 const { area, competence, criterion, previous, next } = Astro.props;
+const examples = (await getExamples()).filter((example) => example.links.some((link) => link.criterionId === criterion.id));
 ---
 <SiteLayout title={`${criterion.id} ${displayTitle(criterion.title)}`} description={`${criterion.id}: ${displayTitle(criterion.title).replace(/[.!?]$/, '')}. Čtyři úrovně rozvoje a mindset.`} current="ramec">
   <div class="shell">
     <Breadcrumbs items={[{ label: 'Rámec', href: withBase('ramec/') }, { label: displayTitle(area.title), href: areaUrl(area.id) }, { label: `${competence.id} ${displayTitle(competence.title)}`, href: competenceUrl(competence.id) }, { label: `Kritérium ${criterion.id}` }]} />
     <article class="criterion-main">
-      <header class="criterion-header"><div><p class="eyebrow">Kritérium {criterion.id}</p><h1 class="criterion-title">{displayTitle(criterion.title)}</h1><p class="criterion-context">{competence.id} {displayTitle(competence.title)}</p></div>
-        <div class="criterion-tools"><button type="button" class="icon-button" data-copy-link aria-label="Kopírovat odkaz na kritérium" title="Kopírovat odkaz na kritérium"><i class="fa-solid fa-link" aria-hidden="true"></i></button><span class="meta" data-copy-status aria-live="polite"></span></div>
-      </header>
+      <header class="criterion-header"><div><p class="eyebrow">Kritérium {criterion.id}</p><h1 class="criterion-title">{displayTitle(criterion.title)}</h1><p class="criterion-context">{competence.id} {displayTitle(competence.title)}</p></div></header>
+      <section class="mindset" id="mindset" aria-labelledby="mindset-heading"><div class="mindset__heading"><span class="mindset__icon" aria-hidden="true"><OwlIcon /></span><div><p class="eyebrow">Mindset</p><h2 id="mindset-heading">Co stojí za jednáním</h2></div></div><div class="mindset__body"><p>{criterion.mindset}</p></div></section>
+      <LevelViewer criterion={criterion} examples={examples} />
+      <section class="reflection" aria-labelledby="reflection-heading"><p class="eyebrow">Pro reflexi nebo společný rozhovor</p><h2 id="reflection-heading">Co z toho plyne pro příští výuku?</h2><ol><li>Co jste v konkrétní situaci pozorovali?</li><li>Který popis jednání je situaci nejbližší a proč?</li><li>Jaký jeden krok vyzkoušíte příště?</li></ol></section>
+      <section class="criterion-actions" aria-label="Zdroj a tisk">
+        <a class="criterion-action" href={pdfUrl(criterion.sourcePage)} target="_blank" rel="noopener noreferrer">
+          <span class="criterion-action__icon" aria-hidden="true"><i class="fa-regular fa-file-pdf"></i></span>
+          <span class="criterion-action__text"><strong>Zdrojový dokument <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></strong><small>Pracovní verze Kompetenčního rámce pro střední školy, strana {criterion.sourcePage}</small></span>
+        </a>
+        <button type="button" class="criterion-action" data-print>
+          <span class="criterion-action__icon" aria-hidden="true"><i class="fa-solid fa-print"></i></span>
+          <span class="criterion-action__text"><strong>Vytisknout nebo uložit jako PDF</strong><small>Tato stránka se všemi úrovněmi, mindsetem a otázkami k reflexi</small></span>
+        </button>
+      </section>
       <nav class="criterion-pager" aria-label="Pohyb mezi kritérii">
         <div>{previous && <a href={criterionUrl(previous.id)} aria-label={`Předchozí kritérium ${previous.id}: ${displayTitle(previous.title)}`} title={displayTitle(previous.title)}><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span><small>Předchozí kritérium</small><strong>{previous.id}</strong><span class="criterion-pager__title">{displayTitle(previous.title)}</span></span></a>}</div>
         <div>{next && <a href={criterionUrl(next.id)} aria-label={`Další kritérium ${next.id}: ${displayTitle(next.title)}`} title={displayTitle(next.title)}><span><small>Další kritérium</small><strong>{next.id}</strong><span class="criterion-pager__title">{displayTitle(next.title)}</span></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>}</div>
       </nav>
-      <LevelViewer criterion={criterion} />
-      <section class="mindset" id="mindset" aria-labelledby="mindset-heading"><div class="mindset__heading"><span class="mindset__icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></span><div><p class="eyebrow">Mindset</p><h2 id="mindset-heading">Co stojí za jednáním</h2></div></div><div class="mindset__body"><p>{criterion.mindset}</p></div></section>
-      <section class="reflection" aria-labelledby="reflection-heading"><p class="eyebrow">Pro reflexi nebo společný rozhovor</p><h2 id="reflection-heading">Co z toho plyne pro příští výuku?</h2><ol><li>Co jste v konkrétní situaci pozorovali?</li><li>Který popis jednání je situaci nejbližší a proč?</li><li>Jaký jeden krok vyzkoušíte příště?</li></ol></section>
-      <div class="criterion-bottom"><p class="meta">Zdroj: pracovní verze Kompetenčního rámce pro střední školy, strana {criterion.sourcePage}. <a href={pdfUrl(criterion.sourcePage)} target="_blank" rel="noopener noreferrer">Zobrazit v PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></p></div>
+      <p class="print-only print-source">Zdroj: pracovní verze Kompetenčního rámce pro střední školy, strana {criterion.sourcePage}. Online: {new URL(criterionUrl(criterion.id), Astro.site).toString()}</p>
     </article>
   </div>
 </SiteLayout>
 
 <script>
-  document.querySelectorAll<HTMLButtonElement>('[data-copy-link]').forEach((button) => button.addEventListener('click', async () => {
-    const status = button.parentElement?.querySelector<HTMLElement>('[data-copy-status]');
-    try {
-      await navigator.clipboard.writeText(location.href);
-      if (status) status.textContent = 'Odkaz zkopírován.';
-    } catch {
-      if (status) status.textContent = 'Odkaz se nepodařilo zkopírovat.';
-    }
-  }));
+  document.querySelectorAll<HTMLButtonElement>('[data-print]').forEach((button) => button.addEventListener('click', () => window.print()));
 </script>

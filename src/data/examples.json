@@ -1,0 +1,19 @@
+[
+  {
+    "id": "vzor-koncept",
+    "status": "draft",
+    "title": "Vzorová ukázka (koncept, jen pro náhled)",
+    "type": "transkript",
+    "context": "Tato položka je jen technický vzor, jak bude ukázka vypadat. Má stav „draft“, proto se zobrazuje pouze při lokálním vývoji (npm run dev) a na veřejný web se nedostane.",
+    "body": [
+      "Sem patří samotný obsah ukázky: přepis části hodiny, popis přípravy, reflexe studujícího nebo popis artefaktu.",
+      "Každý odstavec je samostatná položka v poli „body“."
+    ],
+    "commentary": "Sem patří komentář, proč ukázka ilustruje danou úroveň kritéria.",
+    "source": "Zdroj a informace o souhlasu se zveřejněním.",
+    "links": [
+      { "criterionId": "1.1.1", "level": 1 },
+      { "criterionId": "1.1.1", "level": 2 }
+    ]
+  }
+]
