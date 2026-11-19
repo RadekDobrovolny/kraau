@@ -213,7 +213,7 @@ def main():
     clipped["levels"][3] = clipped["levels"][3].removesuffix("gradaci ílů") + "gradaci cílů."
     pages = {int(page.get("number")): page for page in root.findall("page")}
     output = {
-        "version": "Pracovní verze, 1. 10. 2026",
+        "version": "1. 10. 2026",
         "areas": [
             {
                 "id": str(i),

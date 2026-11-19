@@ -6,7 +6,10 @@ const { areas, competences, criteria } = await getFramework();
 ---
 <SiteLayout title="Kompetenční rámec pro učitelství SŠ" description="Najděte konkrétní popisy učitelské praxe a promyslete další krok ve výuce.">
   <section class="home-hero" aria-labelledby="home-title">
-    <img class="home-hero__image" src={withBase('hero-ucitelstvi.jpg')} alt="" fetchpriority="high" />
+    <picture>
+      <source type="image/webp" srcset={`${withBase('hero-ucitelstvi-800.webp')} 800w, ${withBase('hero-ucitelstvi-1280.webp')} 1280w, ${withBase('hero-ucitelstvi-1672.webp')} 1672w`} sizes="100vw" />
+      <img class="home-hero__image" src={withBase('hero-ucitelstvi.jpg')} alt="" width="1672" height="941" fetchpriority="high" decoding="async" />
+    </picture>
     <div class="shell home-hero__content">
       <p class="home-hero__kicker">KRAAU <span aria-hidden="true">/</span> Učitelství SŠ</p>
       <h1 id="home-title">Kompetenční rámec studentů a studentek učitelství pro střední školy</h1>

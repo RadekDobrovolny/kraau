@@ -12,9 +12,9 @@ export async function getStaticPaths() {
 const { example, criteria } = Astro.props;
 const links = example.links.map((link) => ({ ...link, criterion: criteria.find((item) => item.id === link.criterionId)! }));
 ---
-<SiteLayout title={example.title} description={example.context} current="ukazky">
+<SiteLayout title={example.title} description={example.context} current="jak">
   <div class="shell">
-    <Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Ukázky z praxe', href: withBase('ukazky/') }, { label: example.title }]} />
+    <Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Jak nástroj použít', href: withBase('jak-pracovat/') }, { label: 'Ukázky z praxe', href: withBase('jak-pracovat/#ukazky') }, { label: example.title }]} />
     <header class="page-heading">
       <p class="eyebrow"><i class={`fa-solid ${exampleTypeIcon[example.type]}`} aria-hidden="true"></i> Ukázka z praxe · {example.type}{example.status === 'draft' && ' · koncept'}</p>
       <h1>{example.title}</h1>

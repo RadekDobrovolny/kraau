@@ -1,0 +1,19 @@
+---
+/* Přesměrování ze starší adresy (statický web nemá serverové přesměrování). */
+interface Props { to: string; label: string }
+const { to, label } = Astro.props;
+---
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <link rel="canonical" href={to} />
+    <title>{label} | KRAAU</title>
+  </head>
+  <body>
+    <p>Stránka se přesunula: <a href={to}>{label}</a>.</p>
+  </body>
+</html>

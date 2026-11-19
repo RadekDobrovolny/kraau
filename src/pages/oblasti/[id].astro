@@ -27,7 +27,7 @@ const { area, competences, criteria } = Astro.props;
         </section>
         <section aria-labelledby="competences-heading"><div class="section-heading"><div><h2 id="competences-heading">Kompetence v oblasti</h2><p>Vyberte kompetenci a pokračujte ke konkrétním kritériím.</p></div><span class="meta">{competences.length} kompetencí</span></div><CompetenceRows competences={competences} criteria={criteria} /></section>
       </div>
-      <aside class="content-layout__aside"><h2>Zdroj</h2><p class="meta">Úvod k oblasti na straně {area.sourcePage} pracovního dokumentu.</p><a href={pdfUrl(area.sourcePage)} target="_blank" rel="noopener noreferrer">Otevřít původní PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></aside>
+      <aside class="content-layout__aside"><h2>Zdroj</h2><p class="meta">Úvod k oblasti na straně {area.sourcePage} zdrojového dokumentu.</p><a href={pdfUrl(area.sourcePage)} target="_blank" rel="noopener noreferrer">Otevřít původní PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></aside>
     </div>
   </div>
 </SiteLayout>

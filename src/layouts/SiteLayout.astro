@@ -5,17 +5,18 @@ import '../styles/global.css';
 import muniRegular from '../fonts/muni-regular.ttf?url';
 import muniBold from '../fonts/muni-bold.ttf?url';
 import { withBase } from '../lib/framework';
+import MuniArtsLogo from '../components/MuniArtsLogo.astro';
 
 interface Props {
   title: string;
   description?: string;
-  current?: 'ramec' | 'urovne' | 'ukazky' | 'jak' | 'o-projektu';
+  current?: 'ramec' | 'jak' | 'o-projektu';
 }
 
 const { title, description = 'Kompetenční rámec studentů a studentek učitelství pro střední školy.', current } = Astro.props;
 const nav = [
-  { id: 'ramec', label: 'Procházet rámec', path: '#ramec' },
-  { id: 'jak', label: 'Jak rámec použít', path: 'jak-pracovat/' },
+  { id: 'jak', label: 'Jak nástroj použít', path: 'jak-pracovat/' },
+  { id: 'o-projektu', label: 'O nástroji', path: 'o-projektu/' },
 ] as const;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
@@ -53,18 +54,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
             <a href={withBase('hledat/')}>Hledat</a>
           </nav>
         </details>
+        <span class="header-divider" aria-hidden="true"></span>
+        <a class="header-faculty" href="https://www.phil.muni.cz/" title="Filozofická fakulta Masarykovy univerzity"><MuniArtsLogo full class="header-faculty__full" /><MuniArtsLogo class="header-faculty__compact" /></a>
       </div>
     </header>
     <main id="obsah"><slot /></main>
     <footer class="site-footer">
       <div class="shell site-footer__inner">
+        <a class="site-footer__faculty" href="https://www.phil.muni.cz/" title="Filozofická fakulta Masarykovy univerzity"><MuniArtsLogo /></a>
         <div><strong>KRAAU</strong><p>Kompetenční rámec studentů a studentek učitelství pro střední školy.</p></div>
         <div class="site-footer__links">
-          <a href={withBase('urovne/')}>Co znamenají úrovně</a>
-          <a href={withBase('ukazky/')}>Ukázky z praxe</a>
-          <a href={withBase('o-projektu/')}>O projektu</a>
+          {nav.map((item) => <a href={withBase(item.path)}>{item.label}</a>)}
+        </div>      </div>
+      <div class="funding">
+        <div class="shell funding__inner">
+          <img class="funding__logo" src={withBase('logolink-eu-msmt.svg')} alt="Spolufinancováno Evropskou unií; Ministerstvo školství, mládeže a tělovýchovy" width="445" height="62" loading="lazy" />
+          <p>Tento produkt vznikl v rámci projektu MUNI 4 PREGRAD (reg. č. CZ.02.02.XX/00/23_019/0008395), který je spolufinancován Evropskou unií.</p>
         </div>
-        <p class="site-footer__note">Pracovní verze určená k odbornému připomínkování.</p>
       </div>
     </footer>
   </body>

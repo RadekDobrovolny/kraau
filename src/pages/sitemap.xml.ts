@@ -3,7 +3,7 @@ import { areaUrl, competenceUrl, criterionUrl, getFramework, withBase } from '..
 
 export const GET: APIRoute = async () => {
   const { areas, competences, criteria } = await getFramework();
-  const paths = ['', 'ramec/', 'urovne/', 'ukazky/', 'jak-pracovat/', 'o-projektu/', 'hledat/'].map(withBase);
+  const paths = ['', 'ramec/', 'jak-pracovat/', 'o-projektu/', 'hledat/'].map(withBase);
   paths.push(...areas.map((item) => areaUrl(item.id)));
   paths.push(...competences.map((item) => competenceUrl(item.id)));
   paths.push(...criteria.map((item) => criterionUrl(item.id)));
