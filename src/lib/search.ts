@@ -30,7 +30,7 @@ export function searchDocuments(areas: Area[], competences: Competence[], criter
       competenceId: competence.id,
       title: displayTitle(criterion.title),
       code: criterion.id,
-      context: `${area.title} ${competence.title}`,
+      context: `${area.title} › ${competence.id} ${displayTitle(competence.title)}`,
     };
     return [
       { ...shared, id: criterion.id, kind: 'criterion' as const, level: null, body: criterion.mindset, url: criterionUrl(criterion.id), indexTitle: criterion.title, indexCode: criterion.id, indexContext: `${area.title} ${competence.title}` },

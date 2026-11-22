@@ -18,7 +18,7 @@ const { area, competences, criteria } = Astro.props;
 ---
 <SiteLayout title={`Oblast ${area.id}: ${area.title}`} current="ramec">
   <div class="shell">
-    <Breadcrumbs items={[{ label: 'Rámec', href: withBase('ramec/') }, { label: `Oblast ${area.id}` }]} />
+    <Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: `Oblast ${area.id}` }]} />
     <header class="page-heading"><p class="eyebrow">Oblast {area.id} ze 6</p><h1>{area.title}</h1><p class="lede">{area.intro[0]?.split('. ').slice(0, 2).join('. ')}.</p></header>
     <div class="content-layout">
       <div>

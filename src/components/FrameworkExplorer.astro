@@ -5,7 +5,10 @@ import { criterionUrl, displayTitle } from '../lib/framework';
 interface Props { areas: Area[]; competences: Competence[]; criteria: Criterion[] }
 const { areas, competences, criteria } = Astro.props;
 ---
-<div class="framework-explorer" aria-label="Oblasti kompetenčního rámce">
+<div class="framework-explorer" aria-label="Oblasti kompetenčního rámce" data-framework-explorer>
+  <div class="framework-explorer__tools" data-explorer-tools hidden>
+    <button type="button" class="text-button" data-toggle-all aria-expanded="false"><i class="fa-solid fa-angles-down" aria-hidden="true"></i><span>Rozbalit vše</span></button>
+  </div>
   {areas.map((area) => {
     const areaCompetences = competences.filter((item) => item.areaId === area.id);
     const areaCriteriaCount = criteria.filter((item) => item.competenceId.startsWith(`${area.id}.`)).length;
@@ -20,3 +23,32 @@ const { areas, competences, criteria } = Astro.props;
     </details>;
   })}
 </div>
+
+<script>
+  /* „Rozbalit vše“: oblasti se jinak chovají jako akordeon (otevřená je vždy jen jedna, atribut name). */
+  document.querySelectorAll<HTMLElement>('[data-framework-explorer]').forEach((explorer) => {
+    const tools = explorer.querySelector<HTMLElement>('[data-explorer-tools]')!;
+    const button = tools.querySelector<HTMLButtonElement>('[data-toggle-all]')!;
+    const label = button.querySelector('span')!;
+    const icon = button.querySelector('i')!;
+    const areas = [...explorer.querySelectorAll<HTMLDetailsElement>('details.framework-area')];
+    const update = () => {
+      const allOpen = areas.every((area) => area.open);
+      label.textContent = allOpen ? 'Sbalit vše' : 'Rozbalit vše';
+      icon.className = `fa-solid ${allOpen ? 'fa-angles-up' : 'fa-angles-down'}`;
+      button.setAttribute('aria-expanded', String(allOpen));
+    };
+    button.addEventListener('click', () => {
+      const expand = !areas.every((area) => area.open);
+      areas.forEach((area) => {
+        if (expand) area.removeAttribute('name');
+        area.open = expand;
+        if (!expand) area.setAttribute('name', 'framework-area');
+      });
+      update();
+    });
+    areas.forEach((area) => area.addEventListener('toggle', update));
+    tools.hidden = false;
+    update();
+  });
+</script>

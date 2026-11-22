@@ -160,6 +160,26 @@ def prose_paragraphs(page, *, min_top=180, max_left=None):
     return paragraphs
 
 
+# Typographic slips in the source PDF, p. 2 (Východiska). Each fix must still apply,
+# otherwise the source text changed and the correction needs a fresh review.
+BACKGROUND_FIXES = [
+    ("učitelství , ", "učitelství, "),
+    ("učitel “”na cestě”, který se má kam se rozvíjet dál", "učitel „na cestě“, který se má kam rozvíjet dál"),
+    ("Kompetenční rámec absolventky a absolventek učitelství", "Kompetenční rámec absolventa a absolventky učitelství"),
+    ("Kompetenční rámec absolventů a absolventek učitelství", "Kompetenční rámec absolventa a absolventky učitelství"),
+    ("S tandard kvality", "Standard kvality"),
+]
+
+
+def fix_prose(paragraphs, fixes):
+    text = "\n\n".join(paragraphs)
+    for wrong, right in fixes:
+        if wrong not in text:
+            raise ValueError(f"Known source slip not found, review the correction: {wrong!r}")
+        text = text.replace(wrong, right)
+    return text.split("\n\n")
+
+
 def extract_tables(root):
     criteria = []
     for page in root.findall("page"):
@@ -211,7 +231,18 @@ def main():
     if not clipped["levels"][3].endswith("gradaci ílů"):
         raise ValueError("The known clipped source line has changed; review the correction")
     clipped["levels"][3] = clipped["levels"][3].removesuffix("gradaci ílů") + "gradaci cílů."
+    doubled = next(item for item in criteria if item["id"] == "6.1.3")
+    # The source cell ends with a doubled full stop (p. 28).
+    if not doubled["levels"][3].endswith("výuce. ."):
+        raise ValueError("The known doubled full stop in 6.1.3 has changed; review the correction")
+    doubled["levels"][3] = doubled["levels"][3].removesuffix(" .")
+    misspelled = next(item for item in criteria if item["id"] == "1.2.4")
+    # Missing letter in the source title (p. 8).
+    if "ZPROSTŘEDOVÁVÁM" not in misspelled["title"]:
+        raise ValueError("The known misspelling in 1.2.4 has changed; review the correction")
+    misspelled["title"] = misspelled["title"].replace("ZPROSTŘEDOVÁVÁM", "ZPROSTŘEDKOVÁVÁM")
     pages = {int(page.get("number")): page for page in root.findall("page")}
+    background = fix_prose(prose_paragraphs(pages[2], min_top=190), BACKGROUND_FIXES)
     output = {
         "version": "1. 10. 2026",
         "areas": [
@@ -230,9 +261,12 @@ def main():
         "criteria": criteria,
         "examples": [],
         "editorialCorrections": [
-            "2.1.3, úroveň 3: V PDF je na konci buňky oříznutý začátek slova „cílů“; na webu je doplněno „c“ a koncová tečka."
+            "2.1.3, úroveň 3: V PDF je na konci buňky oříznutý začátek slova „cílů“; na webu je doplněno „c“ a koncová tečka.",
+            "1.2.4, název kritéria: V PDF chybí písmeno ve slově „zprostředkovávám“; na webu je doplněno.",
+            "6.1.3, úroveň 3: V PDF je na konci věty zdvojená tečka; na webu je jen jedna.",
+            "Východiska rámce (stránka O nástroji): opraveny uvozovky, mezery před čárkou, rozdělené slovo „Standard“, zdvojené „se“ a sjednocen název národního Kompetenčního rámce absolventa a absolventky učitelství."
         ],
-        "background": prose_paragraphs(pages[2], min_top=190),
+        "background": background,
         "methodology": prose_paragraphs(pages[3], min_top=190),
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

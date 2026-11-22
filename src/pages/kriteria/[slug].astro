@@ -24,12 +24,29 @@ const examples = (await getExamples()).filter((example) => example.links.some((l
 ---
 <SiteLayout title={`${criterion.id} ${displayTitle(criterion.title)}`} description={`${criterion.id}: ${displayTitle(criterion.title).replace(/[.!?]$/, '')}. Čtyři úrovně rozvoje a mindset.`} current="ramec">
   <div class="shell">
-    <Breadcrumbs items={[{ label: 'Rámec', href: withBase('ramec/') }, { label: displayTitle(area.title), href: areaUrl(area.id) }, { label: `${competence.id} ${displayTitle(competence.title)}`, href: competenceUrl(competence.id) }, { label: `Kritérium ${criterion.id}` }]} />
+    <Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: displayTitle(area.title), href: areaUrl(area.id) }, { label: `${competence.id} ${displayTitle(competence.title)}`, href: competenceUrl(competence.id) }, { label: `Kritérium ${criterion.id}` }]} />
     <article class="criterion-main">
       <header class="criterion-header"><div><p class="eyebrow">Kritérium {criterion.id}</p><h1 class="criterion-title">{displayTitle(criterion.title)}</h1><p class="criterion-context">{competence.id} {displayTitle(competence.title)}</p></div></header>
       <section class="mindset" id="mindset" aria-labelledby="mindset-heading"><div class="mindset__heading"><span class="mindset__icon" aria-hidden="true"><OwlIcon /></span><div><p class="eyebrow">Mindset</p><h2 id="mindset-heading">Co stojí za jednáním</h2></div></div><div class="mindset__body"><p>{criterion.mindset}</p></div></section>
       <LevelViewer criterion={criterion} examples={examples} />
-      <section class="reflection" aria-labelledby="reflection-heading"><p class="eyebrow">Pro reflexi nebo společný rozhovor</p><h2 id="reflection-heading">Co z toho plyne pro příští výuku?</h2><ol><li>Co jste v konkrétní situaci pozorovali?</li><li>Který popis jednání je situaci nejbližší a proč?</li><li>Jaký jeden krok vyzkoušíte příště?</li></ol></section>
+      <section class="reflection" aria-labelledby="reflection-heading" data-reflection={criterion.id}>
+        <p class="eyebrow">Pro reflexi nebo společný rozhovor</p><h2 id="reflection-heading">Co z toho plyne pro příští výuku?</h2>
+        <ol>
+          <li><label for="note-situation">Co jste v konkrétní situaci pozorovali?</label><textarea id="note-situation" data-note="situation" rows="3" placeholder="Vaše poznámka"></textarea></li>
+          <li>
+            <span id="nearest-question">Který popis jednání je situaci nejbližší a proč?</span>
+            <div class="reflection__levels" role="radiogroup" aria-labelledby="nearest-question">
+              {criterion.levels.map((_, level) => <label><input type="radio" name="nearest-level" value={level} data-level-choice /><span><span class="sr-only">Úroveň </span>{level}</span></label>)}
+            </div>
+            <textarea id="note-reason" data-note="reason" rows="3" placeholder="Proč právě tato úroveň?" aria-labelledby="nearest-question"></textarea>
+          </li>
+          <li><label for="note-next">Jaký jeden krok vyzkoušíte příště?</label><textarea id="note-next" data-note="next" rows="3" placeholder="Vaše poznámka"></textarea></li>
+        </ol>
+        <div class="reflection__footer">
+          <p class="reflection__status" data-reflection-status role="status"><i class="fa-solid fa-lock" aria-hidden="true"></i> Poznámky se ukládají jen v tomto prohlížeči a nikam se neodesílají. Do PDF je dostanete tlačítkem „Vytisknout nebo uložit jako PDF“.</p>
+          <button type="button" class="text-button" data-reflection-clear><i class="fa-regular fa-trash-can" aria-hidden="true"></i><span>Smazat poznámky</span></button>
+        </div>
+      </section>
       <section class="criterion-actions" aria-label="Zdroj a tisk">
         <a class="criterion-action" href={pdfUrl(criterion.sourcePage)} target="_blank" rel="noopener noreferrer">
           <span class="criterion-action__icon" aria-hidden="true"><i class="fa-regular fa-file-pdf"></i></span>
@@ -37,7 +54,7 @@ const examples = (await getExamples()).filter((example) => example.links.some((l
         </a>
         <button type="button" class="criterion-action" data-print>
           <span class="criterion-action__icon" aria-hidden="true"><i class="fa-solid fa-print"></i></span>
-          <span class="criterion-action__text"><strong>Vytisknout nebo uložit jako PDF</strong><small>Tato stránka se všemi úrovněmi, mindsetem a otázkami k reflexi</small></span>
+          <span class="criterion-action__text"><strong>Vytisknout nebo uložit jako PDF</strong><small>Tato stránka se všemi úrovněmi, mindsetem, otázkami k reflexi a vašimi poznámkami</small></span>
         </button>
       </section>
       <nav class="criterion-pager" aria-label="Pohyb mezi kritérii">
@@ -51,4 +68,53 @@ const examples = (await getExamples()).filter((example) => example.links.some((l
 
 <script>
   document.querySelectorAll<HTMLButtonElement>('[data-print]').forEach((button) => button.addEventListener('click', () => window.print()));
+
+  /* Poznámky k reflexi: ukládají se jen v localStorage tohoto prohlížeče, pro každé kritérium zvlášť. */
+  document.querySelectorAll<HTMLElement>('[data-reflection]').forEach((section) => {
+    const key = `kraau:reflexe:${section.dataset.reflection}`;
+    const notes = [...section.querySelectorAll<HTMLTextAreaElement>('[data-note]')];
+    const choices = [...section.querySelectorAll<HTMLInputElement>('[data-level-choice]')];
+    const status = section.querySelector<HTMLElement>('[data-reflection-status]')!;
+    const clear = section.querySelector<HTMLButtonElement>('[data-reflection-clear]')!;
+    const panels = [...document.querySelectorAll<HTMLElement>('[data-level-panel]')];
+    let canStore = true;
+
+    const grow = (area: HTMLTextAreaElement) => { area.style.height = 'auto'; area.style.height = `${area.scrollHeight + 2}px`; };
+    const highlight = () => {
+      const chosen = choices.find((choice) => choice.checked)?.value;
+      panels.forEach((panel) => panel.classList.toggle('is-chosen', panel.dataset.levelPanel === chosen));
+    };
+    const save = () => {
+      const data = { level: choices.find((choice) => choice.checked)?.value ?? null, notes: Object.fromEntries(notes.map((area) => [area.dataset.note, area.value])) };
+      const empty = data.level === null && notes.every((area) => !area.value.trim());
+      try {
+        if (empty) localStorage.removeItem(key); else localStorage.setItem(key, JSON.stringify(data));
+      } catch {
+        if (canStore) status.textContent = 'Poznámky se v tomto prohlížeči nedají uložit. Před zavřením stránky si je vytiskněte nebo uložte jako PDF.';
+        canStore = false;
+      }
+      clear.hidden = empty;
+    };
+
+    try {
+      const stored = JSON.parse(localStorage.getItem(key) ?? 'null');
+      if (stored) {
+        notes.forEach((area) => { area.value = stored.notes?.[area.dataset.note!] ?? ''; });
+        choices.forEach((choice) => { choice.checked = choice.value === stored.level; });
+      }
+    } catch { /* bez uložených poznámek */ }
+
+    notes.forEach((area) => { grow(area); area.addEventListener('input', () => { grow(area); save(); }); });
+    choices.forEach((choice) => choice.addEventListener('change', () => { highlight(); save(); }));
+    clear.addEventListener('click', () => {
+      if (!window.confirm('Smazat poznámky a zvolenou úroveň u tohoto kritéria?')) return;
+      notes.forEach((area) => { area.value = ''; grow(area); });
+      choices.forEach((choice) => { choice.checked = false; });
+      highlight();
+      save();
+    });
+    window.addEventListener('beforeprint', () => notes.forEach(grow));
+    highlight();
+    clear.hidden = !choices.some((choice) => choice.checked) && notes.every((area) => !area.value.trim());
+  });
 </script>

@@ -3,15 +3,53 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import source from '../../data/framework.json';
 import { pdfUrl, withBase } from '../../lib/framework';
+
+/* Text východisek se přebírá beze změny z PDF; stránka ho jen člení mezititulky a odstavci. */
+const background = source.background;
+if (background.length !== 5) throw new Error(`Očekáváno 5 odstavců východisek, nalezeno ${background.length}. Zkontrolujte členění stránky O nástroji.`);
+function splitAt(paragraph: string, ...starts: string[]) {
+  const parts = [paragraph];
+  for (const start of starts) {
+    const last = parts.pop()!;
+    const index = last.indexOf(` ${start}`);
+    if (index < 0) throw new Error(`Na stránce O nástroji nelze rozdělit odstavec u „${start}“.`);
+    parts.push(last.slice(0, index), last.slice(index + 1));
+  }
+  return parts;
+}
+const sections = [
+  { id: 'vznik', title: 'Jak rámec vznikal', paragraphs: splitAt(background[0], 'Kompetenční rámec absolventa a absolventky učitelství (2023)') },
+  { id: 'odlisnosti', title: 'Čím se liší od národního rámce', paragraphs: splitAt(background[1], 'U oblasti 2', 'Oblast profesní spolupráce', 'Tyto úpravy') },
+  { id: 'standard', title: 'Navázání na Standard kvality', paragraphs: [background[2], background[3]] },
+  { id: 'urovne', title: 'Úrovně rozvoje a sladění nástrojů', paragraphs: splitAt(background[4], 'Vedle toho nástroj') },
+];
+const toc = [['ve-zkratce', 'Ve zkratce'], ...sections.map((section) => [section.id, section.title]), ['zdroje', 'Zdrojové dokumenty']];
 ---
 <SiteLayout title="O nástroji" current="o-projektu">
   <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'O nástroji' }]} />
-    <header class="page-heading"><p class="eyebrow">Původ a stav</p><h1>O kompetenčním rámci</h1><p class="lede">Fakultní adaptace rámce pro studující učitelských programů se zaměřením na střední školy.</p></header>
-    <div class="prose methodology-page">
-      <h2>Východiska rámce</h2>
-      {source.background.map((paragraph) => <p>{paragraph}</p>)}
-      <h2>Zdrojové dokumenty</h2>
-      <div class="resource-list"><a href={pdfUrl()} target="_blank" rel="noopener noreferrer"><span>Kompetenční rámec studentů a studentek učitelství pro střední školy (PDF)</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a href={pdfUrl(31)} target="_blank" rel="noopener noreferrer"><span>Použitá literatura v původním dokumentu, strana 31</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+    <header class="page-heading"><p class="eyebrow">Původ a stav</p><h1>O nástroji</h1><p class="lede">Fakultní adaptace rámce pro studující učitelských programů se zaměřením na střední školy.</p></header>
+    <div class="content-layout">
+      <div class="prose methodology-page">
+        <section class="summary-box" id="ve-zkratce" aria-labelledby="summary-heading">
+          <h2 id="summary-heading">Ve zkratce</h2>
+          <ul>
+            <li>Rámec vznikal od září 2024 do ledna 2026 pro studující učitelských programů zaměřených na střední školy.</li>
+            <li>Vychází z národního <strong>Kompetenčního rámce absolventa a absolventky učitelství</strong> (MŠMT, 2023) a ze <strong>Standardu kvality profesních kompetencí studenta učitelství</strong> (Masarykova univerzita, 2020).</li>
+            <li>Od národního rámce se liší ve dvou věcech: plánování, vedení a reflexi výuky dělí do více navazujících oblastí a profesní spolupráci propojuje s profesním sebepojetím a rozvojem.</li>
+            <li>Úrovně 0–3 zachycují postupný rozvoj během studia, ne hotovou úroveň absolventa.</li>
+          </ul>
+        </section>
+        {sections.map((section) => <section aria-labelledby={section.id}>
+          <h2 id={section.id}>{section.title}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </section>)}
+        <h2 id="zdroje">Zdrojové dokumenty</h2>
+        <div class="resource-list"><a href={pdfUrl()} target="_blank" rel="noopener noreferrer"><span>Kompetenční rámec studentů a studentek učitelství pro střední školy (PDF)</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a href={pdfUrl(31)} target="_blank" rel="noopener noreferrer"><span>Použitá literatura v původním dokumentu, strana 31</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+      </div>
+      <aside class="content-layout__aside" aria-labelledby="toc-heading">
+        <h2 id="toc-heading">Na této stránce</h2>
+        <ul>{toc.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ul>
+      </aside>
     </div>
   </div>
 </SiteLayout>

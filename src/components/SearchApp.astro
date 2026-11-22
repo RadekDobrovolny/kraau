@@ -5,7 +5,7 @@ interface Props { areas: Area[] }
 const { areas } = Astro.props;
 ---
 <div class="search-app" data-search-app data-index-url={withBase('search-index.json')}>
-  <div class="field"><label for="search-query">Téma nebo číslo kritéria</label><div class="search-input-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="search-query" type="search" placeholder="Např. zpětná vazba nebo 2.1.1" autocomplete="off" /></div></div>
+  <form class="field" role="search" action={withBase('hledat/')} method="get" data-search-form><label for="search-query">Téma nebo číslo kritéria</label><div class="search-bar"><div class="search-input-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="search-query" name="q" type="search" placeholder="Např. zpětná vazba nebo 2.1.1" autocomplete="off" aria-describedby="search-hint" /></div><button class="button search-bar__button" type="submit">Hledat</button></div><p class="search-hint" id="search-hint">Výsledky se zobrazují průběžně při psaní.</p></form>
   <details class="search-options"><summary>Upřesnit podle oblasti <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><div class="field"><label for="filter-area">Oblast</label><select id="filter-area"><option value="">Všechny oblasti</option>{areas.map((item) => <option value={item.id}>{item.id}. {item.title}</option>)}</select></div></details>
   <section class="search-results" aria-labelledby="results-heading"><h2 id="results-heading" class="sr-only">Výsledky hledání</h2><p class="search-results__meta search-status" data-search-status role="status">Načítání rámce…</p><div data-search-results></div></section>
   <noscript><div class="source-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><div>Hledání vyžaduje JavaScript. Celý rámec lze procházet podle <a href={withBase('ramec/')}>oblastí a kompetencí</a>.</div></div></noscript>
@@ -108,6 +108,11 @@ const { areas } = Astro.props;
 
     let timer: number;
     query.addEventListener('input', () => { window.clearTimeout(timer); timer = window.setTimeout(render, 170); });
+    app.querySelector<HTMLFormElement>('[data-search-form]')!.addEventListener('submit', (event) => {
+      event.preventDefault();
+      window.clearTimeout(timer);
+      render();
+    });
     area.addEventListener('change', render);
     window.addEventListener('popstate', () => { location.reload(); });
     render();
