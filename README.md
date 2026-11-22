@@ -23,7 +23,7 @@ npm run build
 python3 scripts/extract_framework.py
 ```
 
-Skript vyžaduje Poppler (`pdftohtml`) a zároveň aktualizuje kopii PDF v `public/`. Obsahové kolekce Astro kontrolují povinná pole; build kontroluje počty, vazby, vygenerované stránky a odkazy. Zdroj je pracovní dokument. Před veřejným vydáním je nutné dokončit redakční kontrolu všech deskriptorů proti PDF a potvrdit definitivní znění s garantem. Jediná provedená textová oprava je popsána na stránce „O projektu“ a v `editorialCorrections` datového souboru.
+Skript vyžaduje Poppler (`pdftohtml`) a zároveň aktualizuje kopii PDF v `public/`. Obsahové kolekce Astro kontrolují povinná pole; build kontroluje počty, vazby, vygenerované stránky a odkazy. Zdroj je pracovní dokument. Před veřejným vydáním je nutné dokončit redakční kontrolu všech deskriptorů proti PDF a potvrdit definitivní znění s garantem. Provedené textové opravy (oříznuté slovo, překlepy a typografické chyby převzaté z PDF) jsou vypsané v `editorialCorrections` datového souboru a aplikuje je skript převodu, takže je nový převod nepřepíše.
 
 Ukázky z praxe zatím nebyly dodány ani schváleny. Stránka ukázek a místa u úrovní proto zobrazují pravdivý prázdný stav.
 
