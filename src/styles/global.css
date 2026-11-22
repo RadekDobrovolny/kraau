@@ -180,7 +180,7 @@ p { margin: 0 0 1rem; }
 .home-framework__heading h2 { font-family: var(--font-sans); font-size: 1.85rem; font-weight: 700; color: var(--muni-blue); }
 .home-framework__heading > p { margin: 0 0 4px; color: var(--muni-blue); font-size: .78rem; white-space: nowrap; }
 .framework-explorer { max-width: 1160px; padding: 20px 0 30px; }
-.framework-explorer__tools { display: flex; justify-content: flex-end; margin: -6px 0 6px; }
+.framework-explorer__tools { display: flex; justify-content: flex-end; margin: 8px 0 0; }
 .framework-explorer__tools[hidden] { display: none; }
 .text-button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 4px; border: 0; background: none; color: var(--muni-blue); font: inherit; font-size: .92rem; font-weight: 700; cursor: pointer; }
 .text-button:hover span { text-decoration: underline; text-underline-offset: 3px; }
@@ -197,6 +197,12 @@ p { margin: 0 0 1rem; }
 .framework-area summary i { color: var(--muni-blue); font-size: .76rem; transition: transform .15s ease; }
 .framework-area[open] summary i { transform: rotate(180deg); }
 .framework-area__content { padding: 12px 24px 30px 90px; }
+.framework-area__intro { padding: 2px 0 14px; }
+.area-about { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--muni-blue); font-weight: 700; text-decoration: none; }
+.area-about__icon { display: grid; flex: 0 0 36px; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--muni-blue); color: #fff; }
+.area-about__icon svg { width: 26px; height: 26px; }
+.area-about:hover .area-about__text { text-decoration: underline; text-underline-offset: 3px; }
+.area-about > i { font-size: .8rem; }
 .framework-competence { padding: 16px 0 20px; border-top: 1px solid var(--line); }
 .framework-competence h2 { font-size: 1.02rem; line-height: 1.35; margin-bottom: 8px; }
 .framework-competence h2 span { color: var(--muni-blue); margin-right: 12px; }
@@ -277,11 +283,12 @@ p { margin: 0 0 1rem; }
 .level-panel h3 { align-self: start; margin: 0; }
 .level-panel__number { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: var(--muni-blue); color: #fff; font-size: 1.8rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
 .level-panel p { margin: 0; max-width: 760px; font-size: 1rem; line-height: 1.55; }
-.mindset { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 24px; padding: 25px 24px; margin-top: 28px; background: var(--soft); border-top: 3px solid var(--arts-blue); }
-.mindset__heading { display: flex; align-items: flex-start; gap: 12px; }
+.mindset { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 14px 24px; align-items: center; padding: 22px 24px 25px; margin-top: 28px; background: var(--soft); border-top: 3px solid var(--arts-blue); }
+.mindset__label { grid-column: 1 / -1; margin: 0; }
+.mindset__heading { display: flex; align-items: center; gap: 14px; }
 .mindset__icon { display: grid; flex: 0 0 42px; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--muni-blue); color: #fff; font-size: 1.1rem; }
 .mindset__icon svg { width: 30px; height: 30px; }
-.mindset h2 { font-family: var(--font-sans); font-size: 1.32rem; color: var(--muni-blue); }
+.mindset h2, .mindset h3 { margin: 0; font-family: var(--font-sans); font-size: 1.32rem; line-height: 1.2; color: var(--muni-blue); }
 .mindset__body p:last-child { margin-bottom: 0; }
 .reflection { padding-top: 42px; }
 .reflection h2 { font-family: var(--font-sans); font-size: 1.55rem; font-weight: 700; }
@@ -302,6 +309,15 @@ p { margin: 0 0 1rem; }
 .reflection__status { margin: 0; max-width: 680px; color: var(--muted); font-size: .86rem; }
 .reflection__status i { margin-right: 4px; }
 .reflection__footer .text-button[hidden] { display: none; }
+/* Tři sloupce sdílejí řádky (číslo, otázka, volba úrovně, poznámka), aby pole na poznámky byla v jedné výšce. */
+@media (min-width: 621px) {
+  .reflection ol { grid-template-rows: repeat(4, auto); column-gap: 18px; row-gap: 10px; }
+  .reflection li { display: grid; grid-row: span 4; grid-template-rows: subgrid; gap: 10px 0; align-content: start; }
+  .reflection li::before { margin-bottom: 0; }
+  .reflection li > label, .reflection li > span { grid-row: 2; align-self: start; }
+  .reflection__levels { grid-row: 3; align-self: end; }
+  .reflection li > textarea { grid-row: 4; align-self: start; }
+}
 .level-panel.is-chosen { background: var(--soft); box-shadow: -8px 0 0 var(--soft), 8px 0 0 var(--soft); }
 .level-panel.is-chosen .level-panel__number { box-shadow: 0 0 0 4px var(--soft), 0 0 0 6px var(--muni-blue); }
 .criterion-bottom { margin-top: 20px; }
@@ -357,6 +373,10 @@ p { margin: 0 0 1rem; }
 .steps li::before { content: counter(step, decimal-leading-zero); font-size: 1.2rem; color: var(--muni-blue); }
 .steps li h3 { margin-bottom: 5px; }
 .steps li p { margin: 0; }
+.prose .steps { padding-left: 0; }
+.prose .steps li { margin: 0; }
+.prose .steps li h3 { margin: 0 0 6px; line-height: 1.25; }
+.steps li::before { line-height: 1.25; padding-top: 1px; }
 .role-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 20px 0 38px; }
 .role-grid section { padding-top: 15px; border-top: 3px solid var(--muni-blue); }
 .role-grid section:nth-child(2) { border-top-color: var(--arts-blue); }
@@ -371,7 +391,7 @@ p { margin: 0 0 1rem; }
 .methodology-details summary::-webkit-details-marker { display: none; }
 .methodology-details[open] summary i { transform: rotate(180deg); }
 .methodology-details > div { padding: 8px 0 24px; }
-.summary-box { padding: 22px 24px 8px; margin-bottom: 8px; border-top: 3px solid var(--muni-blue); background: var(--soft); }
+.summary-box { padding: 20px 24px 4px; margin-bottom: 8px; background: var(--soft); }
 .prose .summary-box h2 { margin-top: 0; }
 .summary-box ul { margin-top: 0; list-style: disc; }
 .summary-box li::marker { color: var(--muni-blue); }
@@ -439,7 +459,7 @@ p { margin: 0 0 1rem; }
   .level-panel__examples ul { justify-content: flex-start; }
   .level-panel { padding: 18px 0; scroll-margin-top: 150px; }
   .level-panel__number { width: 48px; height: 48px; font-size: 1.55rem; }
-  .mindset { grid-template-columns: 1fr; gap: 10px; padding: 20px; }
+  .mindset { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
   .reflection ol { grid-template-columns: 1fr; gap: 8px; }
   .criterion-pager { margin-top: 32px; }
   .funding__inner { flex-direction: column; align-items: flex-start; gap: 14px; }

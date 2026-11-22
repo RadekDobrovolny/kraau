@@ -1,20 +1,21 @@
 ---
 import type { Area, Competence, Criterion } from '../lib/framework';
-import { criterionUrl, displayTitle } from '../lib/framework';
+import { areaUrl, criterionUrl, displayTitle } from '../lib/framework';
+import OwlIcon from './OwlIcon.astro';
 
 interface Props { areas: Area[]; competences: Competence[]; criteria: Criterion[] }
 const { areas, competences, criteria } = Astro.props;
 ---
 <div class="framework-explorer" aria-label="Oblasti kompetenčního rámce" data-framework-explorer>
-  <div class="framework-explorer__tools" data-explorer-tools hidden>
-    <button type="button" class="text-button" data-toggle-all aria-expanded="false"><i class="fa-solid fa-angles-down" aria-hidden="true"></i><span>Rozbalit vše</span></button>
-  </div>
   {areas.map((area) => {
     const areaCompetences = competences.filter((item) => item.areaId === area.id);
     const areaCriteriaCount = criteria.filter((item) => item.competenceId.startsWith(`${area.id}.`)).length;
     return <details class="framework-area" name="framework-area">
       <summary><span class="framework-area__number">{area.id.padStart(2, '0')}</span><span class="framework-area__title">{area.title}</span><span class="framework-area__count">{areaCriteriaCount} kritérií</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
       <div class="framework-area__content">
+        <div class="framework-area__intro">
+          <a class="area-about" href={areaUrl(area.id)}><span class="area-about__icon" aria-hidden="true"><OwlIcon /></span><span class="area-about__text">Úvod k oblasti<span class="sr-only"> {area.title}</span></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
         {areaCompetences.map((competence) => <section class="framework-competence" aria-labelledby={`competence-${competence.id}`}>
           <h2 id={`competence-${competence.id}`}><span>{competence.id}</span> {displayTitle(competence.title)}</h2>
           <ul>{criteria.filter((criterion) => criterion.competenceId === competence.id).map((criterion) => <li><a href={criterionUrl(criterion.id)}><span>{criterion.id}</span>{displayTitle(criterion.title)}<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>)}</ul>
@@ -22,6 +23,9 @@ const { areas, competences, criteria } = Astro.props;
       </div>
     </details>;
   })}
+  <div class="framework-explorer__tools" data-explorer-tools hidden>
+    <button type="button" class="text-button" data-toggle-all aria-expanded="false"><i class="fa-solid fa-angles-down" aria-hidden="true"></i><span>Rozbalit vše</span></button>
+  </div>
 </div>
 
 <script>
@@ -48,6 +52,22 @@ const { areas, competences, criteria } = Astro.props;
       update();
     });
     areas.forEach((area) => area.addEventListener('toggle', update));
+
+    /* Při otevření jiné oblasti se předchozí zavře a obsah nad kliknutou oblastí se zkrátí.
+       Nadpis kliknuté oblasti proto vracíme na stejné místo obrazovky, aby uživatel neskončil uprostřed obsahu. */
+    let anchor: { area: HTMLDetailsElement; top: number } | null = null;
+    areas.forEach((area) => {
+      const summary = area.querySelector('summary')!;
+      summary.addEventListener('click', () => { anchor = { area, top: summary.getBoundingClientRect().top }; });
+      area.addEventListener('toggle', () => {
+        if (!anchor || anchor.area !== area || !area.open) return;
+        const { top } = anchor;
+        anchor = null;
+        const shift = summary.getBoundingClientRect().top - top;
+        if (Math.abs(shift) > 1) window.scrollBy({ top: shift, behavior: 'instant' });
+      });
+    });
+
     tools.hidden = false;
     update();
   });

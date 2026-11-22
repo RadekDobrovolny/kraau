@@ -23,15 +23,14 @@ const sections = [
   { id: 'standard', title: 'Navázání na Standard kvality', paragraphs: [background[2], background[3]] },
   { id: 'urovne', title: 'Úrovně rozvoje a sladění nástrojů', paragraphs: splitAt(background[4], 'Vedle toho nástroj') },
 ];
-const toc = [['ve-zkratce', 'Ve zkratce'], ...sections.map((section) => [section.id, section.title]), ['zdroje', 'Zdrojové dokumenty']];
+const toc = [...sections.map((section) => [section.id, section.title]), ['zdroje', 'Zdrojové dokumenty']];
 ---
 <SiteLayout title="O nástroji" current="o-projektu">
   <div class="shell"><Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'O nástroji' }]} />
     <header class="page-heading"><p class="eyebrow">Původ a stav</p><h1>O nástroji</h1><p class="lede">Fakultní adaptace rámce pro studující učitelských programů se zaměřením na střední školy.</p></header>
     <div class="content-layout">
       <div class="prose methodology-page">
-        <section class="summary-box" id="ve-zkratce" aria-labelledby="summary-heading">
-          <h2 id="summary-heading">Ve zkratce</h2>
+        <section class="summary-box" id="ve-zkratce" aria-label="Shrnutí">
           <ul>
             <li>Rámec vznikal od září 2024 do ledna 2026 pro studující učitelských programů zaměřených na střední školy.</li>
             <li>Vychází z národního <strong>Kompetenčního rámce absolventa a absolventky učitelství</strong> (MŠMT, 2023) a ze <strong>Standardu kvality profesních kompetencí studenta učitelství</strong> (Masarykova univerzita, 2020).</li>
