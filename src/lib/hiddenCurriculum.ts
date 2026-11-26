@@ -175,25 +175,42 @@ export const searchEggs: Record<string, SearchEgg> = {
   },
 };
 
-/* Akademický alibista 1.0 */
-export const excuses = [
-  'Nešlo o nepřipravenost, ale o emergentní didaktický design.',
-  'Hodina nebyla chaotická, byla otevřená více interpretacím.',
-  'Cíl hodiny jsem záměrně nesdělil/a, aby si ho žáci konstruovali sami.',
-  'Projektor nefungoval, a tak jsme rozvíjeli kompetence bez digitálních technologií.',
-  'Učivo jsme nestihli, protože jsme šli do hloubky.',
-  'Žáci mlčeli, protože probíhala intenzivní vnitřní reflexe.',
-  'Zpětnou vazbu poskytnu formativně, tedy později.',
-  'Nejde o zpoždění, ale o flexibilní časovou dotaci.',
-  'Test byl náročný, protože cílil na zónu nejbližšího vývoje.',
-  'Neodbočil/a jsem od tématu, propojoval/a jsem mezipředmětově.',
-  'Přípravu mám. Zatím jen v podobě implicitní profesní znalosti.',
-  'Hluk ve třídě byl projevem kooperativního učení.',
-  'Domácí úkol jsem nezadal/a v zájmu well-beingu žáků. I svého.',
-  'Tabule zůstala prázdná. Šlo o minimalistický vizuální design.',
-  'Hodinu jsem neodučil/a, ale facilitoval/a.',
-  'Nešlo o chybu, ale o modelovou situaci pro formativní práci s chybou.',
+/* Akademický alibista 1.0 a Pedagogický kabinet duchů.
+   Ke každé výmluvě se vyjádří duch pedagoga, ke kterému se hodí. Komentáře jsou smyšlené,
+   volně podle myšlenek dané osobnosti, nejde o skutečné citace. */
+export interface Ghost { name: string; years: string }
+export const ghosts = {
+  komensky: { name: 'Jan Amos Komenský', years: '1592–1670' },
+  sokrates: { name: 'Sókratés', years: 'asi 470–399 př. n. l.' },
+  vygotskij: { name: 'Lev S. Vygotskij', years: '1896–1934' },
+  montessori: { name: 'Maria Montessori', years: '1870–1952' },
+  dewey: { name: 'John Dewey', years: '1859–1952' },
+  piaget: { name: 'Jean Piaget', years: '1896–1980' },
+  freinet: { name: 'Célestin Freinet', years: '1896–1966' },
+  bloom: { name: 'Benjamin Bloom', years: '1913–1999' },
+  freire: { name: 'Paulo Freire', years: '1921–1997' },
+  pestalozzi: { name: 'Johann H. Pestalozzi', years: '1746–1827' },
+} satisfies Record<string, Ghost>;
+
+export interface Excuse { text: string; ghost: keyof typeof ghosts; comment: string }
+export const excuses: Excuse[] = [
+  { text: 'Nešlo o nepřipravenost, ale o emergentní didaktický design.', ghost: 'komensky', comment: 'Napsal jsem celou Velkou didaktiku o pořádku ve vyučování. Slovo „emergentní“ v ní nenajdete. Přípravu ano.' },
+  { text: 'Hodina nebyla chaotická, byla otevřená více interpretacím.', ghost: 'dewey', comment: 'Učení ze zkušenosti, souhlasím. Jenže zkušenost bez reflexe je jen chaos s lepším názvem.' },
+  { text: 'Cíl hodiny jsem záměrně nesdělil/a, aby si ho žáci konstruovali sami.', ghost: 'piaget', comment: 'Konstruktivismus znamená, že žáci konstruují poznání. Ne že hádají, co po nich vlastně chcete.' },
+  { text: 'Projektor nefungoval, a tak jsme rozvíjeli kompetence bez digitálních technologií.', ghost: 'komensky', comment: 'Já měl jen obrázky v Orbis pictus a fungovalo to. Přiznávám ale, že mi nikdy nespadla aktualizace.' },
+  { text: 'Učivo jsme nestihli, protože jsme šli do hloubky.', ghost: 'bloom', comment: 'Hloubka je vyšší patro mé taxonomie. Jen se do něj obvykle chodí přes přízemí, ne místo něj.' },
+  { text: 'Žáci mlčeli, protože probíhala intenzivní vnitřní reflexe.', ghost: 'sokrates', comment: 'Ptám se už přes dva tisíce let a ticho jsem nikdy nepovažoval za odpověď. Zkuste položit lepší otázku.' },
+  { text: 'Zpětnou vazbu poskytnu formativně, tedy později.', ghost: 'vygotskij', comment: 'Podpora má přijít v zóně nejbližšího vývoje. Ne v zóně nejbližšího pololetí.' },
+  { text: 'Nejde o zpoždění, ale o flexibilní časovou dotaci.', ghost: 'komensky', comment: 'Chtěl jsem, aby se učilo rychle, příjemně a důkladně. Všimněte si, co je v tom pořadí první.' },
+  { text: 'Test byl náročný, protože cílil na zónu nejbližšího vývoje.', ghost: 'vygotskij', comment: 'Zóna nejbližšího vývoje počítá s pomocí. Test, ve kterém nikdo nepomůže, je spíš zóna nejbližšího zoufalství.' },
+  { text: 'Neodbočil/a jsem od tématu, propojoval/a jsem mezipředmětově.', ghost: 'freinet', comment: 'Propojování školy se životem vítám. Ale tři historky z dovolené ještě nejsou mezipředmětový projekt.' },
+  { text: 'Přípravu mám. Zatím jen v podobě implicitní profesní znalosti.', ghost: 'montessori', comment: 'Základem mé pedagogiky bylo připravené prostředí. Připravené, ne předpokládané.' },
+  { text: 'Hluk ve třídě byl projevem kooperativního učení.', ghost: 'pestalozzi', comment: 'Učit se měla hlava, srdce i ruka. U vás zjevně pracovala hlavně ústa.' },
+  { text: 'Domácí úkol jsem nezadal/a v zájmu well-beingu žáků. I svého.', ghost: 'freire', comment: 'Celý život jsem psal o osvobozující pedagogice. Osvobození od opravování jsem tím ale úplně nemyslel.' },
+  { text: 'Tabule zůstala prázdná. Šlo o minimalistický vizuální design.', ghost: 'komensky', comment: 'Pro názornost jsem nakreslil celý svět. Vy jste nenakreslil/a ani šipku.' },
+  { text: 'Hodinu jsem neodučil/a, ale facilitoval/a.', ghost: 'freire', comment: 'Dialog je víc než otázka „tak co si o tom myslíte?“ a čtyřicet minut čekání.' },
+  { text: 'Nešlo o chybu, ale o modelovou situaci pro formativní práci s chybou.', ghost: 'sokrates', comment: 'Vím, že nic nevím, a nestydím se to říct nahlas. Zkuste to taky, je to osvobozující.' },
 ];
 
 /* Dlaždice ve slučovačce: hodnota 2^n a její pedagogické jméno. */
-export const mergeTiles = ['', 'Nápad', 'Příprava', 'Hodina', 'Reflexe', 'Hospitace', 'Zpětná vazba', 'Výstup', 'Praxe', 'Kabinet', 'Mentor', 'Zuzana Š.'];
+export const mergeTiles = ['', 'Nápad', 'Příprava', 'Hodina', 'Reflexe', 'Hospitace', 'Zpětná vazba', 'Pokrok', 'Praxe', 'Kompe­tence', 'Mindset', 'Zuzana Š.'];

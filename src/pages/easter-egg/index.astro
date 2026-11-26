@@ -2,7 +2,11 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { criterionUrl, withBase } from '../../lib/framework';
-import { excuses, mergeTiles } from '../../lib/hiddenCurriculum';
+import { excuses, ghosts, mergeTiles } from '../../lib/hiddenCurriculum';
+const alibiData = excuses.map((excuse) => ({ ...excuse, ghost: ghosts[excuse.ghost] }));
+const first = alibiData[0];
+/* Fotka Zuzany Š. pro dlaždici 2048 (se souhlasem). */
+const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.webp')}') 1x, url('${withBase('easter-egg-zuzana-179.webp')}') 2x)`;
 ---
 <SiteLayout title="Easter egg" description="Skryté kurikulum webu KRAAU." noindex>
   <div class="shell">
@@ -36,7 +40,7 @@ import { excuses, mergeTiles } from '../../lib/hiddenCurriculum';
 
     <section class="kabinet-section" id="hra" aria-labelledby="game-heading">
       <div class="section-heading"><div><p class="eyebrow">Přestávka mezi hodinami</p><h2 id="game-heading">Slučovačka</h2><p>Šipkami nebo tahem prstem posouvejte dlaždice. Dvě stejné se spojí ve vyšší stupeň. Z nápadů vznikají přípravy, z hospitací zpětná vazba… a na konci čeká Zuzana&nbsp;Š. (2048).</p></div></div>
-      <div class="merge-game" data-merge-game data-tiles={JSON.stringify(mergeTiles)}>
+      <div class="merge-game" data-merge-game data-tiles={JSON.stringify(mergeTiles)} style={zuzanaPhoto}>
         <div class="merge-game__bar">
           <div class="merge-game__score"><small>Skóre</small><strong data-score>0</strong></div>
           <div class="merge-game__score"><small>Nejlepší</small><strong data-best>0</strong></div>
@@ -52,7 +56,7 @@ import { excuses, mergeTiles } from '../../lib/hiddenCurriculum';
         </div>
         <p class="sr-only" id="game-status" data-game-status role="status" aria-live="polite"></p>
       </div>
-      <ol class="merge-legend" aria-label="Stupně dlaždic">
+      <ol class="merge-legend" aria-label="Stupně dlaždic" style={zuzanaPhoto}>
         {mergeTiles.slice(1).map((label, index) => <li class={`merge-tile merge-tile--${index + 1}`}><span>{label}</span><small>{2 ** (index + 1)}</small></li>)}
       </ol>
     </section>
@@ -60,27 +64,69 @@ import { excuses, mergeTiles } from '../../lib/hiddenCurriculum';
     <section class="kabinet-section" id="alibista" aria-labelledby="alibi-heading">
       <p class="eyebrow">KRAAU Labs / Experimentální nástroj</p>
       <h2 id="alibi-heading">Akademický alibista 1.0</h2>
-      <blockquote class="alibi" data-alibi data-excuses={JSON.stringify(excuses)}><p data-alibi-text>„{excuses[0]}“</p></blockquote>
+      <p class="alibi-intro">Stroj na výmluvy promítne na interaktivní tabuli tu pravou. A Pedagogický kabinet duchů ji hned okomentuje.</p>
+      <div class="alibi-room" data-alibi data-excuses={JSON.stringify(alibiData)}>
+        <figure class="smartboard">
+          <div class="smartboard__screen">
+            <div class="smartboard__bar" aria-hidden="true"><span>Výmluva dne</span><span class="smartboard__live"><i></i>Generátor běží</span></div>
+            <blockquote class="smartboard__text" data-alibi-text aria-live="polite">{first.text}</blockquote>
+            <span class="smartboard__scan" aria-hidden="true"></span>
+          </div>
+        </figure>
+        <aside class="ghost-comment" data-ghost aria-live="polite" aria-labelledby="ghost-heading">
+          <p class="ghost-comment__label" id="ghost-heading"><i class="fa-solid fa-ghost" aria-hidden="true"></i> Pedagogický kabinet duchů</p>
+          <div class="ghost-comment__bubble">
+            <p class="ghost-comment__text" data-ghost-comment>{first.comment}</p>
+            <p class="ghost-comment__who"><strong data-ghost-name>{first.ghost.name}</strong> <span data-ghost-years>({first.ghost.years})</span></p>
+          </div>
+          <span class="ghost-comment__ghost" aria-hidden="true"><i class="fa-solid fa-ghost"></i></span>
+        </aside>
+      </div>
       <button type="button" class="button" data-alibi-next><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Generovat výmluvu</button>
-      <p class="meta">Nástroj není určen k použití při reflexi pedagogické praxe. Nebo právě naopak.</p>
+      <p class="meta">Nástroj není určen k použití při reflexi pedagogické praxe. Nebo právě naopak. Duchové mluví volně podle svých myšlenek, jejich výroky jsou smyšlené.</p>
     </section>
   </div>
 </SiteLayout>
 
 <script>
-  /* Akademický alibista */
-  document.querySelectorAll<HTMLElement>('[data-alibi]').forEach((quote) => {
-    const excuses: string[] = JSON.parse(quote.dataset.excuses ?? '[]');
-    const text = quote.querySelector<HTMLElement>('[data-alibi-text]')!;
+  /* Akademický alibista a Pedagogický kabinet duchů */
+  type AlibiItem = { text: string; comment: string; ghost: { name: string; years: string } };
+  document.querySelectorAll<HTMLElement>('[data-alibi]').forEach((room) => {
+    const items: AlibiItem[] = JSON.parse(room.dataset.excuses ?? '[]');
+    const text = room.querySelector<HTMLElement>('[data-alibi-text]')!;
+    const ghost = room.querySelector<HTMLElement>('[data-ghost]')!;
+    const comment = room.querySelector<HTMLElement>('[data-ghost-comment]')!;
+    const name = room.querySelector<HTMLElement>('[data-ghost-name]')!;
+    const years = room.querySelector<HTMLElement>('[data-ghost-years]')!;
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let current = 0;
+    let timers: number[] = [];
+    /* Po dopsání výmluvy zmizí blikající kurzor. */
+    text.addEventListener('animationend', (event) => { if (event.animationName === 'board-type') text.classList.remove('smartboard__text--typing'); });
+    const restart = (element: HTMLElement, className: string) => { element.classList.remove(className); void element.offsetWidth; element.classList.add(className); };
     document.querySelector('[data-alibi-next]')?.addEventListener('click', () => {
       let next = current;
-      while (excuses.length > 1 && next === current) next = Math.floor(Math.random() * excuses.length);
+      while (items.length > 1 && next === current) next = Math.floor(Math.random() * items.length);
       current = next;
-      text.textContent = `„${excuses[current]}“`;
-      quote.classList.remove('alibi--fresh');
-      void quote.offsetWidth;
-      quote.classList.add('alibi--fresh');
+      const item = items[current];
+      timers.forEach((timer) => window.clearTimeout(timer));
+      timers = [];
+      const write = () => {
+        text.textContent = item.text;
+        restart(text, 'smartboard__text--typing');
+      };
+      const haunt = () => {
+        comment.textContent = item.comment;
+        name.textContent = item.ghost.name;
+        years.textContent = `(${item.ghost.years})`;
+        restart(ghost, 'ghost-comment--appear');
+      };
+      if (calm) { write(); haunt(); return; }
+      restart(room, 'alibi-room--scanning');
+      ghost.classList.remove('ghost-comment--appear');
+      ghost.classList.add('ghost-comment--gone');
+      timers.push(window.setTimeout(write, 520));
+      timers.push(window.setTimeout(() => { ghost.classList.remove('ghost-comment--gone'); haunt(); }, 1500));
     });
   });
 
