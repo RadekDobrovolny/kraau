@@ -493,6 +493,22 @@ p { margin: 0 0 1rem; }
 .god-mode { --gold: linear-gradient(135deg, #fbe38a, #d4a017 60%, #b8860b); }
 .god-mode .level-panel__number, .god-mode .brand__mark, .god-mode .mindset__icon, .god-mode .area-about__icon { background: var(--gold); color: #000; box-shadow: 0 0 0 3px #fff6cf, 0 0 18px rgba(212, 160, 23, .55); }
 .god-mode .site-header { border-bottom: 3px solid #d4a017; }
+/* God Mode: úvodní fotka zezlátne a lidé na ní „září“ */
+.home-hero__image { transition: filter .8s ease; }
+.god-mode .home-hero__image { filter: sepia(.55) saturate(1.7) hue-rotate(-12deg) brightness(1.06) contrast(1.05); }
+.god-mode .home-hero::after { background:
+  radial-gradient(ellipse 32% 55% at 62% 48%, rgba(255, 214, 102, .55), transparent 70%),
+  radial-gradient(ellipse 26% 50% at 86% 42%, rgba(255, 214, 102, .45), transparent 70%),
+  linear-gradient(90deg, rgba(40, 22, 0, .72) 0%, rgba(40, 22, 0, .45) 45%, rgba(40, 22, 0, .1) 100%);
+  mix-blend-mode: normal; }
+.god-mode .home-hero { isolation: isolate; }
+.god-mode .home-hero__content { z-index: 2; }
+.god-mode .home-hero::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(105deg, transparent 35%, rgba(255, 236, 170, .5) 48%, transparent 60%), radial-gradient(ellipse 22% 40% at 58% 52%, rgba(255, 200, 80, .55), transparent 70%), radial-gradient(ellipse 18% 38% at 78% 48%, rgba(255, 200, 80, .5), transparent 70%), radial-gradient(ellipse 16% 34% at 94% 46%, rgba(255, 200, 80, .45), transparent 70%); background-repeat: no-repeat; background-size: 250% 100%, 100% 100%, 100% 100%, 100% 100%; mix-blend-mode: screen; pointer-events: none; animation: hero-shine 4.5s ease-in-out infinite, hero-glow 3s ease-in-out infinite; }
+.god-mode .home-hero__kicker span { color: #fbe38a; }
+.god-mode .home-hero h1 { text-shadow: 0 0 28px rgba(251, 227, 138, .45); }
+@keyframes hero-shine { 0% { background-position: 130% 0, 0 0, 0 0, 0 0; } 60%, 100% { background-position: -40% 0, 0 0, 0 0, 0 0; } }
+@keyframes hero-glow { 0%, 100% { opacity: .85; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .god-mode .home-hero::before { animation: none; background-position: 130% 0, 0 0, 0 0, 0 0; } .home-hero__image { transition: none; } }
 .god-mode .mindset { border-top-color: #d4a017; }
 .god-mode .level-panel--secret { background: repeating-linear-gradient(135deg, #fffaf0 0 14px, #fff1c4 14px 28px); border-bottom-color: #d4a017; }
 .god-mode .level-panel--secret .level-panel__number { border: 0; }
