@@ -50,4 +50,17 @@ const examplesFor = (level: number) =>
     window.getSelection()?.removeAllRanges();
     if (!secret.hidden) secret.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   });
+
+  /* Pojistka k tiskovému stylu: neoficiální úroveň se nikdy netiskne, ani když je právě odkrytá.
+     Po tisku se vrátí do stavu, v jakém byla. */
+  let shownBeforePrint = false;
+  window.addEventListener('beforeprint', () => {
+    if (!secret) return;
+    shownBeforePrint = !secret.hidden;
+    secret.hidden = true;
+  });
+  window.addEventListener('afterprint', () => {
+    if (secret && shownBeforePrint) secret.hidden = false;
+    shownBeforePrint = false;
+  });
 </script>

@@ -75,12 +75,128 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         </div>
       </div>
     </footer>
-    <div class="secret-toast" data-secret-toast data-kabinet={withBase('kabinet/')} role="status" aria-live="polite" hidden></div>
+    <div class="secret-toast" data-secret-toast data-easter-egg={withBase('easter-egg/')} role="status" aria-live="polite" hidden></div>
   </body>
 </html>
 
 <script>
-  /* Skryté kurikulum: Konami kód (↑ ↑ ↓ ↓ ← → ← → B A) zapne „God Mode: Komenský“. */
+  /* Skryté kurikulum: Konami kód (↑ ↑ ↓ ↓ ← → ← → B A) zapne „God Mode: Komenský“.
+     Odemkne neoficiální úroveň 4 u všech kritérií a vydrží do zavření karty (sessionStorage). */
+  const KEY = 'kraau:god-mode';
+  const root = document.documentElement;
+  const toast = document.querySelector<HTMLElement>('[data-secret-toast]');
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const colors = ['#0000dc', '#4bc8ff', '#f2d45c', '#ff7300', '#00af3f', '#9100dc', '#5ac8af', '#d01020', '#b9006e', '#d4a017'];
+
+  const store = (on: boolean) => { try { if (on) sessionStorage.setItem(KEY, '1'); else sessionStorage.removeItem(KEY); } catch { /* bez uložení */ } };
+  const stored = () => { try { return sessionStorage.getItem(KEY) === '1'; } catch { return false; } };
+  const secrets = () => document.querySelectorAll<HTMLElement>('[data-secret-level]');
+
+  function badge() {
+    if (document.querySelector('[data-god-badge]')) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'god-badge';
+    button.dataset.godBadge = '';
+    button.title = 'Vypnout God Mode';
+    button.innerHTML = '<i class="fa-solid fa-crown" aria-hidden="true"></i><span>God Mode</span><i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+    button.setAttribute('aria-label', 'God Mode je zapnutý. Vypnout');
+    button.addEventListener('click', disable);
+    document.body.append(button);
+  }
+
+  function confetti() {
+    if (calm) return;
+    const layer = document.createElement('div');
+    layer.className = 'god-confetti';
+    layer.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 90; i += 1) {
+      const piece = document.createElement('span');
+      if (i % 9 === 0) piece.textContent = '4';
+      piece.style.setProperty('--x', `${Math.random() * 100}vw`);
+      piece.style.setProperty('--drift', `${(Math.random() - .5) * 30}vw`);
+      piece.style.setProperty('--spin', `${(Math.random() - .5) * 1440}deg`);
+      piece.style.setProperty('--delay', `${Math.random() * .7}s`);
+      piece.style.setProperty('--fall', `${2.2 + Math.random() * 1.6}s`);
+      piece.style.setProperty('--color', colors[i % colors.length]);
+      layer.append(piece);
+    }
+    document.body.append(layer);
+    window.setTimeout(() => layer.remove(), 4800);
+  }
+
+  function levelUp() {
+    if (calm) return;
+    const overlay = document.createElement('div');
+    overlay.className = 'god-levelup';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = '<div class="god-levelup__levels">' + [0, 1, 2, 3, 4].map((n) => `<span style="--i:${n}">${n}</span>`).join('') + '</div><p class="god-levelup__title">Úroveň 4 odemčena</p><p class="god-levelup__text">61 kritérií · 0 hodin praxe navíc</p>';
+    const close = () => overlay.remove();
+    overlay.addEventListener('click', close);
+    document.addEventListener('keydown', close, { once: true });
+    document.body.append(overlay);
+    window.setTimeout(close, 3400);
+  }
+
+  function showToast() {
+    if (!toast) return;
+    toast.replaceChildren();
+    toast.classList.add('secret-toast--god');
+    const crown = document.createElement('span');
+    crown.className = 'secret-toast__crown';
+    crown.setAttribute('aria-hidden', 'true');
+    crown.innerHTML = '<i class="fa-solid fa-crown"></i>';
+    const eyebrow = document.createElement('p');
+    eyebrow.className = 'eyebrow';
+    eyebrow.textContent = 'Skryté kurikulum';
+    const title = document.createElement('strong');
+    title.textContent = 'God Mode: Komenský';
+    const text = document.createElement('p');
+    text.textContent = 'Úroveň 4 je odemčená u všech 61 kritérií. Platí jen v tomto prohlížeči do zavření karty. Ve třídě musíš pořád učit.';
+    const link = document.createElement('a');
+    link.className = 'secret-toast__cta';
+    link.href = toast.dataset.easterEgg!;
+    link.innerHTML = '<i class="fa-solid fa-egg" aria-hidden="true"></i><span>Vyzvednout odměnu na stránce Easter egg</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>';
+    const stay = document.createElement('button');
+    stay.type = 'button';
+    stay.className = 'secret-toast__stay';
+    stay.textContent = 'Zůstat tady a užít si zlato';
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'secret-toast__close';
+    close.setAttribute('aria-label', 'Zavřít');
+    close.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+    const hide = () => { toast.hidden = true; document.removeEventListener('keydown', onEscape); };
+    const onEscape = (event: KeyboardEvent) => { if (event.key === 'Escape') hide(); };
+    close.addEventListener('click', hide);
+    stay.addEventListener('click', hide);
+    document.addEventListener('keydown', onEscape);
+    toast.append(close, crown, eyebrow, title, text, link, stay);
+    toast.hidden = false;
+    link.focus({ preventScroll: true });
+  }
+
+  function enable(celebrate: boolean) {
+    root.classList.add('god-mode');
+    secrets().forEach((secret) => { secret.hidden = false; });
+    store(true);
+    badge();
+    if (!celebrate) return;
+    levelUp();
+    confetti();
+    window.setTimeout(showToast, calm ? 0 : 1400);
+  }
+
+  function disable() {
+    root.classList.remove('god-mode');
+    secrets().forEach((secret) => { secret.hidden = true; });
+    store(false);
+    document.querySelector('[data-god-badge]')?.remove();
+    if (toast) toast.hidden = true;
+  }
+
+  if (stored()) enable(false);
+
   const sequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
   let position = 0;
   document.addEventListener('keydown', (event) => {
@@ -90,27 +206,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     position = key === sequence[position] ? position + 1 : key === sequence[0] ? 1 : 0;
     if (position < sequence.length) return;
     position = 0;
-    document.documentElement.classList.add('god-mode');
-    const toast = document.querySelector<HTMLElement>('[data-secret-toast]');
-    if (!toast) return;
-    toast.replaceChildren();
-    const eyebrow = document.createElement('p');
-    eyebrow.className = 'eyebrow';
-    eyebrow.textContent = 'Skryté kurikulum';
-    const title = document.createElement('strong');
-    title.textContent = 'God Mode: Komenský';
-    const text = document.createElement('p');
-    text.textContent = 'Všechny kompetence odemčeny. Bohužel pouze v tomto prohlížeči. Ve třídě musíš pořád učit.';
-    const link = document.createElement('a');
-    link.href = toast.dataset.kabinet!;
-    link.textContent = 'Odměna čeká v kabinetu';
-    const close = document.createElement('button');
-    close.type = 'button';
-    close.className = 'secret-toast__close';
-    close.setAttribute('aria-label', 'Zavřít');
-    close.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
-    close.addEventListener('click', () => { toast.hidden = true; });
-    toast.append(close, eyebrow, title, text, link);
-    toast.hidden = false;
+    enable(true);
   });
 </script>
