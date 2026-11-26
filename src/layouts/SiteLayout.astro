@@ -11,9 +11,10 @@ interface Props {
   title: string;
   description?: string;
   current?: 'ramec' | 'jak' | 'o-projektu';
+  noindex?: boolean;
 }
 
-const { title, description = 'Kompetenční rámec studentů a studentek učitelství pro střední školy.', current } = Astro.props;
+const { title, description = 'Kompetenční rámec studentů a studentek učitelství pro střední školy.', current, noindex = false } = Astro.props;
 const nav = [
   { id: 'jak', label: 'Jak nástroj použít', path: 'jak-pracovat/' },
   { id: 'o-projektu', label: 'O nástroji', path: 'o-projektu/' },
@@ -29,6 +30,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="theme-color" content="#0000DC" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="preload" href={muniRegular} as="font" type="font/ttf" crossorigin />
     <link rel="preload" href={muniBold} as="font" type="font/ttf" crossorigin />
     <title>{title} | KRAAU</title>
@@ -73,5 +75,42 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         </div>
       </div>
     </footer>
+    <div class="secret-toast" data-secret-toast data-kabinet={withBase('kabinet/')} role="status" aria-live="polite" hidden></div>
   </body>
 </html>
+
+<script>
+  /* Skryté kurikulum: Konami kód (↑ ↑ ↓ ↓ ← → ← → B A) zapne „God Mode: Komenský“. */
+  const sequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let position = 0;
+  document.addEventListener('keydown', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.closest('input, textarea, select, [contenteditable]')) return;
+    const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+    position = key === sequence[position] ? position + 1 : key === sequence[0] ? 1 : 0;
+    if (position < sequence.length) return;
+    position = 0;
+    document.documentElement.classList.add('god-mode');
+    const toast = document.querySelector<HTMLElement>('[data-secret-toast]');
+    if (!toast) return;
+    toast.replaceChildren();
+    const eyebrow = document.createElement('p');
+    eyebrow.className = 'eyebrow';
+    eyebrow.textContent = 'Skryté kurikulum';
+    const title = document.createElement('strong');
+    title.textContent = 'God Mode: Komenský';
+    const text = document.createElement('p');
+    text.textContent = 'Všechny kompetence odemčeny. Bohužel pouze v tomto prohlížeči. Ve třídě musíš pořád učit.';
+    const link = document.createElement('a');
+    link.href = toast.dataset.kabinet!;
+    link.textContent = 'Odměna čeká v kabinetu';
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'secret-toast__close';
+    close.setAttribute('aria-label', 'Zavřít');
+    close.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+    close.addEventListener('click', () => { toast.hidden = true; });
+    toast.append(close, eyebrow, title, text, link);
+    toast.hidden = false;
+  });
+</script>

@@ -3,6 +3,7 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import LevelViewer from '../../components/LevelViewer.astro';
 import OwlIcon from '../../components/OwlIcon.astro';import type { Area, Competence, Criterion } from '../../lib/framework';
+import { secretLevels } from '../../lib/hiddenCurriculum';
 import { areaUrl, competenceUrl, criterionUrl, displayTitle, getExamples, getFramework, pdfUrl, slug, withBase } from '../../lib/framework';
 
 interface Props { area: Area; competence: Competence; criterion: Criterion; previous?: Criterion; next?: Criterion }
@@ -28,7 +29,7 @@ const examples = (await getExamples()).filter((example) => example.links.some((l
     <article class="criterion-main">
       <header class="criterion-header"><div><p class="eyebrow">Kritérium {criterion.id}</p><h1 class="criterion-title">{displayTitle(criterion.title)}</h1><p class="criterion-context">{competence.id} {displayTitle(competence.title)}</p></div></header>
       <section class="mindset" id="mindset" aria-labelledby="mindset-heading"><p class="eyebrow mindset__label">Mindset</p><div class="mindset__heading"><span class="mindset__icon" aria-hidden="true"><OwlIcon /></span><h2 id="mindset-heading">Co stojí za jednáním</h2></div><div class="mindset__body"><p>{criterion.mindset}</p></div></section>
-      <LevelViewer criterion={criterion} examples={examples} />
+      <LevelViewer criterion={criterion} examples={examples} secretLevel={secretLevels[criterion.id]} />
       <section class="reflection" aria-labelledby="reflection-heading" data-reflection={criterion.id}>
         <p class="eyebrow">Pro reflexi nebo společný rozhovor</p><h2 id="reflection-heading">Co z toho plyne pro příští výuku?</h2>
         <ol>

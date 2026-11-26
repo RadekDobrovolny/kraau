@@ -1,5 +1,22 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { withBase } from '../lib/framework';
+import { criterionUrl, withBase } from '../lib/framework';
 ---
-<SiteLayout title="Stránka nenalezena"><div class="shell page-section narrow"><p class="eyebrow">404</p><h1>Stránka nebyla nalezena</h1><p class="lede">Odkaz může být neúplný nebo už neplatí. Pokračujte do přehledu rámce.</p><div class="page-heading__actions"><a class="button" href={withBase('ramec/')}>Procházet rámec <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="button button--light" href={withBase('hledat/')}>Hledat</a></div></div></SiteLayout>
+<SiteLayout title="Stránka nenalezena" noindex>
+  <div class="shell page-section narrow error-page">
+    <p class="eyebrow">404 · Autentická výuková situace</p>
+    <h1>Chyba je příležitost k učení.</h1>
+    <p class="lede">Stránka, kterou hledáte, tu není. Právě jste se ocitli v autentické výukové situaci.</p>
+    <ol class="error-page__questions">
+      <li><strong>Co jste pozorovali?</strong> Odkaz nevedl tam, kam měl.</li>
+      <li><strong>Proč k tomu došlo?</strong> Překlep v adrese, starý odkaz, nebo jsme stránku přesunuli. Chyba může být i na naší straně.</li>
+      <li><strong>Jaký jeden krok vyzkoušíte příště?</strong> Třeba hledání nebo přehled rámce.</li>
+    </ol>
+    <div class="page-heading__actions">
+      <a class="button" href={withBase('')}>Raději zpět na úvod <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="button button--light" href={withBase('hledat/')}>Hledat</a>
+      <a class="button button--light" href={criterionUrl('5.3.2')}>Reflektovat svou chybu</a>
+    </div>
+    <p class="meta error-page__signature">KRAAU · kritérium 5.3.2 Formativně pracuji s chybou</p>
+  </div>
+</SiteLayout>

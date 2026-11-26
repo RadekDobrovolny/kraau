@@ -1,8 +1,9 @@
 ---
 import type { Criterion, Example } from '../lib/framework';
 import { exampleTypeIcon, exampleUrl } from '../lib/framework';
-interface Props { criterion: Criterion; examples?: Example[] }
-const { criterion, examples = [] } = Astro.props;
+import type { SecretLevel } from '../lib/hiddenCurriculum';
+interface Props { criterion: Criterion; examples?: Example[]; secretLevel?: SecretLevel }
+const { criterion, examples = [], secretLevel } = Astro.props;
 const examplesFor = (level: number) =>
   examples.filter((example) => example.links.some((link) => link.criterionId === criterion.id && link.level === level));
 ---
@@ -27,5 +28,26 @@ const examplesFor = (level: number) =>
         </div>
       </section>;
     })}
+    {secretLevel && <section class="level-panel level-panel--secret" data-secret-level hidden aria-labelledby="level-heading-secret">
+      <h3 id="level-heading-secret"><span class="sr-only">Neoficiální úroveň </span><span class="level-panel__number">4</span></h3>
+      <div>
+        <p class="level-panel__secret-badge"><i class="fa-solid fa-key" aria-hidden="true"></i> Neoficiální úroveň · skryté kurikulum</p>
+        <p><strong>Úroveň 4 · {secretLevel.title}</strong></p>
+        <p>{secretLevel.text}</p>
+        <p class="level-panel__secret-note">Tuto úroveň rámec nezná. Objevili jste ji dvojklikem na trojku. Dalším dvojklikem ji zase schováte.</p>
+      </div>
+    </section>}
   </div>
 </section>
+
+<script>
+  /* Skryté kurikulum: dvojklik na číslo 3 odhalí neoficiální úroveň 4 (jen u kritérií, která ji mají). */
+  const secret = document.querySelector<HTMLElement>('[data-secret-level]');
+  const three = document.querySelector<HTMLElement>('[data-level-panel="3"] .level-panel__number');
+  three?.addEventListener('dblclick', () => {
+    if (!secret) return;
+    secret.hidden = !secret.hidden;
+    window.getSelection()?.removeAllRanges();
+    if (!secret.hidden) secret.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  });
+</script>

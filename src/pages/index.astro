@@ -2,6 +2,7 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import FrameworkExplorer from '../components/FrameworkExplorer.astro';
 import { getFramework, withBase } from '../lib/framework';
+import { seventhArea } from '../lib/hiddenCurriculum';
 const { areas, competences, criteria } = await getFramework();
 ---
 <SiteLayout title="Kompetenční rámec pro učitelství SŠ" description="Najděte konkrétní popisy učitelské praxe a promyslete další krok ve výuce.">
@@ -21,4 +22,36 @@ const { areas, competences, criteria } = await getFramework();
     <header class="home-framework__heading"><div><p class="eyebrow">Obsah rámce</p><h2 id="framework-heading">Šest oblastí učitelské praxe</h2></div><p>19 kompetencí · 61 kritérií</p></header>
     <FrameworkExplorer areas={areas} competences={competences} criteria={criteria} />
   </section>
+
+  <dialog class="secret-dialog" data-seventh-area aria-labelledby="seventh-area-title">
+    <form method="dialog"><button class="secret-dialog__close" aria-label="Zavřít"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></form>
+    <p class="eyebrow">KRAAU / Tajná oblast</p>
+    <div class="secret-area__head"><span class="secret-area__number">07</span><h2 id="seventh-area-title">{seventhArea.title}</h2></div>
+    {seventhArea.competences.map((competence) => <section class="framework-competence">
+      <h3><span>{competence.id}</span> {competence.title}</h3>
+      <ul>{competence.criteria.map(([id, text]) => <li><span>{id}</span>{text}</li>)}</ul>
+    </section>)}
+    <p class="secret-dialog__note"><i class="fa-solid fa-stamp" aria-hidden="true"></i> {seventhArea.note}</p>
+  </dialog>
 </SiteLayout>
+
+<script>
+  /* Skryté kurikulum: sedm rychlých kliknutí na logo na úvodní stránce odemkne sedmou oblast. */
+  const dialog = document.querySelector<HTMLDialogElement>('[data-seventh-area]');
+  const brand = document.querySelector<HTMLAnchorElement>('.brand');
+  let clicks = 0;
+  let timer: number;
+  brand?.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.clearTimeout(timer);
+    clicks += 1;
+    if (clicks >= 7 && dialog) {
+      clicks = 0;
+      dialog.showModal();
+      return;
+    }
+    if (clicks === 1) window.scrollTo({ top: 0, behavior: 'smooth' });
+    timer = window.setTimeout(() => { clicks = 0; }, 1500);
+  });
+  dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+</script>

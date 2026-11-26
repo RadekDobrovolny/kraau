@@ -1,10 +1,12 @@
 ---
 import type { Area } from '../lib/framework';
 import { withBase } from '../lib/framework';
+import { searchEggs } from '../lib/hiddenCurriculum';
 interface Props { areas: Area[] }
 const { areas } = Astro.props;
+const eggs = Object.fromEntries(Object.entries(searchEggs).map(([key, egg]) => [key, { ...egg, link: egg.link && { label: egg.link.label, href: withBase(egg.link.path) } }]));
 ---
-<div class="search-app" data-search-app data-index-url={withBase('search-index.json')}>
+<div class="search-app" data-search-app data-index-url={withBase('search-index.json')} data-eggs={JSON.stringify(eggs)}>
   <form class="field" role="search" action={withBase('hledat/')} method="get" data-search-form><label for="search-query">Téma nebo číslo kritéria</label><div class="search-bar"><div class="search-input-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="search-query" name="q" type="search" placeholder="Např. zpětná vazba nebo 2.1.1" autocomplete="off" aria-describedby="search-hint" /></div><button class="button search-bar__button" type="submit">Hledat</button></div><p class="search-hint" id="search-hint">Výsledky se zobrazují průběžně při psaní.</p></form>
   <details class="search-options"><summary>Upřesnit podle oblasti <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary><div class="field"><label for="filter-area">Oblast</label><select id="filter-area"><option value="">Všechny oblasti</option>{areas.map((item) => <option value={item.id}>{item.id}. {item.title}</option>)}</select></div></details>
   <section class="search-results" aria-labelledby="results-heading"><h2 id="results-heading" class="sr-only">Výsledky hledání</h2><p class="search-results__meta search-status" data-search-status role="status">Načítání rámce…</p><div data-search-results></div></section>
@@ -68,10 +70,39 @@ const { areas } = Astro.props;
       results.append(item);
     }
 
+    /* Skryté kurikulum: tajná hesla ve vyhledávání */
+    type Egg = { title: string; text: string; link?: { label: string; href: string } };
+    const eggs: Record<string, Egg> = JSON.parse(app.dataset.eggs ?? '{}');
+    function appendEgg(egg: Egg) {
+      const card = document.createElement('aside');
+      card.className = 'search-egg';
+      const eyebrow = document.createElement('p');
+      eyebrow.className = 'eyebrow';
+      eyebrow.textContent = 'Skryté kurikulum';
+      const title = document.createElement('h2');
+      title.textContent = egg.title;
+      const text = document.createElement('p');
+      text.textContent = egg.text;
+      card.append(eyebrow, title, text);
+      if (egg.link) {
+        const link = document.createElement('a');
+        link.className = 'text-link';
+        link.href = egg.link.href;
+        link.textContent = `${egg.link.label} `;
+        const arrow = document.createElement('i');
+        arrow.className = 'fa-solid fa-arrow-right';
+        arrow.setAttribute('aria-hidden', 'true');
+        link.append(arrow);
+        card.append(link);
+      }
+      results.append(card);
+    }
+
     function render() {
       saveState();
       const term = query.value.trim();
       results.replaceChildren();
+      const egg = eggs[normalize(term).replace(/\s+/g, ' ')];
       if (!term) {
         status.textContent = 'Zadejte téma nebo číslo kritéria.';
         return;
@@ -92,7 +123,9 @@ const { areas } = Astro.props;
         return true;
       });
       status.textContent = `${matches.length} ${matches.length === 1 ? 'kritérium' : matches.length >= 2 && matches.length <= 4 ? 'kritéria' : 'kritérií'}`;
-      if (!matches.length) {
+      if (egg && !matches.length) status.textContent = 'Našli jste tajné heslo.';
+      if (egg) appendEgg(egg);
+      if (!matches.length && !egg) {
         const empty = document.createElement('div');
         empty.className = 'search-empty';
         const title = document.createElement('h2');
