@@ -175,7 +175,7 @@ export const searchEggs: Record<string, SearchEgg> = {
   },
 };
 
-/* Akademický alibista 1.0 a Pedagogický kabinet duchů.
+/* Akademický alibista 1.0 a Sborovna nesmrtelných.
    Ke každé výmluvě se vyjádří duch pedagoga, ke kterému se hodí. Komentáře jsou smyšlené,
    volně podle myšlenek dané osobnosti, nejde o skutečné citace. */
 export interface Ghost { name: string; years: string }

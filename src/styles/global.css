@@ -571,7 +571,7 @@ p { margin: 0 0 1rem; }
 .egg-context__body { max-width: 760px; }
 .egg-context__body p { line-height: 1.6; }
 .kabinet-section .section-heading p { max-width: 720px; }
-/* Akademický alibista: školní tabule a Pedagogický kabinet duchů */
+/* Akademický alibista: školní tabule a Sborovna nesmrtelných */
 .alibi-intro { max-width: 720px; margin: 8px 0 0; color: var(--ink-2); }
 .alibi-room { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 28px; align-items: center; max-width: 1060px; margin: 22px 0 26px; }
 .smartboard { margin: 0; }
