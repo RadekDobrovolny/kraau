@@ -661,6 +661,29 @@ p { margin: 0 0 1rem; }
 .merge-game__overlay .page-heading__actions { justify-content: center; }
 .merge-game__overlay [hidden] { display: none; }
 .merge-game__overlay-title { margin: 0 0 6px; color: var(--muni-blue); font-size: 1.8rem; font-weight: 700; }
+/* Výhra 2048: zpráva od Zuzany Šalamounové ve stylu chatu */
+.merge-game__overlay--win, .merge-game__overlay--lose { background: radial-gradient(ellipse at 80% 0%, rgba(75, 200, 255, .35), transparent 55%), linear-gradient(160deg, #0000dc, #00009a); color: #fff; animation: secret-in .35s ease-out; }
+.merge-game__win { display: grid; justify-items: center; gap: 14px; margin-bottom: 18px; }
+.merge-game__win[hidden] { display: none; }
+.merge-game__win-number { margin: 0; color: #fbe38a; font-size: clamp(2.4rem, 9vw, 3.4rem); font-weight: 700; line-height: 1; text-shadow: 0 0 24px rgba(251, 227, 138, .5); }
+.merge-game__win-message { display: flex; align-items: flex-end; gap: 10px; max-width: 320px; text-align: left; }
+.merge-game__win-photo { flex: 0 0 52px; width: 52px; height: 52px; border: 3px solid #fff; border-radius: 50%; background: var(--zuzana, none) center 20% / cover no-repeat #fff3c4; box-shadow: 0 4px 12px rgba(0, 0, 0, .3); }
+.merge-game__win-bubble { padding: 12px 14px; border-radius: 0 14px 14px 14px; background: #fff; color: #000; box-shadow: 0 6px 18px rgba(0, 0, 60, .3); }
+.merge-game__win-bubble p { margin: 0 0 6px; font-size: .95rem; line-height: 1.4; }
+.merge-game__win-bubble a { color: var(--muni-blue); font-size: .82rem; font-weight: 700; }
+/* Prohra: stejný styl jako výhra, místo fotky sova a odkaz na kritérium 5.3.2 */
+.merge-game__lose { gap: 8px; }
+.merge-game__lose-label { margin: 0; color: var(--arts-blue); font-family: var(--font-mono); font-size: .74rem; text-transform: uppercase; }
+.merge-game__lose-number { color: #fff; text-shadow: 0 0 24px rgba(75, 200, 255, .55); }
+.merge-game__lose-stage { margin: -4px 0 8px; color: #fff; font-size: 1rem; font-weight: 700; }
+.merge-game__lose-owl { display: grid; flex: 0 0 52px; place-items: center; width: 52px; height: 52px; border: 3px solid #fff; border-radius: 50%; background: var(--arts-blue); color: #fff; box-shadow: 0 4px 12px rgba(0, 0, 0, .3); }
+.merge-game__lose-owl svg { width: 34px; height: 34px; }
+.merge-game__overlay.merge-game__overlay--lose .button--light { background: #fbe38a; border-color: #fbe38a; color: #000; }
+.merge-game__overlay.merge-game__overlay--lose .button--light:hover { background: #f6d365; color: #000; }
+.merge-game__overlay--win .button, .merge-game__overlay--lose .button { background: #fbe38a; border-color: #fbe38a; color: #000; }
+.merge-game__overlay--win .button:hover, .merge-game__overlay--lose .button:hover { background: #f6d365; color: #000; }
+.merge-game__overlay--win .button--light, .merge-game__overlay--lose .button--light { background: transparent; border-color: #fff; color: #fff; }
+.merge-game__overlay--win .button--light:hover, .merge-game__overlay--lose .button--light:hover { background: rgba(255, 255, 255, .12); color: #fff; }
 /* Legenda pod hrou: stejně široká jako herní plocha, 6 + 5 stejně velkých dlaždic, druhá řada vystředěná. */
 .merge-legend { --legend-gap: 6px; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--legend-gap); width: min(100%, 460px); margin: 18px 0 0; padding: 0; list-style: none; }
 .merge-legend .merge-tile { flex: 0 0 calc((100% - 5 * var(--legend-gap)) / 6); aspect-ratio: 1; min-width: 0; padding: 4px; }

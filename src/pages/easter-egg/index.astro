@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import OwlIcon from '../../components/OwlIcon.astro';
 import { criterionUrl, withBase } from '../../lib/framework';
 import { excuses, ghosts, mergeTiles } from '../../lib/hiddenCurriculum';
 const alibiData = excuses.map((excuse) => ({ ...excuse, ghost: ghosts[excuse.ghost] }));
@@ -51,6 +52,28 @@ const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.w
         <div class="merge-game__overlay" data-overlay hidden>
           <p class="merge-game__overlay-title" data-overlay-title></p>
           <p data-overlay-text></p>
+          <div class="merge-game__win" data-win hidden>
+            <p class="merge-game__win-number">2048</p>
+            <div class="merge-game__win-message">
+              <span class="merge-game__win-photo" aria-hidden="true"></span>
+              <div class="merge-game__win-bubble">
+                <p>Gratulujeme! Jsme rádi, že vás kompetenční rámec baví 🙂</p>
+                <a href="https://www.muni.cz/lide/109084-zuzana-salamounova" target="_blank" rel="noopener noreferrer">Zuzana Šalamounová</a>
+              </div>
+            </div>
+          </div>
+          <div class="merge-game__win merge-game__lose" data-lose hidden>
+            <p class="merge-game__lose-label">Konec hry · nejvyšší stupeň</p>
+            <p class="merge-game__win-number merge-game__lose-number" data-lose-number></p>
+            <p class="merge-game__lose-stage" data-lose-stage></p>
+            <div class="merge-game__win-message">
+              <span class="merge-game__lose-owl" aria-hidden="true"><OwlIcon /></span>
+              <div class="merge-game__win-bubble">
+                <p>Kabinet je plný, ale nic se neděje. Chyba je příležitost k učení!</p>
+                <a href={criterionUrl('5.3.2')}>Reflektovat: kritérium 5.3.2 Formativně pracuji s chybou</a>
+              </div>
+            </div>
+          </div>
           <div class="page-heading__actions"><button type="button" class="button" data-continue>Hrát dál</button><button type="button" class="button button--light" data-overlay-new>Nová hra</button></div>
         </div>
         </div>
@@ -142,6 +165,10 @@ const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.w
     const overlayTitle = game.querySelector<HTMLElement>('[data-overlay-title]')!;
     const overlayText = game.querySelector<HTMLElement>('[data-overlay-text]')!;
     const continueButton = game.querySelector<HTMLButtonElement>('[data-continue]')!;
+    const winMessage = game.querySelector<HTMLElement>('[data-win]')!;
+    const loseMessage = game.querySelector<HTMLElement>('[data-lose]')!;
+    const loseNumber = game.querySelector<HTMLElement>('[data-lose-number]')!;
+    const loseStage = game.querySelector<HTMLElement>('[data-lose-stage]')!;
     const status = game.querySelector<HTMLElement>('[data-game-status]')!;
     const BEST_KEY = 'kraau:slucovacka:nejlepsi';
 
@@ -220,9 +247,19 @@ const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.w
       return false;
     }
 
-    function showOverlay(title: string, text: string, canContinue: boolean) {
+    function showOverlay(title: string, text: string, canContinue: boolean, mode: 'win' | 'lose' | 'plain' = 'plain', top = 0) {
       overlayTitle.textContent = title;
       overlayText.textContent = text;
+      overlayTitle.hidden = mode !== 'plain';
+      overlayText.hidden = mode !== 'plain';
+      winMessage.hidden = mode !== 'win';
+      loseMessage.hidden = mode !== 'lose';
+      if (mode === 'lose') {
+        loseNumber.textContent = String(2 ** top);
+        loseStage.textContent = label(top);
+      }
+      overlay.classList.toggle('merge-game__overlay--win', mode === 'win');
+      overlay.classList.toggle('merge-game__overlay--lose', mode === 'lose');
       continueButton.hidden = !canContinue;
       overlay.hidden = false;
       status.textContent = `${title} ${text}`;
@@ -260,10 +297,10 @@ const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.w
       const top = Math.max(...grid);
       if (!won && top >= GOAL) {
         won = true;
-        showOverlay('Zuzana Š.', 'Gratulujeme! Ze zkušeností vyrostla Zuzana Š. Škola hrou funguje.', true);
+        showOverlay('2048', 'Gratulujeme! Jsme rádi, že vás kompetenční rámec baví. Zuzana Šalamounová', true, 'win');
       } else if (!canMove()) {
         over = true;
-        showOverlay('Kabinet je plný.', `Nejvyšší stupeň: ${label(top)}. Chyba je příležitost k učení, zkuste to znovu.`, false);
+        showOverlay('Konec hry. Kabinet je plný.', `Nejvyšší stupeň: ${label(top)} (${2 ** top}). Chyba je příležitost k učení, reflektujte ji u kritéria 5.3.2.`, false, 'lose', top);
       } else if (gained) {
         status.textContent = `Skóre ${score}.`;
       }
