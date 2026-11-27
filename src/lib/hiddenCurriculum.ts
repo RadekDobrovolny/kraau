@@ -3,6 +3,7 @@
   Hravá vrstva webu oddělená od oficiálního obsahu rámce: není ve vyhledávacím indexu,
   v mapě webu ani v datech kritérií. Všechno se odehrává jen v prohlížeči.
 */
+import { arcadePreviewEnabled } from './arcade';
 
 export interface SecretLevel { title: string; text: string }
 
@@ -156,7 +157,7 @@ export const searchEggs: Record<string, SearchEgg> = {
   '2048': {
     title: 'Našli jste easter egg',
     text: 'Slučujte zkušenosti, dokud z nich nevyroste Zuzana Š.',
-    link: { label: 'Hrát', path: 'easter-egg/#hra' },
+    link: { label: 'Hrát', path: arcadePreviewEnabled ? 'easter-egg/hry/praxe-na-druhou/' : 'easter-egg/#hra' },
   },
   'easter egg': {
     title: 'Našli jste ho',

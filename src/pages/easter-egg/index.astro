@@ -1,13 +1,16 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import OwlIcon from '../../components/OwlIcon.astro';
+import MergeGame from '../../components/MergeGame.astro';
 import { criterionUrl, withBase } from '../../lib/framework';
-import { excuses, ghosts, mergeTiles } from '../../lib/hiddenCurriculum';
+import { excuses, ghosts } from '../../lib/hiddenCurriculum';
+import { arcadePreviewEnabled } from '../../lib/arcade';
+/* KRAAU Arcade je jen ve vývojovém náhledu (src/lib/arcade.ts). V produkčním buildu
+   ji astro.config.mjs nahradí prázdnou komponentou, takže se kód ani data nesestaví. */
+import ArcadeComponent from '../../components/arcade/Arcade.astro';
+const Arcade = arcadePreviewEnabled ? ArcadeComponent : null;
 const alibiData = excuses.map((excuse) => ({ ...excuse, ghost: ghosts[excuse.ghost] }));
 const first = alibiData[0];
-/* Fotka Zuzany Š. pro dlaždici 2048 (se souhlasem). */
-const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.webp')}') 1x, url('${withBase('easter-egg-zuzana-179.webp')}') 2x)`;
 ---
 <SiteLayout title="Easter egg" description="Skryté kurikulum webu KRAAU." noindex>
   <div class="shell">
@@ -35,54 +38,23 @@ const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.w
         <li><span class="egg-list__icon" aria-hidden="true"><i class="fa-solid fa-gamepad"></i></span><div><strong>Konami kód a God Mode</strong><p>Stiskněte na klávesnici Konami kód <span class="egg-keys"><kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd></span> (mimo textové pole). Web zezlátne a úroveň 4 se odemkne u všech 61 kritérií.</p></div></li>
         <li><span class="egg-list__icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span><div><strong>Tajná hesla ve vyhledávání</strong><p>Do <a href={withBase('hledat/')}>vyhledávání</a> zkuste napsat třeba 42, kávu, inspekci, AI, Komenského nebo prokrastinaci.</p></div></li>
         <li><span class="egg-list__icon" aria-hidden="true"><i class="fa-solid fa-link-slash"></i></span><div><strong>Chyba jako příležitost</strong><p>Zadejte adresu stránky, která neexistuje. I chybějící stránka umí vést k reflexi.</p></div></li>
-        <li><span class="egg-list__icon" aria-hidden="true"><i class="fa-solid fa-puzzle-piece"></i></span><div><strong>A tady níž</strong><p><a href="#hra">Slučovačka</a>, ve které ze zkušeností vyroste Zuzana&nbsp;Š., a <a href="#alibista">Akademický alibista</a> s výmluvami pro každou hodinu.</p></div></li>
+        <li><span class="egg-list__icon" aria-hidden="true"><i class="fa-solid fa-puzzle-piece"></i></span><div><strong>A tady níž</strong><p>{Arcade
+          ? <><a href="#arcade">KRAAU Arcade</a> se šesti hrami včetně hry Praxe na druhou, ve které ze zkušeností vyroste Zuzana&nbsp;Š., a </>
+          : <>hra <a href="#hra">Praxe na druhou</a>, ve které ze zkušeností vyroste Zuzana&nbsp;Š., a </>}<a href="#alibista">Akademický alibista</a> s výmluvami pro každou hodinu.</p></div></li>
       </ul>
     </section>
 
-    <section class="kabinet-section" id="hra" aria-labelledby="game-heading">
-      <div class="section-heading"><div><p class="eyebrow">Přestávka mezi hodinami</p><h2 id="game-heading">Slučovačka</h2><p>Šipkami nebo tahem prstem posouvejte dlaždice. Dvě stejné se spojí ve vyšší stupeň. Z nápadů vznikají přípravy, z hospitací zpětná vazba… a na konci čeká Zuzana&nbsp;Š. (2048).</p></div></div>
-      <div class="merge-game" data-merge-game data-tiles={JSON.stringify(mergeTiles)} style={zuzanaPhoto}>
-        <div class="merge-game__bar">
-          <div class="merge-game__score"><small>Skóre</small><strong data-score>0</strong></div>
-          <div class="merge-game__score"><small>Nejlepší</small><strong data-best>0</strong></div>
-          <button type="button" class="button" data-new-game><i class="fa-solid fa-rotate-right" aria-hidden="true"></i> Nová hra</button>
-        </div>
-        <div class="merge-game__stage">
-        <div class="merge-game__board" data-board tabindex="0" role="application" aria-label="Herní plocha 4 × 4. Ovládání šipkami." aria-describedby="game-status"></div>
-        <div class="merge-game__overlay" data-overlay hidden>
-          <p class="merge-game__overlay-title" data-overlay-title></p>
-          <p data-overlay-text></p>
-          <div class="merge-game__win" data-win hidden>
-            <p class="merge-game__win-number">2048</p>
-            <div class="merge-game__win-message">
-              <span class="merge-game__win-photo" aria-hidden="true"></span>
-              <div class="merge-game__win-bubble">
-                <p>Gratulujeme! Jsme rádi, že vás kompetenční rámec baví 🙂</p>
-                <a href="https://www.muni.cz/lide/109084-zuzana-salamounova" target="_blank" rel="noopener noreferrer">Zuzana Šalamounová</a>
-              </div>
-            </div>
-          </div>
-          <div class="merge-game__win merge-game__lose" data-lose hidden>
-            <p class="merge-game__lose-label">Konec hry · nejvyšší stupeň</p>
-            <p class="merge-game__win-number merge-game__lose-number" data-lose-number></p>
-            <p class="merge-game__lose-stage" data-lose-stage></p>
-            <div class="merge-game__win-message">
-              <span class="merge-game__lose-owl" aria-hidden="true"><OwlIcon /></span>
-              <div class="merge-game__win-bubble">
-                <p>Kabinet je plný, ale nic se neděje. Chyba je příležitost k učení!</p>
-                <a href={criterionUrl('5.3.2')}>Reflektovat: kritérium 5.3.2 Formativně pracuji s chybou</a>
-              </div>
-            </div>
-          </div>
-          <div class="page-heading__actions"><button type="button" class="button" data-continue>Hrát dál</button><button type="button" class="button button--light" data-overlay-new>Nová hra</button></div>
-        </div>
-        </div>
-        <p class="sr-only" id="game-status" data-game-status role="status" aria-live="polite"></p>
-      </div>
-      <ol class="merge-legend" aria-label="Stupně dlaždic" style={zuzanaPhoto}>
-        {mergeTiles.slice(1).map((label, index) => <li class={`merge-tile merge-tile--${index + 1}`}><span>{label}</span><small>{2 ** (index + 1)}</small></li>)}
-      </ol>
-    </section>
+    {Arcade ? (
+      /* Náhled: herna jako katalog; každá hra má vlastní stránku easter-egg/hry/<slug>/. */
+      <section class="kabinet-section kabinet-section--arcade" id="arcade" aria-label="KRAAU Arcade">
+        <Arcade reviewPreview={true} />
+      </section>
+    ) : (
+      <section class="kabinet-section" id="hra" aria-labelledby="game-heading">
+        <div class="section-heading"><div><p class="eyebrow">Přestávka mezi hodinami</p><h2 id="game-heading">Praxe na druhou</h2><p>Šipkami nebo tahem prstem posouvejte dlaždice. Dvě stejné se spojí ve vyšší stupeň. Z nápadů vznikají přípravy, z hospitací zpětná vazba… a na konci čeká Zuzana&nbsp;Š. (2048).</p></div></div>
+        <MergeGame />
+      </section>
+    )}
 
     <section class="kabinet-section" id="alibista" aria-labelledby="alibi-heading">
       <p class="eyebrow">KRAAU Labs / Experimentální nástroj</p>
@@ -153,203 +125,4 @@ const zuzanaPhoto = `--zuzana: image-set(url('${withBase('easter-egg-zuzana-96.w
     });
   });
 
-  /* Slučovačka: posuvná hra 4 × 4, dlaždice jsou mocniny dvou (v mřížce ukládáme exponent). */
-  document.querySelectorAll<HTMLElement>('[data-merge-game]').forEach((game) => {
-    const SIZE = 4;
-    const GOAL = 11;
-    const labels: string[] = JSON.parse(game.dataset.tiles ?? '[]');
-    const board = game.querySelector<HTMLElement>('[data-board]')!;
-    const scoreEl = game.querySelector<HTMLElement>('[data-score]')!;
-    const bestEl = game.querySelector<HTMLElement>('[data-best]')!;
-    const overlay = game.querySelector<HTMLElement>('[data-overlay]')!;
-    const overlayTitle = game.querySelector<HTMLElement>('[data-overlay-title]')!;
-    const overlayText = game.querySelector<HTMLElement>('[data-overlay-text]')!;
-    const continueButton = game.querySelector<HTMLButtonElement>('[data-continue]')!;
-    const winMessage = game.querySelector<HTMLElement>('[data-win]')!;
-    const loseMessage = game.querySelector<HTMLElement>('[data-lose]')!;
-    const loseNumber = game.querySelector<HTMLElement>('[data-lose-number]')!;
-    const loseStage = game.querySelector<HTMLElement>('[data-lose-stage]')!;
-    const status = game.querySelector<HTMLElement>('[data-game-status]')!;
-    const BEST_KEY = 'kraau:slucovacka:nejlepsi';
-
-    let grid: number[] = [];
-    let score = 0;
-    let best = 0;
-    let won = false;
-    let over = false;
-    let fresh = new Set<number>();
-    let merged = new Set<number>();
-
-    try { best = Number(localStorage.getItem(BEST_KEY)) || 0; } catch { best = 0; }
-
-    const label = (exp: number) => labels[exp] ?? `${2 ** exp}`;
-
-    function addTile() {
-      const empty = grid.flatMap((value, index) => (value ? [] : [index]));
-      if (!empty.length) return;
-      const index = empty[Math.floor(Math.random() * empty.length)];
-      grid[index] = Math.random() < 0.9 ? 1 : 2;
-      fresh.add(index);
-    }
-
-    function render() {
-      board.replaceChildren(...grid.map((exp, index) => {
-        const cell = document.createElement('div');
-        cell.className = 'merge-game__cell';
-        if (exp) {
-          const tile = document.createElement('div');
-          tile.className = `merge-tile merge-tile--${Math.min(exp, GOAL + 1)}`;
-          if (fresh.has(index)) tile.classList.add('merge-tile--new');
-          if (merged.has(index)) tile.classList.add('merge-tile--merged');
-          const name = document.createElement('span');
-          name.textContent = label(exp);
-          const value = document.createElement('small');
-          value.textContent = String(2 ** exp);
-          tile.append(name, value);
-          cell.append(tile);
-        }
-        return cell;
-      }));
-      scoreEl.textContent = String(score);
-      if (score > best) {
-        best = score;
-        try { localStorage.setItem(BEST_KEY, String(best)); } catch { /* jen bez ukládání */ }
-      }
-      bestEl.textContent = String(best);
-      fresh = new Set();
-      merged = new Set();
-    }
-
-    function lines(direction: string) {
-      const result: number[][] = [];
-      for (let a = 0; a < SIZE; a += 1) {
-        const line: number[] = [];
-        for (let b = 0; b < SIZE; b += 1) {
-          if (direction === 'left') line.push(a * SIZE + b);
-          if (direction === 'right') line.push(a * SIZE + (SIZE - 1 - b));
-          if (direction === 'up') line.push(b * SIZE + a);
-          if (direction === 'down') line.push((SIZE - 1 - b) * SIZE + a);
-        }
-        result.push(line);
-      }
-      return result;
-    }
-
-    function canMove() {
-      if (grid.some((value) => !value)) return true;
-      for (let row = 0; row < SIZE; row += 1) {
-        for (let col = 0; col < SIZE; col += 1) {
-          const value = grid[row * SIZE + col];
-          if (col + 1 < SIZE && grid[row * SIZE + col + 1] === value) return true;
-          if (row + 1 < SIZE && grid[(row + 1) * SIZE + col] === value) return true;
-        }
-      }
-      return false;
-    }
-
-    function showOverlay(title: string, text: string, canContinue: boolean, mode: 'win' | 'lose' | 'plain' = 'plain', top = 0) {
-      overlayTitle.textContent = title;
-      overlayText.textContent = text;
-      overlayTitle.hidden = mode !== 'plain';
-      overlayText.hidden = mode !== 'plain';
-      winMessage.hidden = mode !== 'win';
-      loseMessage.hidden = mode !== 'lose';
-      if (mode === 'lose') {
-        loseNumber.textContent = String(2 ** top);
-        loseStage.textContent = label(top);
-      }
-      overlay.classList.toggle('merge-game__overlay--win', mode === 'win');
-      overlay.classList.toggle('merge-game__overlay--lose', mode === 'lose');
-      continueButton.hidden = !canContinue;
-      overlay.hidden = false;
-      status.textContent = `${title} ${text}`;
-    }
-
-    function move(direction: string) {
-      if (over || !overlay.hidden) return;
-      let moved = false;
-      let gained = 0;
-      for (const line of lines(direction)) {
-        const values = line.map((index) => grid[index]).filter(Boolean);
-        const next: number[] = [];
-        const mergedAt: number[] = [];
-        for (let i = 0; i < values.length; i += 1) {
-          if (values[i] === values[i + 1]) {
-            next.push(values[i] + 1);
-            mergedAt.push(next.length - 1);
-            gained += 2 ** (values[i] + 1);
-            i += 1;
-          } else {
-            next.push(values[i]);
-          }
-        }
-        line.forEach((index, position) => {
-          const value = next[position] ?? 0;
-          if (grid[index] !== value) moved = true;
-          grid[index] = value;
-        });
-        mergedAt.forEach((position) => merged.add(line[position]));
-      }
-      if (!moved) return;
-      score += gained;
-      addTile();
-      render();
-      const top = Math.max(...grid);
-      if (!won && top >= GOAL) {
-        won = true;
-        showOverlay('2048', 'Gratulujeme! Jsme rádi, že vás kompetenční rámec baví. Zuzana Šalamounová', true, 'win');
-      } else if (!canMove()) {
-        over = true;
-        showOverlay('Konec hry. Kabinet je plný.', `Nejvyšší stupeň: ${label(top)} (${2 ** top}). Chyba je příležitost k učení, reflektujte ji u kritéria 5.3.2.`, false, 'lose', top);
-      } else if (gained) {
-        status.textContent = `Skóre ${score}.`;
-      }
-    }
-
-    function newGame() {
-      grid = Array(SIZE * SIZE).fill(0);
-      score = 0;
-      won = false;
-      over = false;
-      overlay.hidden = true;
-      addTile();
-      addTile();
-      render();
-      status.textContent = 'Nová hra.';
-      board.focus({ preventScroll: true });
-    }
-
-    const keys: Record<string, string> = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down', a: 'left', d: 'right', w: 'up', s: 'down' };
-    document.addEventListener('keydown', (event) => {
-      const direction = keys[event.key.length === 1 ? event.key.toLowerCase() : event.key];
-      if (!direction || event.altKey || event.ctrlKey || event.metaKey) return;
-      if (!game.contains(document.activeElement) && document.activeElement !== document.body) return;
-      if ((event.target as HTMLElement).closest('input, textarea, select')) return;
-      const rect = board.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-      event.preventDefault();
-      move(direction);
-    });
-
-    let start: { x: number; y: number } | null = null;
-    board.addEventListener('pointerdown', (event) => { start = { x: event.clientX, y: event.clientY }; board.focus({ preventScroll: true }); });
-    board.addEventListener('pointerup', (event) => {
-      if (!start) return;
-      const dx = event.clientX - start.x;
-      const dy = event.clientY - start.y;
-      start = null;
-      if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
-      move(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : (dy > 0 ? 'down' : 'up'));
-    });
-    board.addEventListener('pointercancel', () => { start = null; });
-
-    game.querySelector('[data-new-game]')!.addEventListener('click', newGame);
-    game.querySelector('[data-overlay-new]')!.addEventListener('click', newGame);
-    continueButton.addEventListener('click', () => { overlay.hidden = true; board.focus({ preventScroll: true }); });
-
-    grid = Array(SIZE * SIZE).fill(0);
-    addTile();
-    addTile();
-    render();
-  });
 </script>

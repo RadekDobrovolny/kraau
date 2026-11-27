@@ -1,0 +1,2565 @@
+export const KNOWLEDGE = {
+  "schemaVersion": 2,
+  "release": "0.2.0",
+  "reviewStatus": "draft_review_required",
+  "reference": {
+    "title": "Kompetenční rámec studentů a studentek učitelství pro střední školy – pracovní verze (2026)",
+    "url": "https://radekdobrovolny.github.io/kraau/kompetencni-ramec-ss.pdf",
+    "scope": "Primární zdroj: dodaný 31stránkový PDF; pracovní verze pro odborné připomínkování",
+    "sha256": "d2763f675cb90b87d7240539cf55247b5b9f902a8d94f8dd7dbe150074d38b78",
+    "localMappingStatus": "pdf_mapped_web_unverified"
+  },
+  "competencies": {
+    "1.1": {
+      "label": "Rozumím vyučovaným oborům a dále se v nich rozvíjím",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "1.1.1",
+        "1.1.2",
+        "1.1.3",
+        "1.1.4"
+      ]
+    },
+    "1.2": {
+      "label": "Zprostředkovávám obsah vyučovaného oboru",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "1.2.1",
+        "1.2.2",
+        "1.2.3",
+        "1.2.4",
+        "1.2.5"
+      ]
+    },
+    "2.1": {
+      "label": "Nastavuji cíle výuky",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "2.1.1",
+        "2.1.2",
+        "2.1.3",
+        "2.1.4"
+      ]
+    },
+    "2.2": {
+      "label": "Plánuji metody výuky",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "2.2.1",
+        "2.2.2",
+        "2.2.3",
+        "2.2.4",
+        "2.2.5",
+        "2.2.6"
+      ]
+    },
+    "2.3": {
+      "label": "Připravuji výukové materiály",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "2.3.1",
+        "2.3.2"
+      ]
+    },
+    "2.4": {
+      "label": "Plánuji rozvržení času",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "2.4.1"
+      ]
+    },
+    "2.5": {
+      "label": "Individualizuji plán výuky",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "2.5.1"
+      ]
+    },
+    "3.1": {
+      "label": "Buduji prostředí důvěry",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "3.1.1",
+        "3.1.2",
+        "3.1.3",
+        "3.1.4"
+      ]
+    },
+    "3.2": {
+      "label": "Udržuji bezpečné prostředí",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "3.2.1",
+        "3.2.2",
+        "3.2.3",
+        "3.2.4",
+        "3.2.5",
+        "3.2.6"
+      ]
+    },
+    "4.1": {
+      "label": "Zprostředkovávám výukové cíle a ověřuji, jak jim žáci a žákyně rozumí",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "4.1.1"
+      ]
+    },
+    "4.2": {
+      "label": "Využívám výukové strategie podporující učení žáků a žákyň",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "4.2.1",
+        "4.2.2",
+        "4.2.3",
+        "4.2.4",
+        "4.2.5"
+      ]
+    },
+    "4.3": {
+      "label": "Vedu výuku s ohledem na aktuální situaci ve třídě",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "4.3.1",
+        "4.3.2"
+      ]
+    },
+    "4.4": {
+      "label": "Podporuji autoregulaci učení žáků a žákyň",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "4.4.1",
+        "4.4.2"
+      ]
+    },
+    "5.1": {
+      "label": "Poskytuji průběžnou zpětnou vazbu",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "5.1.1",
+        "5.1.2",
+        "5.1.3"
+      ]
+    },
+    "5.2": {
+      "label": "Využívám různorodé metody a formy hodnocení",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "5.2.1",
+        "5.2.2",
+        "5.2.3"
+      ]
+    },
+    "5.3": {
+      "label": "Svou okamžitou zpětnou vazbou podporuji učení žáků a žákyň",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "5.3.1",
+        "5.3.2"
+      ]
+    },
+    "6.1": {
+      "label": "Spolupracuji s ostatními",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "6.1.1",
+        "6.1.2",
+        "6.1.3",
+        "6.1.4"
+      ]
+    },
+    "6.2": {
+      "label": "Plánuji a realizuji svůj profesní rozvoj",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "6.2.1",
+        "6.2.2",
+        "6.2.3",
+        "6.2.4"
+      ]
+    },
+    "6.3": {
+      "label": "Pečuji o sebe",
+      "labelType": "source_heading",
+      "localCriteria": [
+        "6.3.1",
+        "6.3.2"
+      ]
+    }
+  },
+  "terms": [
+    {
+      "id": "w01",
+      "term": "CÍLE",
+      "primary": "2.1",
+      "definition": "Zamýšlené výsledky učení, ke kterým výuka směřuje.",
+      "question": "Jak žáci poznají, čeho mají dosáhnout?",
+      "related": [
+        "4.1"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "2.1.1",
+        "2.1.2",
+        "4.1.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w02",
+      "term": "KRITÉRIA",
+      "primary": "5.1",
+      "definition": "Hlediska, podle nichž posuzujeme kvalitu práce nebo výkonu vzhledem k cíli.",
+      "question": "Jak žáci využívají kritéria při vlastní práci?",
+      "related": [
+        "5.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "5.1.2",
+        "5.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w03",
+      "term": "REFLEXE",
+      "primary": "4.4",
+      "definition": "Promýšlení vlastní zkušenosti s učením a toho, co z ní vyplývá pro další postup.",
+      "question": "Co žákům pomáhá pojmenovat jejich další krok?",
+      "related": [
+        "6.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "4.4.1",
+        "6.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w04",
+      "term": "POROZUMĚNÍ",
+      "primary": "4.3",
+      "definition": "Schopnost vystihnout význam učiva a pracovat s ním, nikoli pouze zopakovat jeho znění.",
+      "question": "Jak zjišťuješ, čemu žáci opravdu rozumějí?",
+      "related": [
+        "1.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "4.3.1",
+        "1.2.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w05",
+      "term": "ZVÍDAVOST",
+      "primary": "2.2",
+      "definition": "Zájem objevovat, klást otázky a hledat vysvětlení.",
+      "question": "Jak dáváš prostor otázkám žáků?",
+      "related": [
+        "4.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "2.2.3",
+        "4.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w06",
+      "term": "MOTIVACE",
+      "primary": "1.2",
+      "definition": "Procesy, které ovlivňují směr, intenzitu a vytrvalost jednání při učení.",
+      "question": "Jak pomáháš žákům nacházet smysl učení?",
+      "related": [
+        "4.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "1.2.2",
+        "4.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w07",
+      "term": "DŮVĚRA",
+      "primary": "3.1",
+      "definition": "Vztahové očekávání, že druhý bude jednat spolehlivě a respektujícím způsobem.",
+      "question": "Co umožňuje žákům bezpečně přiznat nejistotu?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "3.1.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w08",
+      "term": "RESPEKT",
+      "primary": "3.1",
+      "definition": "Uznávání důstojnosti, práv a odlišností druhých.",
+      "question": "Jak reaguješ na nesouhlas žáka?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "3.1.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w09",
+      "term": "SPOLUPRÁCE",
+      "primary": "4.2",
+      "definition": "Společné jednání směřující ke sdílenému cíli.",
+      "question": "Jak se učí žáci spolupracovat, ne jen sedět ve skupině?",
+      "related": [
+        "3.1",
+        "6.1"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "4.2.5",
+        "3.1.3",
+        "6.1.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w10",
+      "term": "CHYBA",
+      "primary": "5.3",
+      "definition": "Odchylka od očekávaného postupu nebo výsledku, která může přinést informaci pro další učení.",
+      "question": "Jak pomáháš žákům využít chybu bez obav ze zesměšnění?",
+      "related": [
+        "3.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "5.3.2",
+        "3.2.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w11",
+      "term": "POKROK",
+      "primary": "5.2",
+      "definition": "Posun v učení vzhledem k výchozímu stavu a cíli.",
+      "question": "Jak rozlišuješ pokrok od dosažené úrovně výkonu?",
+      "related": [
+        "4.3"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "5.2.1",
+        "4.3.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w12",
+      "term": "DIDAKTIKA",
+      "primary": "1.2",
+      "definition": "Oblast pedagogiky zabývající se výukou a učením, v oborovém kontextu také zprostředkováním obsahu.",
+      "question": "Jaké překážky porozumění vytváří konkrétní učivo?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "1.2.1",
+        "1.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w13",
+      "term": "DIFERENCIACE",
+      "primary": "2.5",
+      "definition": "Přizpůsobování výuky rozdílným vzdělávacím potřebám žáků.",
+      "question": "Které bariéry můžeš odstranit změnou podpory?",
+      "related": [
+        "2.3"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "2.5.1",
+        "2.3.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w14",
+      "term": "SEBEHODNOCENÍ",
+      "primary": "5.2",
+      "definition": "Posuzování vlastní práce nebo výkonu vůči srozumitelným kritériím.",
+      "question": "Jak žáci dokládají vlastní posouzení?",
+      "related": [
+        "4.4"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "5.2.3",
+        "4.4.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w15",
+      "term": "HOSPITACE",
+      "primary": "6.2",
+      "definition": "Pozorování výuky, které může sloužit profesnímu učení, je-li spojeno s reflexí a zpětnou vazbou.",
+      "question": "Jakou otázku si před pozorováním výuky stanovíš?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.2.4",
+        "6.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w16",
+      "term": "MENTORING",
+      "primary": "6.1",
+      "definition": "Profesní podpora založená na vztahu a společném učení ze zkušeností.",
+      "question": "Jakou podporu potřebuješ ve své současné praxi?",
+      "related": [
+        "6.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.1.1",
+        "6.2.4"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w17",
+      "term": "PORTFOLIO",
+      "primary": "6.2",
+      "definition": "Záměrný výběr dokladů zkušeností a jejich reflexe, umožňující sledovat profesní učení.",
+      "question": "Co by dokládalo skutečný posun tvé praxe?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.2.3",
+        "6.2.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w18",
+      "term": "SEBEPOJETÍ",
+      "primary": "6.2",
+      "definition": "Představa o sobě v profesní roli, včetně vlastních hodnot a možností.",
+      "question": "Co utváří tvé pojetí dobrého učitelství?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.2.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w19",
+      "term": "MINDSET",
+      "primary": "6.2",
+      "definition": "Profesní přesvědčení o významu určitého jednání pro učení žáků a žákyň; doprovází každé kritérium.",
+      "question": "Které přesvědčení ovlivňuje tvoje rozhodování a jak je můžeš prověřit v praxi?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.2.1",
+        "6.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w20",
+      "term": "INFORMACE",
+      "primary": "1.1",
+      "definition": "Obsah, který může pomoci porozumění nebo rozhodnutí; jeho kvalitu je třeba posuzovat v kontextu.",
+      "question": "Jak se žáky a žákyněmi ověřuješ důvěryhodnost zdroje?",
+      "related": [
+        "2.2"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "1.1.2",
+        "2.2.4"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w21",
+      "term": "PSYCHOHYGIENA",
+      "primary": "6.3",
+      "definition": "Péče o duševní zdraví prostřednictvím návyků, podpory a pracovních podmínek.",
+      "question": "Co můžeš změnit ty a co potřebuje změnit škola?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.3.1",
+        "6.3.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w22",
+      "term": "REGENERACE",
+      "primary": "6.3",
+      "definition": "Obnovování sil po zátěži.",
+      "question": "Kde máš v týdnu skutečný prostor na obnovu sil?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.3.1",
+        "6.3.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w23",
+      "term": "KURIKULUM",
+      "primary": "1.1",
+      "definition": "Rámec cílů a obsahu vzdělávání i jejich realizace v praxi.",
+      "question": "Jak navazují cíle tvé výuky na širší vzdělávací záměry?",
+      "related": [
+        "2.1"
+      ],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "1.1.4",
+        "2.1.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "w24",
+      "term": "AUTONOMIE",
+      "primary": "4.4",
+      "definition": "Prostor jednat a rozhodovat se s přiměřenou mírou podpory a odpovědnosti.",
+      "question": "O čem mohou žáci při učení sami rozhodovat?",
+      "related": [],
+      "type": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "4.4.2",
+        "4.4.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    }
+  ],
+  "connectionSets": [
+    {
+      "id": "s01",
+      "title": "Jazyk rámce",
+      "groups": [
+        {
+          "cards": [
+            "Věcná správnost",
+            "Důvěryhodnost oborových zdrojů",
+            "Oborové digitální nástroje",
+            "Návaznost kurikula napříč stupni"
+          ],
+          "rationale": "Jde o odbornou znalost a její odpovědné využití při výuce.",
+          "type": "editorial_interpretation",
+          "primary": "1.1",
+          "related": [],
+          "criteria": [
+            "1.1.1",
+            "1.1.2",
+            "1.1.3",
+            "1.1.4"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Klíčové znalosti a dovednosti",
+            "Ověřitelný cíl",
+            "Přiměřená výzva v cíli",
+            "Celkový rozvoj žáků"
+          ],
+          "rationale": "Čtyři hlediska nastavování cílů; cíl není jen téma hodiny.",
+          "type": "editorial_interpretation",
+          "primary": "2.1",
+          "related": [],
+          "criteria": [
+            "2.1.1",
+            "2.1.2",
+            "2.1.3",
+            "2.1.4"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Respekt k odlišnostem",
+            "Plnění slibů",
+            "Pozitivní vrstevnické vztahy",
+            "Regulace emocí vyučujícího"
+          ],
+          "rationale": "Čtyři různé projevy budování prostředí důvěry.",
+          "type": "editorial_interpretation",
+          "primary": "3.1",
+          "related": [],
+          "criteria": [
+            "3.1.1",
+            "3.1.2",
+            "3.1.3",
+            "3.1.4"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Rovnováha práce a osobního života",
+            "Sledování psychického zdraví",
+            "Rozpoznání stresu",
+            "Vědomá strategie zvládání stresu"
+          ],
+          "rationale": "Péče o sebe zahrnuje sledování zátěže a reakci na ni.",
+          "type": "editorial_interpretation",
+          "primary": "6.3",
+          "related": [],
+          "criteria": [
+            "6.3.1",
+            "6.3.2"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "title": "Příprava výuky",
+      "groups": [
+        {
+          "cards": [
+            "Metoda odpovídající cíli",
+            "Účelná různorodost metod",
+            "Plán žákovského bádání",
+            "Plán tvůrčí činnosti"
+          ],
+          "rationale": "Metody mají smysl vzhledem k cílům, nikoli jen díky pestrosti.",
+          "type": "editorial_interpretation",
+          "primary": "2.2",
+          "related": [],
+          "criteria": [
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.2.5"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Výběr materiálu podle cíle",
+            "Účelná různorodost materiálů",
+            "Úprava textu podle potřeb",
+            "Přístupné výukové podklady"
+          ],
+          "rationale": "Materiály slouží učení a reagují na rozmanité potřeby.",
+          "type": "editorial_interpretation",
+          "primary": "2.3",
+          "related": [],
+          "criteria": [
+            "2.3.1",
+            "2.3.2"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Realizovatelný časový plán",
+            "Čas podle významu aktivity",
+            "Rezerva pro odchýlení",
+            "Čas pro upevnění učiva"
+          ],
+          "rationale": "Rozvržení času respektuje význam učení a prostor pro flexibilitu.",
+          "type": "editorial_interpretation",
+          "primary": "2.4",
+          "related": [],
+          "criteria": [
+            "2.4.1"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Individuální potřeby při plánování",
+            "Funkční úpravy podle doporučení SVP",
+            "Zohlednění různých zájmů",
+            "Rovné příležitosti k učení"
+          ],
+          "rationale": "Individualizace plánu není automatické snížení očekávání.",
+          "type": "editorial_interpretation",
+          "primary": "2.5",
+          "related": [],
+          "criteria": [
+            "2.5.1"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "title": "Vedení výuky",
+      "groups": [
+        {
+          "cards": [
+            "Zpřístupnění výukového cíle",
+            "Žák vlastními slovy vysvětlí cíl",
+            "Návrat k cíli během hodiny",
+            "Ověření porozumění cíli"
+          ],
+          "rationale": "Nestačí cíl pouze oznámit; žáci mu mají rozumět.",
+          "type": "editorial_interpretation",
+          "primary": "4.1",
+          "related": [],
+          "criteria": [
+            "4.1.1"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Srozumitelné zadání",
+            "Zapojení do výukové komunikace",
+            "Produktivní zapojení",
+            "Postupná opora a spolupráce při učení"
+          ],
+          "rationale": "Strategie zahrnují srozumitelné zadání, komunikaci, produktivní zapojení, postupné strukturování a podporu spolupráce.",
+          "type": "editorial_interpretation",
+          "primary": "4.2",
+          "related": [],
+          "criteria": [
+            "4.2.1",
+            "4.2.2",
+            "4.2.3",
+            "4.2.4",
+            "4.2.5"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Průběžné zjišťování učení",
+            "Změna postupu podle důkazů",
+            "Úprava tempa podle porozumění",
+            "Opětovné ověření po úpravě"
+          ],
+          "rationale": "Informace o učení slouží k průběžnému rozhodování.",
+          "type": "editorial_interpretation",
+          "primary": "4.3",
+          "related": [],
+          "criteria": [
+            "4.3.1",
+            "4.3.2"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Volba učební strategie",
+            "Sledování vlastního učení",
+            "Plán vlastního dalšího kroku",
+            "Postupné převzetí odpovědnosti"
+          ],
+          "rationale": "Autoregulace se rozvíjí postupně s vhodnou oporou.",
+          "type": "editorial_interpretation",
+          "primary": "4.4",
+          "related": [],
+          "criteria": [
+            "4.4.1",
+            "4.4.2"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "title": "Hodnocení a bezpečí",
+      "groups": [
+        {
+          "cards": [
+            "Popisná zpětná vazba",
+            "Zpětná vazba podle kritérií",
+            "Včasný konkrétní komentář",
+            "Příležitost využít komentář"
+          ],
+          "rationale": "Zpětná vazba směřuje k dalšímu učení.",
+          "type": "editorial_interpretation",
+          "primary": "5.1",
+          "related": [],
+          "criteria": [
+            "5.1.1",
+            "5.1.2",
+            "5.1.3"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Hodnocení výsledků i pokroku",
+            "Opora pro vzájemné hodnocení",
+            "Sebehodnocení žáků",
+            "Různorodé formy hodnocení"
+          ],
+          "rationale": "Hodnocení zahrnuje více forem a aktivní roli žáků.",
+          "type": "editorial_interpretation",
+          "primary": "5.2",
+          "related": [],
+          "criteria": [
+            "5.2.1",
+            "5.2.2",
+            "5.2.3"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Rozvíjející otázka na odpověď",
+            "Elaborovaná reakce učitele",
+            "Společné hledání příčiny chyby",
+            "Oprava s porozuměním"
+          ],
+          "rationale": "Okamžitá reakce pomáhá žákům rozvíjet odpověď nebo pracovat s chybou.",
+          "type": "editorial_interpretation",
+          "primary": "5.3",
+          "related": [],
+          "criteria": [
+            "5.3.1",
+            "5.3.2"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Socioemoční rozvoj a reakce na výsměch",
+            "Rozpoznání signálů ohrožení",
+            "Bezpečí ve fyzickém i virtuálním prostředí",
+            "Reakce na nenadálou situaci"
+          ],
+          "rationale": "Bezpečné prostředí zahrnuje socioemoční rozvoj, reakce na ohrožení a nenadálé situace i fyzické a virtuální prostředí.",
+          "type": "editorial_interpretation",
+          "primary": "3.2",
+          "related": [],
+          "criteria": [
+            "3.2.1",
+            "3.2.2",
+            "3.2.3",
+            "3.2.4",
+            "3.2.5",
+            "3.2.6"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "title": "Profesní cesta a obor",
+      "groups": [
+        {
+          "cards": [
+            "Srozumitelné zprostředkování oboru",
+            "Smysl vyučovaného obsahu",
+            "Práce s předchozí zkušeností",
+            "Mezipředmětové vazby a gramotnosti"
+          ],
+          "rationale": "Obsah má být srozumitelný a ukotvený ve zkušenosti, v souvislostech oborů i v rozvoji gramotností, je-li to účelné.",
+          "type": "editorial_interpretation",
+          "primary": "1.2",
+          "related": [],
+          "criteria": [
+            "1.2.1",
+            "1.2.2",
+            "1.2.3",
+            "1.2.4",
+            "1.2.5"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Spolupráce s provázejícím učitelem",
+            "Tandemová výuka",
+            "Koordinace se školním poradenským pracovištěm",
+            "Promyšlená komunikace s rodiči"
+          ],
+          "rationale": "Profesní spolupráce má sloužit rozvoji a potřebám žáků.",
+          "type": "editorial_interpretation",
+          "primary": "6.1",
+          "related": [],
+          "criteria": [
+            "6.1.1",
+            "6.1.2",
+            "6.1.3",
+            "6.1.4"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Profesní sebepojetí",
+            "Přiměřený rozvojový cíl",
+            "Reflexe vlastní výuky",
+            "Využití kolegiální zpětné vazby"
+          ],
+          "rationale": "Profesní učení spojuje reflexi, přesvědčení a změnu praxe.",
+          "type": "editorial_interpretation",
+          "primary": "6.2",
+          "related": [],
+          "criteria": [
+            "6.2.1",
+            "6.2.2",
+            "6.2.3",
+            "6.2.4"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        },
+        {
+          "cards": [
+            "Plán experimentování",
+            "Plán kritické práce s AI",
+            "Plán tvořivého řešení",
+            "Plán využití prostoru a pomůcek"
+          ],
+          "rationale": "Jde o plánování metod včetně kritického myšlení a tvořivosti.",
+          "type": "editorial_interpretation",
+          "primary": "2.2",
+          "related": [],
+          "criteria": [
+            "2.2.3",
+            "2.2.4",
+            "2.2.5",
+            "2.2.6"
+          ],
+          "sourceType": "editorial_interpretation",
+          "reviewStatus": "draft_review_required"
+        }
+      ]
+    }
+  ],
+  "reignsScenarios": [
+    {
+      "id": "r01",
+      "primary": "1.1",
+      "related": [
+        "6.1"
+      ],
+      "situation": "V přípravě narazíš na oborovou otázku, u které si nejsi jistý/á. Hodina začíná za deset minut.",
+      "choices": [
+        {
+          "label": "Přiznám nejistotu a ověřím odpověď s třídou.",
+          "delta": [
+            4,
+            4,
+            -4,
+            6
+          ],
+          "feedback": "Společné ověřování může modelovat odbornou práci; potřebuje však kvalitní zdroje."
+        },
+        {
+          "label": "Domluvím se s kolegou a vrátím se k otázce příště.",
+          "delta": [
+            4,
+            4,
+            -2,
+            6
+          ],
+          "feedback": "Odložená odpověď je legitimní, pokud se k ní skutečně vrátíš."
+        }
+      ],
+      "question": "Jak v obou případech ověříš správnost vysvětlení?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "1.1.1",
+        "1.1.2",
+        "6.1.1"
+      ],
+      "mindset": "Proč je pro tebe důležité přiznat oborovou nejistotu? Jakou roli mají ověřené zdroje? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r02",
+      "primary": "1.2",
+      "related": [
+        "4.3"
+      ],
+      "situation": "Žáci znají definici, ale neumějí ji použít v novém příkladu.",
+      "choices": [
+        {
+          "label": "Použiji názorný příklad a nechám je vysvětlit vztahy.",
+          "delta": [
+            4,
+            8,
+            -6,
+            4
+          ],
+          "feedback": "Příklad může zpřístupnit podstatu, pokud nezakrývá důležité rozdíly."
+        },
+        {
+          "label": "Nechám žáky porovnat dva odlišné příklady ve dvojicích.",
+          "delta": [
+            4,
+            8,
+            -3,
+            4
+          ],
+          "feedback": "Porovnávání může odhalit miskoncepce; bude potřeba společné vyjasnění."
+        }
+      ],
+      "question": "Co by prokazovalo porozumění, nejen zapamatování?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "1.2.1",
+        "1.2.3",
+        "4.3.1"
+      ],
+      "mindset": "Věříš, že znalost definice znamená porozumění? Co by tento předpoklad zpochybnilo? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r03",
+      "primary": "1.2",
+      "related": [
+        "4.1"
+      ],
+      "situation": "Třída se ptá, proč se učí právě toto téma.",
+      "choices": [
+        {
+          "label": "Společně pojmenujeme smysl a očekávaný výsledek.",
+          "delta": [
+            4,
+            6,
+            -3,
+            4
+          ],
+          "feedback": "Sdílení smyslu pomáhá orientaci, neznamená rezignaci na kurikulum."
+        },
+        {
+          "label": "Ukážu praktický problém a nechám žáky odvodit cíl.",
+          "delta": [
+            4,
+            6,
+            -5,
+            4
+          ],
+          "feedback": "Problém může vzbudit zájem; cíl je potřeba následně zpřesnit."
+        }
+      ],
+      "question": "Jak poznají žáci, že cíle dosáhli?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "1.2.2",
+        "4.1.1"
+      ],
+      "mindset": "Proč mají žáci sami rozumět smyslu učiva? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r04",
+      "primary": "2.5",
+      "related": [
+        "2.3",
+        "1.2"
+      ],
+      "situation": "Ve třídě jsou velké rozdíly v předchozích znalostech.",
+      "choices": [
+        {
+          "label": "Připravím společný cíl a různé míry podpory.",
+          "delta": [
+            3,
+            8,
+            -9,
+            6
+          ],
+          "feedback": "Diferencuješ podporu, nikoli automaticky náročnost očekávání."
+        },
+        {
+          "label": "Využiji krátkou diagnostickou aktivitu a plán upravím až podle ní.",
+          "delta": [
+            3,
+            8,
+            -4,
+            6
+          ],
+          "feedback": "Získáš informace pro další rozhodování, ale potřebná podpora nesmí čekat příliš dlouho."
+        }
+      ],
+      "question": "Jak zabráníš fixnímu rozdělování žáků podle schopností?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "2.5.1",
+        "2.3.2",
+        "1.2.3"
+      ],
+      "mindset": "Je pro tebe spravedlnost totéž co stejný postup pro všechny? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r05",
+      "primary": "4.2",
+      "related": [
+        "4.4"
+      ],
+      "situation": "Část třídy ztrácí zájem o dlouhodobý projekt.",
+      "choices": [
+        {
+          "label": "Dám možnost zvolit si způsob zpracování při společných cílech.",
+          "delta": [
+            6,
+            6,
+            -4,
+            4
+          ],
+          "feedback": "Volba může podpořit autonomii; sama o sobě motivaci nezaručuje."
+        },
+        {
+          "label": "Nechám skupiny pojmenovat překážky a upravit dílčí plán.",
+          "delta": [
+            6,
+            6,
+            -6,
+            4
+          ],
+          "feedback": "Zjišťuješ důvody nezájmu, místo abys ho automaticky připisoval/a lenosti."
+        }
+      ],
+      "question": "Které podmínky brání zapojení?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "4.2.3",
+        "4.4.2"
+      ],
+      "mindset": "Co považuješ za produktivní zapojení a jak se liší od pouhé aktivity? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r06",
+      "primary": "4.3",
+      "related": [],
+      "situation": "Rychlé ověření ukázalo, že třetina třídy nerozumí klíčovému pojmu.",
+      "choices": [
+        {
+          "label": "Zastavím a zkusím jiné vysvětlení.",
+          "delta": [
+            4,
+            8,
+            -5,
+            4
+          ],
+          "feedback": "Reaguješ na důkazy o učení; jiné vysvětlení je třeba znovu ověřit."
+        },
+        {
+          "label": "Zadám krátkou cílenou podporu, ostatní pracují na rozšíření.",
+          "delta": [
+            4,
+            8,
+            -7,
+            4
+          ],
+          "feedback": "Rozdělení podpory může pomoci, pokud nikdo nezůstane bez vedení."
+        }
+      ],
+      "question": "Jak po úpravě ověříš její účinek?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "4.3.2",
+        "4.3.1"
+      ],
+      "mindset": "Je důležitější dodržet plán, nebo reagovat na to, co se žáci skutečně učí? Proč? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r07",
+      "primary": "6.2",
+      "related": [
+        "4.3"
+      ],
+      "situation": "Po hodině máš dobrý pocit, ale výstupní lístky ukazují nejasnosti.",
+      "choices": [
+        {
+          "label": "Vyberu typické nejasnosti a upravím příští hodinu.",
+          "delta": [
+            2,
+            6,
+            -4,
+            7
+          ],
+          "feedback": "Reflexe propojuje důkazy s rozhodnutím o další výuce."
+        },
+        {
+          "label": "Proberu anonymizované výstupy s kolegyní.",
+          "delta": [
+            2,
+            6,
+            -3,
+            7
+          ],
+          "feedback": "Kolegiální pohled může odhalit, co ti uniklo; stále je třeba změnu vyzkoušet."
+        }
+      ],
+      "question": "Jak odlišíš spokojenost od skutečného učení?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "6.2.3",
+        "6.2.4",
+        "4.3.1"
+      ],
+      "mindset": "Na čem zakládáš úsudek, že hodina byla kvalitní? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r08",
+      "primary": "3.2",
+      "related": [
+        "3.1",
+        "5.3"
+      ],
+      "situation": "Při chybné odpovědi se několik žáků spolužákovi směje.",
+      "choices": [
+        {
+          "label": "Zastavím posměch, podpořím žáka a připomenu pravidla.",
+          "delta": [
+            10,
+            4,
+            -4,
+            2
+          ],
+          "feedback": "Bezpečí vyžaduje okamžitou reakci; pravidla mají platit i příště."
+        },
+        {
+          "label": "Zastavím posměch a nabídnu žákovi možnost rozhovoru po hodině.",
+          "delta": [
+            10,
+            4,
+            -5,
+            2
+          ],
+          "feedback": "Chráníš důstojnost žáka; později lze řešit vztahy i se skupinou."
+        }
+      ],
+      "question": "Jak zapojíš žáka, aniž bys na něj přenesl/a odpovědnost za situaci?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "3.2.2",
+        "3.1.1",
+        "5.3.2"
+      ],
+      "mindset": "Co si myslíš o možnosti dělat chyby před ostatními? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r09",
+      "primary": "4.2",
+      "related": [
+        "3.1"
+      ],
+      "situation": "Skupinová práce sklouzla k tomu, že vše řeší jeden člověk.",
+      "choices": [
+        {
+          "label": "Rozdělíme role a zviditelníme příspěvky všech.",
+          "delta": [
+            6,
+            6,
+            -4,
+            4
+          ],
+          "feedback": "Role mohou podpořit účast; je dobré je střídat."
+        },
+        {
+          "label": "Přeruším práci a nechám skupiny reflektovat spolupráci.",
+          "delta": [
+            6,
+            6,
+            -5,
+            4
+          ],
+          "feedback": "Společná reflexe může pomoci změnit pravidla práce."
+        }
+      ],
+      "question": "Jak ověříš, že se učí i ti méně viditelní?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "4.2.5",
+        "3.1.3"
+      ],
+      "mindset": "Považuješ skupinovou práci automaticky za spolupráci? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r10",
+      "primary": "3.2",
+      "related": [
+        "2.2"
+      ],
+      "situation": "Nová aktivita vyžaduje pohyb, ale třída má těsné uličky.",
+      "choices": [
+        {
+          "label": "Přeskládám prostor s ohledem na dostupnost a bezpečí.",
+          "delta": [
+            4,
+            6,
+            -6,
+            3
+          ],
+          "feedback": "Prostor se přizpůsobuje potřebám učení a přístupu všech."
+        },
+        {
+          "label": "Upravím aktivitu tak, aby šla dělat bezpečně na místech.",
+          "delta": [
+            4,
+            6,
+            -2,
+            3
+          ],
+          "feedback": "Alternativa šetří čas; nesmí však vyloučit některé žáky."
+        }
+      ],
+      "question": "Kdo by mohl být v navrženém prostoru znevýhodněn?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "3.2.4",
+        "2.2.6"
+      ],
+      "mindset": "Jaký vztah podle tebe mají bezpečí a učení? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r11",
+      "primary": "5.2",
+      "related": [
+        "5.1"
+      ],
+      "situation": "Žáci chtějí vědět, proč jejich práce získaly různé hodnocení.",
+      "choices": [
+        {
+          "label": "Ukážeme si kritéria a anonymizované ukázky kvality.",
+          "delta": [
+            6,
+            8,
+            -5,
+            4
+          ],
+          "feedback": "Kritéria pomáhají porozumět hodnocení, pokud byla srozumitelná a použitá férově."
+        },
+        {
+          "label": "Nabídnu práci s kritérii při sebehodnocení a následném rozhovoru.",
+          "delta": [
+            6,
+            8,
+            -7,
+            4
+          ],
+          "feedback": "Sebehodnocení není přenesení odpovědnosti za spravedlivé hodnocení na žáka."
+        }
+      ],
+      "question": "Kdy a jak žáci kritéria poznali?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "5.2.3",
+        "5.1.2"
+      ],
+      "mindset": "Proč by měli žáci znát kritéria a podílet se na posouzení práce? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r12",
+      "primary": "5.1",
+      "related": [],
+      "situation": "Na opravu třiceti prací máš jen hodinu.",
+      "choices": [
+        {
+          "label": "Poskytnu společnou zpětnou vazbu k typickým jevům a čas na revizi.",
+          "delta": [
+            4,
+            8,
+            -2,
+            3
+          ],
+          "feedback": "Společná zpětná vazba je užitečná, pokud žáci vědí, co konkrétně změnit."
+        },
+        {
+          "label": "Zaměřím individuální komentář na jeden další krok.",
+          "delta": [
+            4,
+            8,
+            -7,
+            3
+          ],
+          "feedback": "Cílený komentář může být zvládnutelný; důležitá je příležitost ho využít."
+        }
+      ],
+      "question": "Jak žáci zpětnou vazbu skutečně použijí?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "5.1.3",
+        "5.1.1",
+        "5.1.2"
+      ],
+      "mindset": "Co je podle tebe účelem zpětné vazby: zdůvodnit hodnocení, nebo ovlivnit další učení? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r13",
+      "primary": "4.4",
+      "related": [
+        "4.3"
+      ],
+      "situation": "Zbývá pět minut a nabízí se ještě jedna procvičovací úloha.",
+      "choices": [
+        {
+          "label": "Využiji čas k reflexi toho, co pomohlo a co ještě nejde.",
+          "delta": [
+            4,
+            6,
+            -1,
+            3
+          ],
+          "feedback": "Reflexe může podpořit regulaci vlastního učení; potřebuje konkrétní podklady."
+        },
+        {
+          "label": "Žáci vyřeší krátkou úlohu a označí, kde potřebují podporu.",
+          "delta": [
+            4,
+            6,
+            -2,
+            3
+          ],
+          "feedback": "Propojuješ výkon a sebehodnocení; příště na informace navaž."
+        }
+      ],
+      "question": "Co se dozví žák a co se dozvíš ty?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "4.4.1",
+        "4.3.1"
+      ],
+      "mindset": "Do jaké míry mohou žáci řídit vlastní učení a jakou oporu k tomu potřebují? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r14",
+      "primary": "6.2",
+      "related": [
+        "6.1"
+      ],
+      "situation": "Kolega nabízí společnou hospitaci. Máš ale hodně příprav.",
+      "choices": [
+        {
+          "label": "Domluvíme krátkou hospitaci s jednou konkrétní otázkou.",
+          "delta": [
+            1,
+            4,
+            -5,
+            7
+          ],
+          "feedback": "Úzké zaměření může zefektivnit profesní učení."
+        },
+        {
+          "label": "Dohodneme pozdější termín a zatím sdílíme přípravu.",
+          "delta": [
+            1,
+            4,
+            3,
+            7
+          ],
+          "feedback": "Udržitelné plánování spolupráce je legitimní, pokud dohoda nezapadne."
+        }
+      ],
+      "question": "Co má být důkazem přínosu spolupráce?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "6.2.4",
+        "6.1.1"
+      ],
+      "mindset": "Jakou hodnotu přikládáš pohledu kolegů na svou výuku? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r15",
+      "primary": "6.1",
+      "related": [
+        "3.1"
+      ],
+      "situation": "Rodič píše, že dítě doma úkolu nerozumělo, a je rozladěný.",
+      "choices": [
+        {
+          "label": "Domluvím krátký rozhovor o potřebách dítěte a dalším postupu.",
+          "delta": [
+            6,
+            4,
+            -5,
+            2
+          ],
+          "feedback": "Partnerský rozhovor umožňuje sdílet pohledy a chránit soukromí."
+        },
+        {
+          "label": "Odpovím stručně, uznám obavu a nabídnu termín konzultace.",
+          "delta": [
+            6,
+            4,
+            -2,
+            2
+          ],
+          "feedback": "Nastavíš hranice i cestu k řešení; důležitá je skutečná návaznost."
+        }
+      ],
+      "question": "Jak zapojíš samotného žáka?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "6.1.4",
+        "3.1.1"
+      ],
+      "mindset": "Jakou roli přisuzuješ rodičům při podpoře středoškolského žáka? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r16",
+      "primary": "6.2",
+      "related": [],
+      "situation": "Máš možnost dalšího kurzu, ale také vlastní rozvojový cíl, na kterém ještě pracuješ.",
+      "choices": [
+        {
+          "label": "Zůstanu u cíle a vyzkouším jednu konkrétní změnu.",
+          "delta": [
+            1,
+            4,
+            -3,
+            8
+          ],
+          "feedback": "Rozvoj znamená změnu praxe, ne sbírání certifikátů."
+        },
+        {
+          "label": "Vyberu kurz, pokud mi pomůže s tímto cílem.",
+          "delta": [
+            1,
+            4,
+            -6,
+            8
+          ],
+          "feedback": "Kurz může být užitečný, pokud jeho přínos přeneseš do praxe."
+        }
+      ],
+      "question": "Jak vyhodnotíš svůj posun?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "6.2.2",
+        "6.2.3"
+      ],
+      "mindset": "Podle čeho poznáš skutečný profesní růst? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r17",
+      "primary": "2.2",
+      "related": [
+        "1.1",
+        "4.3"
+      ],
+      "situation": "Při plánování semináře na SŠ chceš, aby žáci a žákyně kriticky pracovali s odpovědí generativní AI. Máš jen část hodiny.",
+      "choices": [
+        {
+          "label": "Žáci porovnají výstup AI se dvěma důvěryhodnými oborovými zdroji.",
+          "delta": [
+            3,
+            5,
+            -4,
+            4
+          ],
+          "feedback": "Srovnání může rozvíjet kritickou práci s informacemi, pokud žáci zdůvodňují kvalitu zdrojů a opravují nepřesnosti."
+        },
+        {
+          "label": "Připravím ukázku s chybou a žáci navrhnou postup ověření.",
+          "delta": [
+            3,
+            5,
+            -4,
+            4
+          ],
+          "feedback": "Společná analýza může zpřístupnit proces ověřování. Později ověř, zda jej žáci zvládnou samostatně."
+        }
+      ],
+      "question": "Jak poznáš, že žáci kriticky posuzují výstup, a ne jen používají nástroj?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "2.2.4",
+        "1.1.2",
+        "4.3.1"
+      ],
+      "mindset": "Co považuješ za odpovědnou práci s informacemi a AI? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r18",
+      "primary": "6.3",
+      "related": [],
+      "situation": "Po náročném týdnu dostáváš pozvánku na další dobrovolný webinář.",
+      "choices": [
+        {
+          "label": "Odmítnu a vyhradím si čas na odpočinek.",
+          "delta": [
+            0,
+            2,
+            12,
+            3
+          ],
+          "feedback": "Regenerace je součást udržitelné práce, nikoli selhání."
+        },
+        {
+          "label": "Domluvím sdílení poznatků s kolegou, který se účastní.",
+          "delta": [
+            0,
+            2,
+            7,
+            3
+          ],
+          "feedback": "Spolupráce může rozložit zátěž; odpočinek nemusí být podmíněn produktivitou."
+        }
+      ],
+      "question": "Co může změnit škola, ne pouze jednotlivý učitel?",
+      "reviewStatus": "draft_review_required",
+      "sourceType": "editorial_interpretation",
+      "criteria": [
+        "6.3.1",
+        "6.3.2"
+      ],
+      "mindset": "Je odpočinek podmíněný dokončením práce, nebo je součástí udržitelné profese? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r19",
+      "situation": "Před praxí na SŠ máš téma „industrializace“, ale ještě nemáš ověřitelný výukový cíl.",
+      "choices": [
+        {
+          "label": "Zvolím vysvětlení dvou příčin a navrhnu krátkou ověřovací úlohu.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "V obou případech potřebuje cíl odpovídající způsob ověření. Volba závisí na plánovaném obsahu a předchozích znalostech."
+        },
+        {
+          "label": "Stanovím cíl porovnat dva prameny a připravím kritéria porovnání.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "V obou případech potřebuje cíl odpovídající způsob ověření. Volba závisí na plánovaném obsahu a předchozích znalostech."
+        }
+      ],
+      "question": "Jaký důkaz ti umožní posoudit naplnění cíle?",
+      "primary": "2.1",
+      "related": [],
+      "criteria": [
+        "2.1.2",
+        "2.1.1"
+      ],
+      "sourceType": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "mindset": "Je pro tebe důležitější šíře obsahu, nebo doložitelné porozumění? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r20",
+      "situation": "Část třídy na SŠ nerozumí náročnému odbornému textu, který je důležitý pro cíl výuky.",
+      "choices": [
+        {
+          "label": "Připravím oporu ve formě slovníčku a členění textu.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Materiál má podporovat naplnění cíle a reagovat na potřeby; ověř, zda úprava zachovává podstatu obsahu."
+        },
+        {
+          "label": "Zvolím jiný věcně přesný text a úlohu se stejným cílem.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Materiál má podporovat naplnění cíle a reagovat na potřeby; ověř, zda úprava zachovává podstatu obsahu."
+        }
+      ],
+      "question": "Jak poznáš, že opora nezakrývá samotný cíl?",
+      "primary": "2.3",
+      "related": [],
+      "criteria": [
+        "2.3.2",
+        "2.3.1"
+      ],
+      "sourceType": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "mindset": "Znamená přizpůsobení materiálu snížení nároků? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r21",
+      "situation": "Při plánování 45minutové hodiny vidíš, že všechny aktivity pravděpodobně nestihneš.",
+      "choices": [
+        {
+          "label": "Vynechám méně podstatnou aktivitu a nechám čas na ověření cíle.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Časový plán má odpovídat významu aktivit pro učení a umožnit odchýlení; obě možnosti mohou být účelné."
+        },
+        {
+          "label": "Rozdělím práci do dvou hodin s návazností a rezervou.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Časový plán má odpovídat významu aktivit pro učení a umožnit odchýlení; obě možnosti mohou být účelné."
+        }
+      ],
+      "question": "Který výukový cíl je prioritou a proč?",
+      "primary": "2.4",
+      "related": [
+        "2.2"
+      ],
+      "criteria": [
+        "2.4.1",
+        "2.2.1"
+      ],
+      "sourceType": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "mindset": "Co je podle tebe účelné využití času ve výuce? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r22",
+      "situation": "Na praxi jsi slíbil/a třídě termín zpětné vazby, ale zjistíš, že ho nestihneš.",
+      "choices": [
+        {
+          "label": "Včas vysvětlím situaci a domluvím nový realistický termín.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Důvěra souvisí s transparentností a plněním dohod. Včasná informace nesmí zastřít potřeby žáků."
+        },
+        {
+          "label": "Dodám v termínu společnou zpětnou vazbu a upřesním termín individuálních komentářů.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Společná zpětná vazba může být užitečná, ale pokud jsi slíbil/a individuální komentáře, transparentně domluv nový termín a zohledni potřeby žáků."
+        }
+      ],
+      "question": "Co potřebují žáci vědět, aby se na tvou dohodu mohli spolehnout?",
+      "primary": "3.1",
+      "related": [],
+      "criteria": [
+        "3.1.2",
+        "3.1.1"
+      ],
+      "sourceType": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "mindset": "Jak souvisí spolehlivost učitele s důvěrou žáků? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r23",
+      "situation": "Žáci opakují cíl napsaný na tabuli, ale nevědí, co znamená pro jejich práci.",
+      "choices": [
+        {
+          "label": "Nechám je cíl vysvětlit vlastními slovy a společně jej vyjasníme.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Pouhé zopakování cíle není důkazem porozumění; ověř, že si žáci dovedou představit požadovaný výsledek."
+        },
+        {
+          "label": "Ukážu dvě ukázky výstupu a nechám žáky odvodit, kam směřujeme.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Pouhé zopakování cíle není důkazem porozumění; ověř, že si žáci dovedou představit požadovaný výsledek."
+        }
+      ],
+      "question": "Co ti ukáže, že žáci cíli opravdu rozumějí?",
+      "primary": "4.1",
+      "related": [
+        "2.1"
+      ],
+      "criteria": [
+        "4.1.1",
+        "2.1.2"
+      ],
+      "sourceType": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "mindset": "Stačí podle tebe výukový cíl sdělit? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    },
+    {
+      "id": "r24",
+      "situation": "Žák při společném řešení vysloví nesprávný závěr, ale jeho postup obsahuje užitečnou myšlenku.",
+      "choices": [
+        {
+          "label": "Navážu otázkou na jeho postup a nechám jej hledat nesrovnalost.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Chyba může být východiskem učení, pokud zůstane zachována důstojnost a žáci porozumějí příčině i dalšímu kroku."
+        },
+        {
+          "label": "Nabídnu kontrastní příklad a dám třídě čas na společné zdůvodnění.",
+          "delta": [
+            3,
+            5,
+            -4,
+            3
+          ],
+          "feedback": "Chyba může být východiskem učení, pokud zůstane zachována důstojnost a žáci porozumějí příčině i dalšímu kroku."
+        }
+      ],
+      "question": "Jak ověříš, že oprava vychází z porozumění, ne z napodobení?",
+      "primary": "5.3",
+      "related": [],
+      "criteria": [
+        "5.3.2",
+        "5.3.1"
+      ],
+      "sourceType": "editorial_interpretation",
+      "reviewStatus": "draft_review_required",
+      "mindset": "Považuješ chybu spíš za selhání, nebo za informaci pro další učení? Jaký důkaz z praxe by tě mohl přimět tento předpoklad přehodnotit?"
+    }
+  ],
+  "simActions": [
+    {
+      "id": "rest",
+      "label": "Odpočinek bez práce",
+      "primary": "6.3",
+      "related": [],
+      "delta": [
+        22,
+        0,
+        0,
+        0
+      ],
+      "note": "Odpočinek není odměna za splněné úkoly.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.3.1",
+        "6.3.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "plan",
+      "label": "Příprava podle potřeb žáků",
+      "primary": "2.5",
+      "related": [
+        "2.1",
+        "2.3"
+      ],
+      "delta": [
+        -9,
+        -13,
+        3,
+        5
+      ],
+      "note": "Zaměř se na důležité cíle, ne na dokonalý materiál.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "2.5.1",
+        "2.1.2",
+        "2.3.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "feedback",
+      "label": "Cílená zpětná vazba",
+      "primary": "5.1",
+      "related": [],
+      "delta": [
+        -8,
+        -11,
+        7,
+        3
+      ],
+      "note": "Vytvoř čas na využití zpětné vazby.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "5.1.3",
+        "5.1.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "peer",
+      "label": "Společná příprava s provázejícím učitelem",
+      "primary": "6.1",
+      "related": [],
+      "delta": [
+        -4,
+        -9,
+        10,
+        8
+      ],
+      "note": "Sdílená práce může rozložit zátěž, když je dobře domluvená.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.1.1",
+        "6.1.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "reflect",
+      "label": "Reflexe jedné hodiny",
+      "primary": "6.2",
+      "related": [
+        "4.3"
+      ],
+      "delta": [
+        -5,
+        -4,
+        2,
+        11
+      ],
+      "note": "Vyber jeden doklad učení a jeden další krok.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.2.3",
+        "4.3.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "boundary",
+      "label": "Domluvit priority s provázejícím učitelem",
+      "primary": "6.3",
+      "related": [
+        "6.1"
+      ],
+      "delta": [
+        8,
+        -15,
+        4,
+        2
+      ],
+      "note": "Udržitelnost vyžaduje i organizační podmínky, nejen osobní odolnost.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.3.1",
+        "6.1.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "family",
+      "label": "Promyslet konzultaci s rodiči",
+      "primary": "6.1",
+      "related": [
+        "3.1"
+      ],
+      "delta": [
+        -7,
+        -7,
+        12,
+        3
+      ],
+      "note": "Na praxi nejdříve vyhodnoť cíl a vhodný způsob komunikace s provázejícím učitelem.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.1.4",
+        "3.1.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "course",
+      "label": "Cílený profesní rozvoj",
+      "primary": "6.2",
+      "related": [],
+      "delta": [
+        -11,
+        3,
+        2,
+        14
+      ],
+      "note": "Stanov přiměřený rozvojový cíl, krok a způsob, jak posun vyhodnotíš.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.2.2",
+        "6.2.4"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "id": "ethics",
+      "label": "Ověřit zdroje a plán práce s AI",
+      "primary": "1.1",
+      "related": [
+        "2.2"
+      ],
+      "delta": [
+        -6,
+        -5,
+        2,
+        8
+      ],
+      "note": "Promysli oborovou správnost a kritické posouzení zdrojů žáky.",
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "1.1.2",
+        "2.2.4"
+      ],
+      "sourceType": "editorial_interpretation"
+    }
+  ],
+  "simEvents": [
+    {
+      "title": "Pondělní suplování",
+      "description": "Rozvrh se nečekaně mění.",
+      "delta": [
+        -8,
+        12,
+        0,
+        0
+      ],
+      "primary": "3.2",
+      "related": [
+        "6.3"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "3.2.6",
+        "6.3.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Dobrá zpráva",
+      "description": "Kolegyně nabídla sdílení materiálů.",
+      "delta": [
+        4,
+        -6,
+        6,
+        0
+      ],
+      "primary": "6.1",
+      "related": [
+        "2.3"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.1.1",
+        "2.3.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Nejasné zadání",
+      "description": "Několik žáků potřebuje další vysvětlení.",
+      "delta": [
+        -3,
+        10,
+        0,
+        0
+      ],
+      "primary": "4.2",
+      "related": [
+        "4.3"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "4.2.1",
+        "4.3.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Administrativní smršť",
+      "description": "Přibyly úkoly mimo výuku.",
+      "delta": [
+        -6,
+        15,
+        0,
+        0
+      ],
+      "primary": "6.3",
+      "related": [],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.3.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Výstupní lístky",
+      "description": "Žáci pojmenovali, co jim pomohlo.",
+      "delta": [
+        2,
+        3,
+        5,
+        3
+      ],
+      "primary": "4.4",
+      "related": [
+        "6.2"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "4.4.1",
+        "6.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Podpora vedení",
+      "description": "Část administrativy přebírá školní tým.",
+      "delta": [
+        7,
+        -13,
+        5,
+        0
+      ],
+      "primary": "6.3",
+      "related": [
+        "6.1"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.3.1",
+        "6.1.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Rodičovská konzultace",
+      "description": "Je třeba najít společný postup.",
+      "delta": [
+        -4,
+        9,
+        0,
+        0
+      ],
+      "primary": "6.1",
+      "related": [],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.1.4"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Prostor na přípravu",
+      "description": "V rozvrhu se uvolnil plánovací blok.",
+      "delta": [
+        5,
+        -8,
+        0,
+        0
+      ],
+      "primary": "2.4",
+      "related": [
+        "6.3"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "2.4.1",
+        "6.3.1"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Důvěra ve třídě",
+      "description": "Žáci se odvažují ptát.",
+      "delta": [
+        2,
+        0,
+        7,
+        0
+      ],
+      "primary": "3.1",
+      "related": [
+        "4.2"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "3.1.2",
+        "4.2.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Technická komplikace",
+      "description": "Digitální nástroj ve výuce nefunguje.",
+      "delta": [
+        -5,
+        8,
+        0,
+        0
+      ],
+      "primary": "3.2",
+      "related": [
+        "1.1"
+      ],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "3.2.6",
+        "1.1.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Týmová reflexe",
+      "description": "Kolegové sdílejí užitečnou zkušenost.",
+      "delta": [
+        0,
+        -3,
+        4,
+        5
+      ],
+      "primary": "6.2",
+      "related": [],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.2.4",
+        "6.2.3"
+      ],
+      "sourceType": "editorial_interpretation"
+    },
+    {
+      "title": "Náročný týden",
+      "description": "Nahromadilo se více povinností než obvykle.",
+      "delta": [
+        -9,
+        10,
+        0,
+        0
+      ],
+      "primary": "6.3",
+      "related": [],
+      "reviewStatus": "draft_review_required",
+      "criteria": [
+        "6.3.1",
+        "6.3.2"
+      ],
+      "sourceType": "editorial_interpretation"
+    }
+  ],
+  "criteria": {
+    "1.1.1": {
+      "label": "PŘI PLÁNOVÁNÍ A REALIZACI VÝUKY ÚČELNĚ VYUŽÍVÁM ZNALOSTI A DOVEDNOSTI VYUČOVANÉHO OBORU.",
+      "page": 6
+    },
+    "1.1.2": {
+      "label": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM S OPOROU O DŮVĚRYHODNÉ ZDROJE A KRITICKY PRACUJI S INFORMACEMI A JEJICH ZDROJI.",
+      "page": 6
+    },
+    "1.1.3": {
+      "label": "PŘI PLÁNOVÁNÍ A REALIZACI VÝUKY ÚČELNĚ VYUŽÍVÁM MODERNÍ TECHNOLOGIE A DALŠÍ NÁSTROJE VYUŽÍVANÉ VE VYUČOVANÉM OBORU.",
+      "page": 6
+    },
+    "1.1.4": {
+      "label": "PŘI PLÁNOVÁNÍ A REALIZACI VÝUKY ZOHLEDŇUJI NÁVAZNOST VYUČOVANÉHO OBORU A KURIKULA NAPŘÍČ STUPNI VZDĚLÁVÁNÍ.",
+      "page": 6
+    },
+    "1.2.1": {
+      "label": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM S OHLEDEM NA ŽÁKY A ŽÁKYNĚ SROZUMITELNĚ (VČ. ZOHLEDNĚNÍ STUPNĚ A TYPU VZDĚLÁVÁNÍ).",
+      "page": 7
+    },
+    "1.2.2": {
+      "label": "VEDU ŽÁKY A ŽÁKYNĚ K TOMU, ABY CHÁPALI, PROČ SE DANÉMU VYUČOVACÍMU OBSAHU VĚNUJÍ.",
+      "page": 7
+    },
+    "1.2.3": {
+      "label": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM S OHLEDEM NA TO, CO JIŽ ŽÁCI A ŽÁKYNĚ O DANÉM UČIVU VĚDÍ A S JAKOU ZKUŠENOSTÍ PŘICHÁZEJÍ.",
+      "page": 8
+    },
+    "1.2.4": {
+      "label": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM V SOUVISLOSTECH S DALŠÍMI PŘEDMĚTY, JE-LI TO S OHLEDEM NA VYUČOVANÝ OBSAH ŽÁDOUCÍ.",
+      "page": 8
+    },
+    "1.2.5": {
+      "label": "OBSAH VYUČOVANÉHO OBORU ZPROSTŘEDKOVÁVÁM SPOLEČNĚ S VÝSTUPY PRŮŘEZOVÝCH TÉMAT, KLÍČOVÝCH KOMPETENCÍ ČI GRAMOTNOSTÍ, JE-LI TO V SOULADU S VYUČOVANÝM OBSAHEM.",
+      "page": 8
+    },
+    "2.1.1": {
+      "label": "Cíle výuky nastavuji tak, aby se vztahovaly ke klíčovým znalostem a dovednostem a vedly k naplnění očekávaných výstupů učení.",
+      "page": 10
+    },
+    "2.1.2": {
+      "label": "Cíle výuky nastavuji tak, aby byly ověřitelné, a současně plánuji způsob jejich ověření.",
+      "page": 10
+    },
+    "2.1.3": {
+      "label": "Cíle výuky nastavuji tak, aby byly pro žáky a žákyně přiměřenou výzvou.",
+      "page": 10
+    },
+    "2.1.4": {
+      "label": "Cíle výuky nastavuji tak, aby vedly k celkovému rozvoji žáků a žákyň.",
+      "page": 10
+    },
+    "2.2.1": {
+      "label": "Metody výuky plánuji tak, aby odpovídaly cílům výuky.",
+      "page": 11
+    },
+    "2.2.2": {
+      "label": "Metody výuky plánuji tak, aby byly přiměřené a účelně různorodé.",
+      "page": 11
+    },
+    "2.2.3": {
+      "label": "Metody výuky plánuji tak, aby žáci a žákyně při výuce sami bádali, experimentovali, nacházeli souvislosti.",
+      "page": 11
+    },
+    "2.2.4": {
+      "label": "Metody výuky plánuji tak, abych vedl/a žáky a žákyně ke kritickému myšlení, respektu k vědeckým faktům, odpovědné práci s informacemi a jejich zdroji, včetně umělé inteligence.",
+      "page": 11
+    },
+    "2.2.5": {
+      "label": "Metody výuky plánuji tak, abych vedl/a žáky a žákyně k tvůrčí činnosti.",
+      "page": 12
+    },
+    "2.2.6": {
+      "label": "Metody výuky plánuji s ohledem na různé možnosti využití prostorového uspořádání třídy, vybavení a pomůcek.",
+      "page": 12
+    },
+    "2.3.1": {
+      "label": "Vybírám či připravuji výukové materiály tak, aby byly účelně různorodé a sloužily naplnění zvolených cílů.",
+      "page": 12
+    },
+    "2.3.2": {
+      "label": "Výukové materiály vybírám a upravuji tak, aby vhodně reagovaly na potřeby žáků a žákyň.",
+      "page": 12
+    },
+    "2.4.1": {
+      "label": "Plánuji rozvržení času tak, aby výuka byla pro mě i pro žáky a žákyně časově účelná a efektivní.",
+      "page": 13
+    },
+    "2.5.1": {
+      "label": "Individualizuji plán výuky tak, aby můj plán zohledňoval různorodé individuální potřeby žáků a žákyň.",
+      "page": 13
+    },
+    "3.1.1": {
+      "label": "Se všemi žáky a žákyněmi jednám s respektem, bez ohledu na jejich pohlaví či gender, barvu pleti, národnost či etnickou příslušnost, náboženství, sexuální orientaci, rodinné zázemí či původ, studijní předpoklady či aktuální studijní výsledky.",
+      "page": 15
+    },
+    "3.1.2": {
+      "label": "Buduji s žáky a žákyněmi vztah založený na vzájemné důvěře: jednám spravedlivě, plním sliby, chodím včas, reaguji na situace porušování pravidel, jsem konzistentní v chování k žákům a žákyním a jsem transparentní ve svých očekáváních.",
+      "page": 15
+    },
+    "3.1.3": {
+      "label": "Vedu žáky a žákyně k budování pozitivních vrstevnických vztahů: reflektuji s žáky a žákyněmi komunikační normy, podporuji interakci napříč třídou, oceňuji prosociální chování; s prvky konkurence a soutěživosti při výuce nakládám tak, aby nebyla narušena spolupráce a vzájemná podpora ve třídě.",
+      "page": 15
+    },
+    "3.1.4": {
+      "label": "Ve výuce vhodně reguluji své emoce tak, aby mé chování zůstalo vyrovnané.",
+      "page": 15
+    },
+    "3.2.1": {
+      "label": "Podporuji socioemoční rozvoj žáků a žákyň (sebeuvědomění, seberegulaci, sociální uvědomění, tvorbu vztahů a odpovědné rozhodování) a vedu je k uvědomění si dopadu vlastního chování na sebe i ostatní.",
+      "page": 16
+    },
+    "3.2.2": {
+      "label": "Reaguji na chování žáků a žákyň, které by mohlo vést k narušení bezpečného prostředí ve třídě (např. nerespektující chování, výsměch, verbální či fyzická agrese, včetně digitálního prostředí). Transparentně a v souladu s pravidly školy pracuji s důsledky nedodržení stanovených pravidel.",
+      "page": 16
+    },
+    "3.2.3": {
+      "label": "Reaguji na fyzické či psychické znaky či projevy u žáků a žákyň, které mohou naznačovat, že u nich dochází k ohrožení jejich zdravého vývoje.",
+      "page": 16
+    },
+    "3.2.4": {
+      "label": "Přizpůsobuji fyzické prostředí třídy tak, abych zajistil/a bezpečí žáků a žákyň.",
+      "page": 17
+    },
+    "3.2.5": {
+      "label": "Využívám virtuální prostředí třídy tak, abych zajistil/a bezpečí žáků a žákyň.",
+      "page": 17
+    },
+    "3.2.6": {
+      "label": "Reaguji na nenadálé situace ve výuce.",
+      "page": 17
+    },
+    "4.1.1": {
+      "label": "Vedu žáky a žákyně k porozumění cílům výuky.",
+      "page": 19
+    },
+    "4.2.1": {
+      "label": "Formuluji srozumitelná zadání úkolů či výukových situací.",
+      "page": 19
+    },
+    "4.2.2": {
+      "label": "Vytvářím příležitosti pro to, aby se žáci a žákyně zapojovali do výukové komunikace.",
+      "page": 19
+    },
+    "4.2.3": {
+      "label": "Vytvářím příležitosti pro produktivní zapojení žáků a žákyň.",
+      "page": 20
+    },
+    "4.2.4": {
+      "label": "Postupnými kroky předem strukturuji výuku tak, aby všichni žáci a žákyně mohli dosáhnout nastavených cílů.",
+      "page": 20
+    },
+    "4.2.5": {
+      "label": "Vedu žáky a žákyně k vzájemné podpoře při učení včetně rozvoje dovedností a postojů potřebných ke spolupráci.",
+      "page": 20
+    },
+    "4.3.1": {
+      "label": "V průběhu výuky uplatňuji postupy, díky nimž jsme já i žáci a žákyně schopni vyhodnocovat, jak se jim aktuálně daří v procesu učení.",
+      "page": 21
+    },
+    "4.3.2": {
+      "label": "Ve výuce průběžně reaguji na to, jak se žákům a žákyním daří v procesu učení.",
+      "page": 21
+    },
+    "4.4.1": {
+      "label": "Podporuji žáky a žákyně v uvědomování si a řízení vlastního učení.",
+      "page": 22
+    },
+    "4.4.2": {
+      "label": "Vedu výuku tak, aby žáci a žákyně postupnými kroky přebírali odpovědnost za své učení.",
+      "page": 22
+    },
+    "5.1.1": {
+      "label": "Poskytuji popisnou zpětnou vazbu.",
+      "page": 24
+    },
+    "5.1.2": {
+      "label": "Poskytuji průběžnou zpětnou vazbu na základě stanovených kritérií.",
+      "page": 24
+    },
+    "5.1.3": {
+      "label": "Poskytuji průběžnou zpětnou vazbu tak, aby byla využitelná pro další učení žáků a žákyň, byla respektující, konkrétní, včasná, konstruktivní a aby zohledňovala individuální potřeby žáků a žákyň.",
+      "page": 24
+    },
+    "5.2.1": {
+      "label": "Využívám různorodé metody a formy hodnocení výsledků učení i pokroku žáků a žákyň.",
+      "page": 25
+    },
+    "5.2.2": {
+      "label": "Využívám různorodé metody a formy hodnocení včetně těch, jimiž vytvářím příležitosti a oporu pro vzájemné hodnocení.",
+      "page": 25
+    },
+    "5.2.3": {
+      "label": "Vedu žáky a žákyně k sebehodnocení.",
+      "page": 25
+    },
+    "5.3.1": {
+      "label": "Během výuky pracuji s odpověďmi žáků a žákyň tak, že na ně navazuji elaborovanou zpětnou vazbou či rozvíjející otázkou.",
+      "page": 26
+    },
+    "5.3.2": {
+      "label": "Formativně pracuji s chybou a vedu k tomu také žáky a žákyně.",
+      "page": 26
+    },
+    "6.1.1": {
+      "label": "Spolupracuji s provázejícím učitelem / provázející učitelkou.",
+      "page": 28
+    },
+    "6.1.2": {
+      "label": "Vedu tandemovou výuku společně se spolužáky a spolužačkami či provázejícími učiteli a učitelkami, je-li to možné.",
+      "page": 28
+    },
+    "6.1.3": {
+      "label": "Spolupracuji s asistentem či asistentkou pedagoga, je-li ve třídě, s členy ŠPP a dalšími kolegy a kolegyněmi ve prospěch žáků a žákyň ve třídě.",
+      "page": 28
+    },
+    "6.1.4": {
+      "label": "Vyhodnocuji, kdy, jak a s jakým cílem komunikovat s rodiči žáků a žákyň.",
+      "page": 28
+    },
+    "6.2.1": {
+      "label": "Formuluji své profesní sebepojetí.",
+      "page": 29
+    },
+    "6.2.2": {
+      "label": "Stanovuji si přiměřené (adekvátní) cíle svého profesního rozvoje, plánuji kroky pro jejich naplnění a vyhodnocuji, zda se nastaveným rozvojovým cílům přibližuji.",
+      "page": 29
+    },
+    "6.2.3": {
+      "label": "Reflektuji svoji výuku.",
+      "page": 29
+    },
+    "6.2.4": {
+      "label": "Získávám zpětnou vazbu od kolegů a kolegyň (spolužáků a spolužaček, provázejících učitelů a učitelek, didaktiků a didaktiček) i z dalších zdrojů a využívám ji pro svůj další profesní rozvoj.",
+      "page": 29
+    },
+    "6.3.1": {
+      "label": "Vyhodnocuji rovnováhu mezi svým pracovním a osobním životem, sleduji stav svého psychického zdraví a reaguji na něj.",
+      "page": 30
+    },
+    "6.3.2": {
+      "label": "Znám a vědomě používám strategie, které mi pomáhají vyrovnat se se stresem.",
+      "page": 30
+    }
+  }
+};

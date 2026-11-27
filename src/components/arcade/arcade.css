@@ -1,0 +1,190 @@
+/*
+  KRAAU Arcade – styly sladěné s designovým systémem webu (src/styles/global.css):
+  MUNI modrá, doplňková barva FF, ostré rohy, Muni pro proložené verzálky,
+  plochy --soft a linky --line. Herní plochy používají barvy fakult MU stejně
+  jako Praxe na druhou. Web nemá tmavý režim, proto ho nemá ani herna.
+*/
+kraau-arcade {
+  --ka-ink: var(--ink, #000);
+  --ka-ink-2: var(--ink-2, #1e1e1e);
+  --ka-muted: var(--muted, #555);
+  --ka-accent: var(--muni-blue, #0000dc);
+  --ka-accent-dark: var(--muni-blue-dark, #0000a8);
+  --ka-arts: var(--arts-blue, #4bc8ff);
+  --ka-soft: var(--soft, #edf8ff);
+  --ka-border: var(--line, #c2c2f4);
+  --ka-panel: #fff;
+  /* Funkční stavy (sdílené s dlaždicemi hry Praxe na druhou) */
+  --ka-correct: var(--muni-blue, #0000dc);
+  --ka-present: #f2d45c;
+  --ka-absent: #6b6b6b;
+  --ka-warn: #ff7300;
+  display: block;
+  max-width: 100%;
+  color: var(--ka-ink);
+  font-family: inherit;
+  line-height: 1.5;
+}
+kraau-arcade * { box-sizing: border-box; }
+kraau-arcade [hidden] { display: none !important; }
+kraau-arcade h2, kraau-arcade h3, kraau-arcade p { margin: 0; }
+kraau-arcade h2 { font-size: 1.55rem; }
+kraau-arcade h3 { font-size: 1.15rem; line-height: 1.25; }
+kraau-arcade h2:focus, kraau-arcade h3:focus { outline: none; }
+/* Kotvy a fokus nadpisu nesmí skončit pod lepivou hlavičkou webu (76 px). */
+#arcade, #arcade ~ .kabinet-section, kraau-arcade h2, kraau-arcade h3 { scroll-margin-top: 92px; }
+kraau-arcade h2:focus-visible, kraau-arcade h3:focus-visible { outline: 3px solid var(--ka-accent); outline-offset: 3px; }
+kraau-arcade ul, kraau-arcade ol { margin: 0; padding-left: 1.2rem; }
+kraau-arcade .ka-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Tlačítka: stejná jako .button / .button--light webu */
+kraau-arcade button, kraau-arcade input { font: inherit; }
+kraau-arcade button, kraau-arcade a.ka-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 9px 16px; border: 1px solid var(--ka-accent); border-radius: 0;
+  background: #fff; color: var(--ka-accent); font-weight: 700; text-decoration: none; cursor: pointer;
+}
+kraau-arcade button:hover, kraau-arcade a.ka-button:hover { background: var(--ka-soft); color: var(--ka-accent); }
+kraau-arcade .ka-primary, kraau-arcade a.ka-button.ka-primary { background: var(--ka-accent); color: #fff; }
+kraau-arcade .ka-primary:hover, kraau-arcade a.ka-button.ka-primary:hover { background: var(--ka-accent-dark); color: #fff; }
+kraau-arcade button:disabled { border-color: var(--ka-border); background: #fff; color: #8a8a8a; cursor: default; }
+kraau-arcade :focus-visible { outline: 3px solid var(--ka-accent); outline-offset: 3px; }
+
+/* Typografie */
+kraau-arcade .ka-kicker { font-family: var(--font-mono); font-size: .78rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0; color: var(--ka-accent); }
+kraau-arcade .ka-muted { color: var(--ka-muted); font-size: .92rem; }
+kraau-arcade .ka-badge { display: inline-block; width: fit-content; padding: 4px 10px; background: var(--ka-soft); color: var(--ka-accent); font-family: var(--font-mono); font-size: .74rem; text-transform: uppercase; }
+kraau-arcade a { color: var(--ka-accent); text-underline-offset: 3px; }
+
+/* Katalog: úvod odpovídá ostatním sekcím stránky (eyebrow + h2 + text) */
+kraau-arcade .ka-shell { display: grid; gap: 8px; }
+kraau-arcade .ka-shell > h2 { margin: 0 0 4px; }
+kraau-arcade .ka-shell > p:not(.ka-kicker) { max-width: 720px; }
+kraau-arcade .ka-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 1060px; margin: 18px 0 10px; }
+@media (max-width: 900px) { kraau-arcade .ka-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { kraau-arcade .ka-grid { grid-template-columns: 1fr; } }
+kraau-arcade .ka-card { display: flex; flex-direction: column; min-width: 0; background: var(--ka-soft); border-left: 3px solid var(--ka-arts); }
+kraau-arcade .ka-art { display: grid; place-items: center; height: 108px; overflow: hidden; background: var(--ka-accent); }
+kraau-arcade .ka-art svg { width: 100%; height: 100%; max-width: 220px; }
+kraau-arcade .ka-card-body { display: flex; flex: 1; flex-direction: column; gap: 6px; padding: 16px 18px 18px; }
+kraau-arcade .ka-card-body h3 { color: var(--ka-accent); font-size: 1.1rem; }
+kraau-arcade .ka-card-body p { font-size: .93rem; }
+kraau-arcade .ka-card-body .ka-button, kraau-arcade .ka-card-body button { align-self: flex-start; margin-top: auto; }
+kraau-arcade .ka-card-body .ka-muted + .ka-muted { margin-bottom: 10px; font-family: var(--font-mono); font-size: .74rem; text-transform: uppercase; color: var(--ka-muted); }
+
+/* Detail hry */
+kraau-arcade .ka-game { gap: 18px; }
+kraau-arcade .ka-game > div > h2 { color: var(--ka-accent); font-size: 1.8rem; margin-bottom: 6px; }
+kraau-arcade .ka-game > div > p { max-width: 720px; color: var(--ka-ink-2); }
+kraau-arcade .ka-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+kraau-arcade .ka-toolbar .ka-right { margin-left: auto; }
+kraau-arcade .ka-panel { display: grid; gap: 14px; padding: clamp(12px, 2.4vw, 24px); border: 1px solid var(--ka-border); border-top: 3px solid var(--ka-accent); background: #fff; }
+kraau-arcade .ka-status { min-height: 1.5em; font-weight: 700; color: var(--ka-accent); }
+kraau-arcade .ka-reflection { display: grid; gap: 6px; padding: 16px 18px; background: var(--ka-soft); border-left: 3px solid var(--ka-arts); }
+kraau-arcade .ka-reflection > strong { color: var(--ka-accent); }
+kraau-arcade .ka-reflection p { margin: 0; }
+kraau-arcade details summary { cursor: pointer; font-weight: 700; color: var(--ka-accent); min-height: 32px; display: flex; align-items: center; }
+kraau-arcade .ka-source ul { display: grid; gap: 6px; margin: 8px 0; font-size: .92rem; }
+kraau-arcade .ka-source li strong { font-family: var(--font-mono); font-weight: 500; }
+
+/* KRAAULE: barva + symbol (✓ ↔ ·), barva není jediným nositelem informace */
+kraau-arcade .ka-word-board { display: grid; gap: 5px; width: min(100%, 380px); margin: 0 auto; }
+kraau-arcade .ka-word-row { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 4px; }
+kraau-arcade .ka-letter { position: relative; display: grid; place-items: center; aspect-ratio: 1; border: 1px solid var(--ka-border); background: #fff; color: var(--ka-ink); font-family: var(--font-mono); font-size: clamp(.85rem, 3.4vw, 1.45rem); font-weight: 700; }
+kraau-arcade .ka-letter small { position: absolute; right: 3px; bottom: 1px; font-family: var(--font-sans); font-size: .62rem; line-height: 1; }
+kraau-arcade .ka-letter[data-state=correct] { background: var(--ka-correct); border-color: var(--ka-correct); color: #fff; }
+kraau-arcade .ka-letter[data-state=present] { background: var(--ka-present); border-color: #b39320; color: #000; }
+kraau-arcade .ka-letter[data-state=absent] { background: var(--ka-absent); border-color: var(--ka-absent); color: #fff; }
+kraau-arcade .ka-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; font-size: .85rem; color: var(--ka-muted); }
+kraau-arcade .ka-guess { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+kraau-arcade .ka-guess input { flex: 1; min-width: 0; max-width: 260px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--ka-accent); border-radius: 0; background: #fff; color: var(--ka-ink); font-family: var(--font-mono); text-transform: uppercase; }
+kraau-arcade .ka-keyboard { display: grid; gap: 4px; width: 100%; max-width: 480px; margin: 0 auto; }
+kraau-arcade .ka-key-row { display: flex; justify-content: center; gap: 3px; }
+kraau-arcade .ka-key-row button { flex: 1; min-width: 0; max-width: 44px; min-height: 40px; padding: 4px 0; border-color: var(--ka-border); font-family: var(--font-mono); font-size: .85rem; }
+kraau-arcade .ka-key-row button[data-state=correct] { background: var(--ka-correct); border-color: var(--ka-correct); color: #fff; }
+kraau-arcade .ka-key-row button[data-state=present] { background: var(--ka-present); border-color: #b39320; color: #000; }
+kraau-arcade .ka-key-row button[data-state=absent] { background: var(--ka-absent); border-color: var(--ka-absent); color: #fff; }
+
+/* Pedagogické souvislosti */
+kraau-arcade .ka-connections { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+kraau-arcade .ka-tile { min-height: 68px; padding: 6px; border-color: var(--ka-border); color: var(--ka-ink); font-size: clamp(.74rem, 2.6vw, .96rem); font-weight: 700; overflow-wrap: anywhere; hyphens: auto; }
+kraau-arcade .ka-tile[aria-pressed=true] { background: var(--ka-accent); border-color: var(--ka-accent); color: #fff; box-shadow: inset 0 0 0 3px var(--ka-arts); }
+kraau-arcade .ka-solved { grid-column: 1 / -1; display: grid; gap: 4px; padding: 12px 14px; color: #000; text-align: left; border-left: 3px solid var(--ka-accent); }
+kraau-arcade .ka-solved strong { display: block; color: var(--ka-accent); }
+kraau-arcade .ka-solved p { margin: 0; font-size: .92rem; }
+kraau-arcade .ka-solved .ka-muted { color: #333; }
+
+/* Didaktris */
+kraau-arcade .ka-tetris { display: grid; grid-template-columns: minmax(0, 250px) minmax(0, 1fr); gap: 18px; justify-content: center; width: 100%; max-width: 540px; margin: 0 auto; }
+kraau-arcade .ka-tetris canvas { display: block; width: 100%; height: auto; background: var(--ka-accent-dark); touch-action: manipulation; }
+kraau-arcade .ka-stats { display: grid; align-content: start; gap: 12px; }
+kraau-arcade .ka-stats .ka-muted { margin: 0; font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; color: var(--ka-accent); }
+kraau-arcade .ka-number { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+kraau-arcade .ka-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: 100%; max-width: 540px; margin: 0 auto; }
+kraau-arcade .ka-controls button { gap: 6px; padding: 6px 4px; font-size: .88rem; }
+kraau-arcade .ka-controls button > span:first-child { font-size: 1.15rem; line-height: 1; }
+/* Dotykové ovládání: tahy po plátně nescrollují stránku (jen uvnitř herní plochy). */
+kraau-arcade .ka-tetris canvas:first-child { touch-action: none; }
+kraau-arcade .ka-panel { scroll-margin-top: 84px; }
+
+/* Potvrzovací dialog ve stylu webu */
+kraau-arcade .ka-dialog { max-width: min(420px, calc(100vw - 32px)); margin: auto; padding: 22px 24px; border: 0; border-top: 4px solid var(--ka-accent); background: #fff; color: var(--ka-ink); box-shadow: 0 15px 25px rgba(0, 0, 0, .16); }
+kraau-arcade .ka-dialog::backdrop { background: rgba(0, 0, 60, .35); }
+kraau-arcade .ka-dialog__text { margin: 0 0 18px; font-size: 1.05rem; font-weight: 700; }
+
+/* Souvislosti: vysvětlení po omylu */
+kraau-arcade .ka-why { padding: 12px 16px; background: var(--ka-soft); border-left: 3px solid var(--ka-arts); }
+kraau-arcade .ka-why p { margin: 8px 0 0; }
+kraau-arcade .ka-why ul { margin: 6px 0 0; }
+
+/* Sborovna: shrnutí roku; KRAAULE: akce po dohrání */
+kraau-arcade .ka-summary { display: grid; gap: 6px; padding: 12px 16px; background: #fff; border: 1px solid var(--ka-border); }
+kraau-arcade .ka-summary ul { font-variant-numeric: tabular-nums; }
+kraau-arcade .ka-word-actions { justify-content: center; }
+
+/* Sborovna a SimSborovna */
+kraau-arcade .ka-meters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px; }
+kraau-arcade .ka-meter { display: grid; gap: 4px; min-width: 0; }
+kraau-arcade .ka-meter > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px; font-size: .86rem; }
+kraau-arcade .ka-meter strong { font-variant-numeric: tabular-nums; }
+kraau-arcade progress { width: 100%; height: 10px; appearance: none; border: 0; background: var(--ka-soft); accent-color: var(--ka-accent); }
+kraau-arcade progress::-webkit-progress-bar { background: var(--ka-soft); }
+kraau-arcade progress::-webkit-progress-value { background: var(--ka-accent); }
+kraau-arcade progress::-moz-progress-bar { background: var(--ka-accent); }
+kraau-arcade progress.ka-warn { accent-color: var(--ka-warn); }
+kraau-arcade progress.ka-warn::-webkit-progress-value { background: var(--ka-warn); }
+kraau-arcade progress.ka-warn::-moz-progress-bar { background: var(--ka-warn); }
+kraau-arcade .ka-case { display: grid; gap: 10px; padding: clamp(14px, 3vw, 22px); background: var(--ka-soft); border-left: 3px solid var(--ka-arts); }
+kraau-arcade .ka-case h3 { color: var(--ka-accent); }
+kraau-arcade .ka-case > button, kraau-arcade .ka-case > .ka-primary { justify-self: start; }
+kraau-arcade .ka-feedback { background: #fff; border: 1px solid var(--ka-border); border-left: 3px solid var(--ka-accent); }
+kraau-arcade .ka-choices, kraau-arcade .ka-action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+kraau-arcade .ka-choices button, kraau-arcade .ka-action-grid button { display: grid; align-content: start; justify-items: start; gap: 4px; min-width: 0; padding: 12px 14px; color: var(--ka-ink); font-weight: 400; text-align: left; overflow-wrap: anywhere; }
+kraau-arcade .ka-choices button .ka-kicker { font-weight: 700; }
+kraau-arcade .ka-action-grid strong { color: var(--ka-accent); }
+kraau-arcade .ka-action-grid button:disabled strong { color: #8a8a8a; }
+kraau-arcade .ka-action-grid small { font-size: .78rem; color: var(--ka-muted); }
+kraau-arcade .ka-changes { display: flex; flex-wrap: wrap; gap: 6px; font-size: .82rem; }
+kraau-arcade .ka-changes span { padding: 2px 8px; background: var(--ka-soft); font-variant-numeric: tabular-nums; }
+kraau-arcade .ka-pet { display: grid; grid-template-columns: minmax(75px, 130px) minmax(0, 1fr); gap: 16px; align-items: center; }
+kraau-arcade .ka-pet svg { width: 100%; height: auto; }
+kraau-arcade .ka-pet > div { display: grid; gap: 10px; }
+
+@media (max-width: 620px) {
+  kraau-arcade .ka-tetris { grid-template-columns: minmax(0, 175px) minmax(0, 1fr); gap: 12px; }
+  kraau-arcade .ka-tile { min-height: 58px; }
+  kraau-arcade .ka-panel { padding: 10px; gap: 10px; }
+  /* Didaktris: ovládání v jedné řadě, jen symboly (popisky nese aria-label) */
+  kraau-arcade .ka-controls { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; }
+  kraau-arcade .ka-controls button { min-height: 48px; padding: 4px 0; }
+  kraau-arcade .ka-controls .ka-ctl-label { display: none; }
+  kraau-arcade .ka-stats { gap: 6px; }
+  kraau-arcade .ka-number { font-size: 1.2rem; }
+  kraau-arcade .ka-game > div > h2 { font-size: 1.5rem; }
+}
+@media (max-width: 460px) {
+  kraau-arcade .ka-pet { grid-template-columns: 1fr; }
+  kraau-arcade .ka-pet svg { max-width: 100px; justify-self: center; }
+  kraau-arcade .ka-choices, kraau-arcade .ka-action-grid, kraau-arcade .ka-meters { grid-template-columns: 1fr; }
+  kraau-arcade .ka-toolbar .ka-right { margin-left: 0; }
+}

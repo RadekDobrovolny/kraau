@@ -1,0 +1,19 @@
+---
+/*
+  KRAAU Arcade 0.2.0 (vývojový náhled pro odbornou revizi).
+  Bez reviewPreview se nic nevykreslí. O zapnutí rozhoduje stránka přes
+  arcadePreviewEnabled v src/lib/arcade.ts a astro.config.mjs, aby se neschválený
+  obsah nedostal ani do JS balíčků produkčního buildu.
+  - bez `game`: katalog her, karty vedou na stránky easter-egg/hry/<slug>/
+  - s `game` (id z games.js): jen herní plocha jedné hry pro její stránku
+*/
+import './arcade.css';
+interface Props { mergeHref?: string; reviewPreview?: boolean; game?: string }
+const { mergeHref = '#slucovacka', reviewPreview = false, game } = Astro.props;
+/* Base path webu (např. /kraau/) pro odkazy na stránky her, kritéria a PDF rámce. */
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+{reviewPreview && <kraau-arcade merge-href={mergeHref} base={base} game={game}></kraau-arcade>}
+<script>
+  import './arcade.js';
+</script>

@@ -1,0 +1,74 @@
+---
+/*
+  Samostatná stránka jedné hry KRAAU Arcade (easter-egg/hry/<slug>/).
+  Stránky vznikají jen ve vývojovém náhledu (src/lib/arcade.ts); v produkčním
+  buildu getStaticPaths nevrátí nic a žádná adresa neexistuje.
+*/
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import MergeGame from '../../../components/MergeGame.astro';
+import Arcade from '../../../components/arcade/Arcade.astro';
+import { GAMES } from '../../../components/arcade/games.js';
+import { arcadePreviewEnabled } from '../../../lib/arcade';
+import { withBase } from '../../../lib/framework';
+
+export function getStaticPaths() {
+  if (!arcadePreviewEnabled) return [];
+  return GAMES.map((game) => ({ params: { hra: game.slug } }));
+}
+
+const game = GAMES.find((item) => item.slug === Astro.params.hra)!;
+const index = GAMES.indexOf(game);
+const others = GAMES.filter((item) => item !== game);
+const prev = GAMES[(index - 1 + GAMES.length) % GAMES.length];
+const next = GAMES[(index + 1) % GAMES.length];
+const arcadeUrl = withBase('easter-egg/#arcade');
+const gameUrl = (slug: string) => withBase(`easter-egg/hry/${slug}/`);
+---
+<SiteLayout title={`${game.name} · KRAAU Arcade`} description={game.desc} noindex>
+  <div class="shell">
+    <Breadcrumbs items={[{ label: 'Úvod', href: withBase('') }, { label: 'Easter egg', href: withBase('easter-egg/') }, { label: 'KRAAU Arcade', href: arcadeUrl }, { label: game.name }]} />
+    <header class="page-heading arcade-heading">
+      <p class="eyebrow">KRAAU Arcade · {game.type}</p>
+      <h1>{game.name}</h1>
+      <p class="lede">{game.rules}</p>
+    </header>
+
+    <section class="kabinet-section arcade-stage" aria-label={`Hra ${game.name}`}>
+      {game.id === 'merge'
+        ? <>
+            <MergeGame />
+            <div class="ka-like-reflection">
+              <strong>Co má tahle hra společného s učitelstvím?</strong>
+              <p>{game.why}</p>
+              <p class="meta">{game.frame}</p>
+            </div>
+          </>
+        : <Arcade reviewPreview={true} game={game.id} />}
+    </section>
+
+    <nav class="kabinet-section arcade-more" aria-labelledby="more-heading">
+      <h2 id="more-heading">Další hry v herně</h2>
+      <ul>
+        {others.map((item) => <li><a href={gameUrl(item.slug)}><strong>{item.name}</strong><span>{item.desc}</span></a></li>)}
+      </ul>
+      <div class="page-heading__actions">
+        <a class="button button--light" href={arcadeUrl}><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Zpět do herny</a>
+        <a class="button button--light" href={gameUrl(prev.slug)} rel="prev">Předchozí: {prev.name}</a>
+        <a class="button button--light" href={gameUrl(next.slug)} rel="next">Další: {next.name}</a>
+      </div>
+    </nav>
+  </div>
+</SiteLayout>
+
+<style>
+  .arcade-heading { padding-bottom: 28px; }
+  .arcade-stage { padding-top: 28px; }
+  .ka-like-reflection { display: grid; gap: 6px; max-width: 760px; margin-top: 28px; padding: 16px 18px; background: var(--soft); border-left: 3px solid var(--arts-blue); }
+  .ka-like-reflection strong { color: var(--muni-blue); }
+  .ka-like-reflection p { margin: 0; }
+  .arcade-more ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 10px; max-width: 1060px; margin: 16px 0 0; padding: 0; list-style: none; }
+  .arcade-more li a { display: grid; gap: 2px; height: 100%; padding: 14px 16px; background: var(--soft); border-left: 3px solid var(--arts-blue); text-decoration: none; }
+  .arcade-more li a:hover { background: #d4eeff; border-left-color: var(--muni-blue); }
+  .arcade-more li span { color: var(--ink-2); font-size: .92rem; }
+</style>
