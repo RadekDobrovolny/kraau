@@ -18,6 +18,10 @@ jobs:
       - uses: withastro/action@v6
         with:
           build-cmd: npm run build
+        env:
+          # KRAAU Arcade (Skryté kurikulum) je zveřejněná; obsah her je pracovní verze
+          # čekající na odbornou revizi. Smazáním řádku hernu opět skryjete.
+          PUBLIC_KRAAU_ARCADE_PREVIEW: 'true'
   deploy:
     needs: build
     runs-on: ubuntu-latest
